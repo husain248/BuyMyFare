@@ -1,40 +1,40 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import Counter from 'yet-another-react-lightbox/plugins/counter';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import 'yet-another-react-lightbox/styles.css';
-import 'yet-another-react-lightbox/plugins/counter.css';
+import Link from "next/link";
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/counter.css";
 
 const galleryImgNums = [1, 2, 3, 4, 5, 6, 7];
 
 const footerLinks = {
   quickLinks: [
-    { label: 'Home', href: '/' },
-    { label: 'About Us', href: '/about-us' },
-    { label: 'Tour Packages', href: '/tour-packages' },
-    { label: 'Ticket Booking', href: '/ticket-booking' },
-    { label: 'Blogs', href: '/blogs' },
-    { label: 'Contact', href: '/contact' },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about-us" },
+    { label: "Tour Packages", href: "/tour-packages" },
+    { label: "Ticket Booking", href: "/ticket-booking" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: 'Flight Booking', href: '/ticket-booking' },
-    { label: 'Travel Insurance', href: '/about-us' },
-    { label: 'Tour Packages', href: '/tour-packages' },
-    { label: 'Super Visa Insurance', href: '/about-us' },
-    { label: 'Hotel Booking', href: '/tour-packages' },
-    { label: 'Car Rentals', href: '/tour-packages' },
+    { label: "Flight Booking", href: "/ticket-booking" },
+    { label: "Travel Insurance", href: "/about-us" },
+    { label: "Tour Packages", href: "/tour-packages" },
+    { label: "Super Visa Insurance", href: "/about-us" },
+    { label: "Hotel Booking", href: "/tour-packages" },
+    { label: "Car Rentals", href: "/tour-packages" },
   ],
 };
 
 const socialLinks = [
-  { icon: 'fa-facebook-f', label: 'Facebook', href: '#' },
-  { icon: 'fa-x-twitter', label: 'Twitter', href: '#' },
-  { icon: 'fa-instagram', label: 'Instagram', href: '#' },
-  { icon: 'fa-linkedin-in', label: 'LinkedIn', href: '#' },
-  { icon: 'fa-youtube', label: 'YouTube', href: '#' },
+  { icon: "fa-facebook-f", label: "Facebook", href: "#" },
+  { icon: "fa-x-twitter", label: "Twitter", href: "#" },
+  { icon: "fa-instagram", label: "Instagram", href: "#" },
+  { icon: "fa-linkedin-in", label: "LinkedIn", href: "#" },
+  { icon: "fa-youtube", label: "YouTube", href: "#" },
 ];
 
 export default function Footer() {
@@ -60,18 +60,30 @@ export default function Footer() {
                   placeholder="Enter Your Email Address"
                 />
                 <div className="absolute md:right-2.5 right-1.5 top-1/2 -translate-y-1/2 z-1">
-                  <button name="submit" value="Submit" type="submit" aria-label="Subscribe Now" className="btn btn-primary btn-hover max-md:px-5!">
+                  <button
+                    name="submit"
+                    value="Submit"
+                    type="submit"
+                    aria-label="Subscribe Now"
+                    className="btn btn-primary btn-hover max-md:px-5!"
+                  >
                     <span className="md:block hidden">Subscribe</span>
                     <span className="md:hidden">
-                      <i className="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                      <i
+                        className="fa-solid fa-paper-plane"
+                        aria-hidden="true"
+                      ></i>
                     </span>
                   </button>
                 </div>
               </div>
             </form>
             <p className="text-sm text-secondary">
-              We are committed to protecting your{' '}
-              <Link href="/contact" className="font-medium underline">Privacy Policy</Link>.
+              We are committed to protecting your{" "}
+              <Link href="/contact" className="font-medium underline">
+                Privacy Policy
+              </Link>
+              .
             </p>
           </div>
         </div>
@@ -82,32 +94,56 @@ export default function Footer() {
         <div className="container">
           <div className="py-16 md:py-20">
             <div className="row gap-y-10">
-
               {/* Brand column */}
               <div className="xl:w-1/3 lg:w-1/2 w-full">
-                <Link href="/" aria-label="Go to homepage" className="inline-block mb-7">
+                <Link
+                  href="/"
+                  aria-label="Go to homepage"
+                  className="inline-block mb-7"
+                >
                   <img
-                    src="/assets/images/Buy-My-Fare-Logo-white.png"
+                    src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png"
                     alt="BuyMyFare"
                     className="h-14 w-auto object-contain"
                   />
                 </Link>
                 <p className="text-white/70 text-sm leading-relaxed mb-7 max-w-72">
-                  Your trusted travel partner — offering affordable flights, curated tour packages, and comprehensive travel insurance across Canada and beyond.
+                  Your trusted travel partner — offering affordable flights,
+                  curated tour packages, and comprehensive travel insurance
+                  across Canada and beyond.
                 </p>
 
                 {/* Contact details */}
                 <ul className="space-y-3 text-sm mb-7">
                   <li className="flex items-center gap-3 text-white/80">
-                    <i className="fa-solid fa-phone text-primary w-4" aria-hidden="true"></i>
-                    <a href="tel:+17806001550" className="hover:text-primary transition-colors">+1 780 600 1550</a>
+                    <i
+                      className="fa-solid fa-phone text-primary w-4"
+                      aria-hidden="true"
+                    ></i>
+                    <a
+                      href="tel:+17806001550"
+                      className="hover:text-primary transition-colors"
+                    >
+                      +1 780 600 1550
+                    </a>
                   </li>
                   <li className="flex items-center gap-3 text-white/80">
-                    <i className="fa-solid fa-envelope text-primary w-4" aria-hidden="true"></i>
-                    <a href="mailto:info@buymyfare.com" className="hover:text-primary transition-colors">info@buymyfare.com</a>
+                    <i
+                      className="fa-solid fa-envelope text-primary w-4"
+                      aria-hidden="true"
+                    ></i>
+                    <a
+                      href="mailto:info@buymyfare.com"
+                      className="hover:text-primary transition-colors"
+                    >
+                      info@buymyfare.com
+                    </a>
                   </li>
                   <li className="flex items-start gap-3 text-white/80">
-                    <i className="fa-solid fa-location-dot text-primary w-4 mt-0.5" aria-hidden="true"></i>
+                    <i
+                      className="fa-solid fa-location-dot text-primary w-4 mt-0.5"
+                      aria-hidden="true"
+                    ></i>
                     <span>Edmonton, Alberta, Canada</span>
                   </li>
                 </ul>
@@ -123,7 +159,10 @@ export default function Footer() {
                         href={s.href}
                         className="size-9 rounded-full flex items-center justify-center border border-white/20 text-white/60 hover:bg-primary hover:border-primary hover:text-secondary transition-all"
                       >
-                        <i className={`fa-brands ${s.icon} text-sm`} aria-hidden="true"></i>
+                        <i
+                          className={`fa-brands ${s.icon} text-sm`}
+                          aria-hidden="true"
+                        ></i>
                       </a>
                     </li>
                   ))}
@@ -138,8 +177,14 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {footerLinks.quickLinks.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-white/70 text-sm hover:text-primary transition-colors flex items-center gap-2">
-                        <i className="fa-solid fa-chevron-right text-primary text-xs" aria-hidden="true"></i>
+                      <Link
+                        href={link.href}
+                        className="text-white/70 text-sm hover:text-primary transition-colors flex items-center gap-2"
+                      >
+                        <i
+                          className="fa-solid fa-chevron-right text-primary text-xs"
+                          aria-hidden="true"
+                        ></i>
                         {link.label}
                       </Link>
                     </li>
@@ -155,8 +200,14 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {footerLinks.services.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href} className="text-white/70 text-sm hover:text-primary transition-colors flex items-center gap-2">
-                        <i className="fa-solid fa-chevron-right text-primary text-xs" aria-hidden="true"></i>
+                      <Link
+                        href={link.href}
+                        className="text-white/70 text-sm hover:text-primary transition-colors flex items-center gap-2"
+                      >
+                        <i
+                          className="fa-solid fa-chevron-right text-primary text-xs"
+                          aria-hidden="true"
+                        ></i>
                         {link.label}
                       </Link>
                     </li>
@@ -182,13 +233,15 @@ export default function Footer() {
                         className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                        <i className="fa-solid fa-plus text-white text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></i>
+                        <i
+                          className="fa-solid fa-plus text-white text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          aria-hidden="true"
+                        ></i>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -200,15 +253,24 @@ export default function Footer() {
               <div className="row items-center">
                 <div className="xl:w-1/3 w-full max-xl:mb-2.5">
                   <p className="2xl:text-base text-2sm mb-0 max-xl:text-center text-white/60">
-                    © Copyright <span>{new Date().getFullYear()}</span> By{' '}
-                    <a href="https://buymyfare.com" className="text-white hover:text-primary transition-colors">BuyMyFare</a>. All Rights Reserved.
+                    © Copyright <span>{new Date().getFullYear()}</span> By{" "}
+                    <a
+                      href="https://buymyfare.com"
+                      className="text-white hover:text-primary transition-colors"
+                    >
+                      BuyMyFare
+                    </a>
+                    . All Rights Reserved.
                   </p>
                 </div>
                 <div className="xl:w-1/3 w-full max-xl:mb-2.5 max-sm:hidden">
                   <ul className="flex items-center justify-center gap-1">
                     {footerLinks.quickLinks.map((link) => (
                       <li key={link.href}>
-                        <Link href={link.href} className="2xl:px-5 px-2 py-1 text-2sm font-medium text-white/60 hover:text-primary transition-colors">
+                        <Link
+                          href={link.href}
+                          className="2xl:px-5 px-2 py-1 text-2sm font-medium text-white/60 hover:text-primary transition-colors"
+                        >
                           {link.label}
                         </Link>
                       </li>
@@ -226,7 +288,10 @@ export default function Footer() {
                           href={s.href}
                           className="size-8 rounded-full flex items-center justify-center text-white/60 hover:bg-primary hover:text-secondary transition-all"
                         >
-                          <i className={`fa-brands ${s.icon} text-sm`} aria-hidden="true"></i>
+                          <i
+                            className={`fa-brands ${s.icon} text-sm`}
+                            aria-hidden="true"
+                          ></i>
                         </a>
                       </li>
                     ))}
@@ -259,9 +324,11 @@ export default function Footer() {
         open={lightboxIndex >= 0}
         index={lightboxIndex}
         close={() => setLightboxIndex(-1)}
-        slides={galleryImgNums.map((n) => ({ src: `/assets/images/gallery/img${n}.png` }))}
+        slides={galleryImgNums.map((n) => ({
+          src: `/assets/images/gallery/img${n}.png`,
+        }))}
         plugins={[Counter, Zoom]}
-        styles={{ container: { backgroundColor: 'rgba(0,0,0,.85)' } }}
+        styles={{ container: { backgroundColor: "rgba(0,0,0,.85)" } }}
       />
     </footer>
   );
