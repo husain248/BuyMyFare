@@ -21,15 +21,15 @@ export default function Home() {
       </div>
 
       <HeroBanner />
-      <TravelInsurance />
+      <TourPackages />
       <ExploreWorld />
       <OurServices />
-      <Destinations />
-      <TourPackages />
+      <TravelInsurance />
+      {/* <Destinations /> */}
       <TicketBookings />
-      <EnjoyHoliday />
-      <Feedback />
+      {/* <EnjoyHoliday /> */}
       <Blog />
+      <Feedback />
       <ContactSection />
       <GallerySection />
     </>
