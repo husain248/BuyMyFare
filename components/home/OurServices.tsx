@@ -1,32 +1,32 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 const services = [
   {
-    title: 'TOUR PACKAGES',
-    tag: 'Packages',
-    image: '/assets/images/gallery/img1.png', // Placeholder if specific one not found, though img1 looks like a beach
+    title: "TOUR PACKAGES",
+    tag: "Packages",
+    image: "/assets/images/gallery/img1.png", // Placeholder if specific one not found, though img1 looks like a beach
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
-    btnText: 'See All Packages',
-    link: '/tour-packages'
+    btnText: "See All Packages",
+    link: "/tour-packages",
   },
   {
-    title: 'TICKET BOOKING',
-    tag: 'Booking',
-    image: '/assets/images/gallery/img2.png',
+    title: "TICKET BOOKING",
+    tag: "Booking",
+    image: "/assets/images/gallery/img2.png",
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
-    btnText: 'Book Now',
-    link: '/ticket-booking'
+    btnText: "Book Now",
+    link: "/ticket-booking",
   },
   {
-    title: 'TRAVEL INSURANCE',
-    tag: 'Insurance',
-    image: '/assets/images/gallery/img5.png', // Desert-ish image
+    title: "TRAVEL INSURANCE",
+    tag: "Insurance",
+    image: "/assets/images/gallery/img5.png", // Desert-ish image
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
-    btnText: 'Get Insurance',
-    link: '/travel-insurance'
-  }
+    btnText: "Get Insurance",
+    link: "/travel-insurance",
+  },
 ];
 
 export default function OurServices() {
@@ -34,7 +34,10 @@ export default function OurServices() {
     <section className="py-20 bg-[#F5F2EB]">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-12">
-          <span className="block font-main text-[#072032] text-2xl mb-4 italic" style={{ fontSize: '32px', textTransform: 'none' }}>
+          <span
+            className="block font-main text-[#072032] text-2xl mb-4 italic"
+            style={{ fontSize: "32px", textTransform: "none" }}
+          >
             Service We Offer Is Specifically Designed To Meet Your Needs.
           </span>
           <h2 className="text-[#072032] font-bold lg:text-8xl md:text-6xl text-4xl uppercase tracking-tighter">
@@ -44,14 +47,17 @@ export default function OurServices() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-[40px] p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="relative mb-6 overflow-hidden rounded-[30px] aspect-[4/3]">
+            <div
+              key={index}
+              className="bg-[#f4f4f4] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="relative mb-6 overflow-hidden rounded-2xl aspect-4/3">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-4 left-4 bg-[#3CFF78] text-black px-4 py-1.5 rounded-full text-sm font-medium">
+                <span className="absolute top-4 left-4 bg-green text-black px-4 py-1.5 rounded-full text-sm font-medium">
                   {service.tag}
                 </span>
               </div>
@@ -65,9 +71,9 @@ export default function OurServices() {
                 </p>
                 <Link
                   href={service.link}
-                  className="block w-full py-4 text-center bg-[#00A3FF] text-white rounded-full font-bold hover:bg-[#0082CC] transition-colors"
+                  className="btn btn-primary btn-hover w-full justify-center"
                 >
-                  {service.btnText}
+                  <span>{service.btnText}</span>
                 </Link>
               </div>
             </div>

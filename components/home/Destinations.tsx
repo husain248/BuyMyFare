@@ -7,10 +7,23 @@ export default function Destinations() {
     <section className="bg-[#ffffff] py-20 overflow-hidden">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-[#072032] uppercase tracking-widest font-bold lg:text-8xl md:text-6xl text-4xl">
+          <span
+            className="text-white font-main"
+            style={{
+              textTransform: "capitalize",
+              fontSize: "32px",
+              color: "#072032",
+            }}
+          >
+            The Unforgettable
+          </span>
+          <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase lg:mb-4 headline">
             DESTINATION
           </h2>
-          <div className="mx-auto mt-4 size-12 bg-primary" />
+          <p>
+            Explore breathtaking destinations that promise adventure,
+            relaxation, and memories to last a lifetime.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

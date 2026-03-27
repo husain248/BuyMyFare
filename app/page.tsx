@@ -10,6 +10,7 @@ import Feedback from "../components/home/Feedback";
 import Blog from "../components/home/Blog";
 import ContactSection from "../components/home/ContactSection";
 import GallerySection from "../components/home/GallerySection";
+// import SubscribeBanner from "../components/home/SubscribeBanner";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <Feedback />
       <ContactSection />
       <GallerySection />
+      {/* <SubscribeBanner /> */}
     </>
   );
 }
