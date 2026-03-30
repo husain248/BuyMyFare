@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Destinations() {
   return (
     <section className="bg-[#ffffff] py-20 overflow-hidden">
-      <div className="container">
+      <div className="container relative z-1 max-w-7xl">
         <div className="text-center mb-12">
           <span
             className="text-white font-main"
@@ -37,7 +37,7 @@ export default function Destinations() {
           ].map((d) => (
             <Link
               key={d.title}
-              href="/tour-packages"
+              href="/"
               className="group relative overflow-hidden rounded-xxl"
               aria-label={`View destination ${d.title}`}
             >

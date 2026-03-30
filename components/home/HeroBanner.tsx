@@ -9,15 +9,15 @@ export default function HeroBanner() {
             <div className="h-full xl:pt-0 lg:pt-7.5 sm:pt-37.75 pt-40">
                 <div className="row items-end h-full">
                     <div className="md:w-2/3 w-full">
-                        <div className="relative z-1 xl:p-20 lg:p-15 md:py-12.5 py-6 md:px-5 px-5 sm:pe-20" style={{ bottom: '250px' }}>
-                            <div className="mb-5 wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="0.8s">
-                                <button data-type="youtube" type="button" data-src="https://www.youtube.com/embed/o8OgzQdA70c" className="flex items-center gap-3.5 cursor-pointer relative z-1">
+                        <div className="relative z-1 xl:p-20 lg:p-15 md:py-12.5 py-6 md:px-5 px-5 sm:pe-20 bottom-[50px] md:bottom-[250px] ">
+                            <div className="mb-5">
+                                <h1 className="flex items-center gap-3.5 cursor-pointer relative z-1">
                                     <span className="text-white font-main" style={{ textTransform: 'capitalize', fontSize: '32px' }}>your journey, perfectly planned</span>
-                                </button>
+                                </h1>
                             </div>
                             <h1 className="3xl:text-15xl 2xxl:text-10xl xl:text-10xl md:text-8xl sm:text-6xl text-4xxl font-bold mb-2.5 text-white leading-none! uppercase wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Travel Packages</h1>
                             <p className="text-white">Experience stress-free travel with all-inclusive packages covering flights, hotels, transfers, and more. Every detail tailored for your dream getaway.</p>
-                            <Link href="/plan" className="btn btn-primary btn-hover light mt-5" data-hover-init="true">
+                            <Link href="/" className="btn btn-primary btn-hover light mt-5" data-hover-init="true">
                                 <span>Plan Your Dream Trip</span>
                                 <span className="gsap-clone" style={{ '--clone-left': '35px', '--clone-top': '14px' } as React.CSSProperties}>Plan Your Dream Trip</span>
                             </Link>

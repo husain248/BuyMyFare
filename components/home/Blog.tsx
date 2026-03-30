@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Blog() {
   return (
     <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 relative z-1 bg-light">
-        <div className="container">
+        <div className="container relative z-1 max-w-7xl">
             <div className="lg:mb-10 sm:mb-5 mb-2.5">
                 <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase headline">From Our Blog</h2>
             </div>
@@ -44,7 +44,7 @@ export default function Blog() {
                                             <li className="text-base text-black/40 ">|   January 26, 2025 </li>
                                         </ul>
                                     </div>
-                                    <Link href="/blog-details" aria-label="Read blog post" className="size-12.5 flex items-center justify-center rounded-full bg-primary">
+                                    <Link href="/" aria-label="Read blog post" className="size-12.5 flex items-center justify-center rounded-full bg-primary">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7 17L17 7" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                             <path d="M7 7H17V17" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

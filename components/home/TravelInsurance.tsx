@@ -6,9 +6,9 @@ export default function TravelInsurance() {
   return (
     <section
       id="nextSection"
-      className="relative md:py-20 py-15 before:absolute before:top-0 before:right-[21%] before:bg-[#EEEEEE] before:w-[22.35%] before:h-full before:-z-1 max-lg:before:hidden after:absolute after:-bottom-47.5 lg:after:-left-72.5 after:left-0 after:size-full after:bg-no-repeat after:bg-bottom-left after:bg-[url(/assets/images/background/bg1.png)] after:-z-1"
+      className="relative md:py-20 py-15 before:absolute before:top-0 before:right-[21%] before:bg-[#f5f2eb] before:w-[22.35%] before:h-full before:-z-1 max-lg:before:hidden after:absolute after:-bottom-47.5 lg:after:-left-72.5 after:left-0 after:size-full after:bg-no-repeat after:bg-bottom-left after:bg-[url(/assets/images/background/bg1.png)] after:-z-1"
     >
-      <div className="container">
+      <div className="container max-w-[1330px] relative z-1">
         <div className="row">
           <div className="lg:w-1/2 w-full">
             <div className="lg:pt-20 relative mb-10">
@@ -69,7 +69,7 @@ export default function TravelInsurance() {
                 <div className="w-full text-center relative before:absolute before:top-0 before:right-0 before:w-full before:h-0.5 before:bg-white lg:before:hidden">
                   <div className="flex flex-wrap items-center gap-7.5 justify-center">
                     <Link
-                      href="/book-now"
+                      href="/"
                       className="btn btn-primary btn-hover"
                     >
                       <span>Book Now</span>

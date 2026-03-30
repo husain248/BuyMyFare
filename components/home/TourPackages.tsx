@@ -92,8 +92,8 @@ export default function TourPackages() {
   }, []);
 
   return (
-    <section className="lg:pt-40 lg:pb-45 sm:py-25 py-18 overflow-hidden">
-      <div className="container-left relative z-1">
+    <section className="lg:pt-25 lg:pb-45 sm:py-25 py-18 overflow-hidden">
+      <div className="container-left relative z-1 max-w-[1330px]">
         <div className="lg:mb-10 sm:mb-5 mb-2.5">
           <span
             className="text-white font-main"
@@ -118,7 +118,7 @@ export default function TourPackages() {
                 journey, we make it unforgettable.{" "}
               </p>
               <Link
-                href="/upcoming-trips"
+                href="/"
                 className="btn btn-primary btn-hover"
               >
                 <span>View All</span>
@@ -161,7 +161,7 @@ export default function TourPackages() {
                           </span>
                         </div>
                       </div>
-                      <Link href="/trip-details" className="view-detail">
+                      <Link href="/" className="view-detail">
                         {" "}
                         View
                         <br />

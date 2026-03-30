@@ -9,7 +9,7 @@ const services = [
     image: "/assets/images/gallery/img1.png", // Placeholder if specific one not found, though img1 looks like a beach
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "See All Packages",
-    link: "/tour-packages",
+    link: "/",
   },
   {
     title: "TICKET BOOKING",
@@ -17,7 +17,7 @@ const services = [
     image: "/assets/images/gallery/img2.png",
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "Book Now",
-    link: "/ticket-booking",
+    link: "/",
   },
   {
     title: "TRAVEL INSURANCE",
@@ -25,14 +25,14 @@ const services = [
     image: "/assets/images/gallery/img5.png", // Desert-ish image
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "Get Insurance",
-    link: "/travel-insurance",
+    link: "/",
   },
 ];
 
 export default function OurServices() {
   return (
     <section className="py-20 bg-[#F5F2EB]">
-      <div className="container px-4 mx-auto">
+      <div className="container px-4 mx-auto relative z-1 max-w-[1330px]">
         <div className="text-center mb-12">
           <span
             className="block font-main text-[#072032] text-2xl mb-4 italic"

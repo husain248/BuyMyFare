@@ -23,13 +23,13 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="2xl:py-40 lg:py-30 lg:pb-0 sm:py-25 sm:pb-0 py-18 pb-0 relative z-1 overflow-hidden">
+    <section className="2xl:py-40 2xl:pb-0 lg:py-30 lg:pb-0 sm:py-25 sm:pb-0 py-18 pb-0 relative z-1 overflow-hidden">
       {/* Decorative background circles */}
       {/* <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-white/5 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-primary/10 translate-x-1/2 translate-y-1/2 pointer-events-none"></div> */}
 
       <div className="container relative z-1">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12">
             <span
               className="block font-main text-primary mb-4"

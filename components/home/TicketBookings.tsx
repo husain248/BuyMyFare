@@ -22,7 +22,7 @@ export default function TicketBookings() {
 
   return (
     <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 bg-light relative z-1 after:absolute after:bottom-0 lg:after:-right-55 after:right-0 after:size-full after:bg-no-repeat after:bg-bottom-right after:bg-[url(/assets/images/background/bg2.png)] after:-z-1 max-xl:after:bg-contain overflow-hidden">
-      <div className="container">
+      <div className="container max-w-[1330px] relative z-1">
         <div
           className="row"
           id="masonry"
@@ -106,7 +106,7 @@ export default function TicketBookings() {
                       </del>
                     </h4>
                     <Link
-                      href="/tour-packages"
+                      href="/"
                       aria-label="View trip Packages"
                       className="size-12.5 flex items-center justify-center rounded-full bg-primary"
                     >
@@ -141,7 +141,7 @@ export default function TicketBookings() {
 
           <div className="card-container xl:w-1/2 w-full mb-5">
             <Link
-              href="/tour-packages"
+              href="/"
               className="bg-white rounded-xxl flex items-center justify-center p-10 size-full sm:min-h-47.5 min-h-25"
             >
               <h4 className="sm:text-4xxl text-2xxl text-center">

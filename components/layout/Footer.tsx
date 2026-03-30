@@ -94,7 +94,7 @@ export default function Footer() {
                   </li>
                 </ul>
                 <div className="mt-8">
-                   <img src="/assets/images/logo/tids.png" alt="TIDS IATA" className="h-25 w-auto" />
+                   <img src="/assets/images/IATA-TIDS.png" alt="TIDS IATA" className="h-25 w-auto" />
                 </div>
               </div>
 

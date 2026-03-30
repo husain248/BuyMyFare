@@ -38,7 +38,7 @@ export default function SubscribeBanner() {
           </form>
           <p className="text-sm text-secondary">
             We are committed to protecting your{" "}
-            <Link href="/contact" className="font-medium underline">
+            <Link href="/" className="font-medium underline">
               Privacy Policy
             </Link>
             .

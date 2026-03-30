@@ -87,7 +87,7 @@ export default function ExploreWorld() {
                 begins here.
               </p>
               <Link
-                href="/tour-packages"
+                href="/"
                 className="btn btn-primary btn-hover light"
               >
                 <span>Click Here</span>

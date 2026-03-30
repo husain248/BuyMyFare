@@ -6,12 +6,12 @@ import { usePathname } from 'next/navigation';
 
 const navRoutes = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Tour Packages', path: '/' },
-  { label: 'Ticket Booking', path: '/' },
-  { label: 'Testimonials', path: '/' },
-  { label: 'Blogs', path: '/' },
-  { label: 'Contact', path: '/' },
+  { label: 'About', path: '/about-us' },
+  { label: 'Tour Packages', path: '/tour-packages' },
+  { label: 'Ticket Booking', path: '/ticket-booking' },
+  { label: 'Testimonials', path: '/testimonials' },
+  { label: 'Blogs', path: '/blogs' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export default function Header() {
@@ -65,12 +65,12 @@ export default function Header() {
   return (
     <header className={`site-header sticky-header-wrapper absolute top-0 left-0 w-full z-999 lg:pt-7.5 [.sticky-header-wrapper.is-fixed]:fixed [.sticky-header-wrapper.is-fixed]:bg-white lg:[.sticky-header-wrapper.is-fixed]:pb-4 lg:[.sticky-header-wrapper.is-fixed]:pt-4 [.sticky-header-wrapper.is-fixed]:animate-headerSlideDown ${isFixed ? 'is-fixed' : ''}`}>
       <div className="main-bar relative lg:text-white text-secondary w-full">
-        <div className="container-fluid flex items-center">
+        <div className="container max-w-8xl flex items-center">
           {/* Website Logo */}
           <div className="flex items-center align-middle me-2 logo-dark" style={{ width: '200px' }}>
             <Link aria-label="Go to homepage" href="/" className="table-cell align-middle">
               <img src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png" alt="logo" className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden" />
-              <img src="/assets/images/logo.svg" alt="" className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden" />
+              <img src="/assets/images/Buy-My-Fare-Logo.PNG" alt="" className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden" />
             </Link>
           </div>
 
@@ -95,7 +95,7 @@ export default function Header() {
           >
             <div className="flex items-center relative z-9 py-6.25 lg:hidden w-33.75 h-15.25">
               <Link aria-label="Go to homepage" href="/" className="table-cell align-middle" onClick={closeMenu}>
-                <img src="/assets/images/logo.svg" alt="" className="object-contain duration-500" />
+                <img src="/assets/images/Buy-My-Fare-Logo.PNG" alt="" className="object-contain duration-500" />
               </Link>
             </div>
             <ul
@@ -166,7 +166,7 @@ export default function Header() {
             <div className="flex items-center w-full">
               <ul className="lg:ml-5 sm:ml-3.75 flex items-center gap-5 w-full justify-between">
                 <li className="inline-block max-xl:hidden">
-                  <Link href="/book-now" className="btn btn-primary btn-hover light">
+                  <Link href="/" className="btn btn-primary btn-hover light">
                     <span>Plan Your Dream Trip</span>
                   </Link>
                 </li>

@@ -19,13 +19,13 @@ export default function GallerySection() {
   const [lightboxIndex, setLightboxIndex] = useState<number>(-1);
 
   return (
-    <section className="relative z-1 bg-[#F2EFEA] overflow-hidden 2xl:py-40 lg:py-30 sm:py-25 py-18">
+    <section className="relative z-1 bg-[#F2EFEA] overflow-hidden 2xl:py-40 2xl:pb-10 lg:py-30 sm:py-25 py-18">
       {/* Section heading */}
       <div className="container mb-10 md:mb-14 text-center">
         <span className="block font-main text-primary mb-3" style={{ fontSize: '28px', textTransform: 'none' }}>
           The Gallery Hub
         </span>
-        <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase headline">
+        <h2 className="2xxl:text-8xl lg:text-6xl md:text-5xxl sm:text-4xl text-3xxl uppercase headline">
           Captured Moments, Lasting Impressions
         </h2>
       </div>
