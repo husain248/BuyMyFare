@@ -50,7 +50,7 @@ export default function ContactSection() {
         </div>
       </div>
       <div className="relative">
-        <div className=" p-8 md:p-12 text-left relative overflow-hidden">
+        <div className="py-5 md:p-12 text-left relative overflow-hidden">
           {/* Background image in form */}
           <div
             className="absolute inset-0 bg-no-repeat bg-right-bottom pointer-events-none -z-0"

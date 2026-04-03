@@ -96,13 +96,7 @@ export default function TourPackages() {
       <div className="container-left relative z-1 max-w-[1330px]">
         <div className="lg:mb-10 sm:mb-5 mb-2.5">
           <span
-            className="text-white font-main"
-            style={{
-              textTransform: "capitalize",
-              fontSize: "32px",
-              color: "#072032",
-            }}
-          >
+            className="font-main text-[24px] md:text-[32px] text-[#072032] capitalize">
             Discover Your Next Adventure
           </span>
           <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase font-medium headline">
@@ -129,12 +123,14 @@ export default function TourPackages() {
             <div className="swiper tour-swiper" ref={swiperRef}>
               <div className="swiper-wrapper">
                 {[
-                  { img: "img1.png", title: "Bengal Wild Escape" },
-                  { img: "img2.png", title: "Bengal Wild Escape" },
-                  { img: "img3.png", title: "Bengal Wild Escape" },
-                  { img: "img4.png", title: "Verdant Reach" },
-                  { img: "img5.png", title: "Thar Desert" },
-                  { img: "img6.png", title: "French Polynesia" },
+                  { img: "img1.png", title: "Cuba", amt: "$625" },
+                  { img: "img2.png", title: "Jamaica", amt: "$1175" },
+                  { img: "img3.png", title: "Mexico", amt: "$965" },
+                  { img: "img4.png", title: "Caribbean", amt: "$1315" },
+                  { img: "img5.png", title: "Costa Rica", amt: "$1345" },
+                  { img: "img6.png", title: "Dominican Republic", amt: "$1035" },
+                  { img: "img7.png", title: "Spain", amt: "$2109" },
+                  { img: "img8.png", title: "Paris", amt: "$1645" },
                 ].map((tour, idx) => (
                   <div className="swiper-slide" key={idx}>
                     <div className="relative tour-card">
@@ -157,7 +153,7 @@ export default function TourPackages() {
                             From
                           </span>
                           <span className="block font-title text-2xxl text-primary font-semibold">
-                            $199
+                            {tour.amt}
                           </span>
                         </div>
                       </div>

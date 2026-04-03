@@ -23,7 +23,7 @@ export default function AboutMission() {
                                     <p className="sm:text-xl/7.5 text-lg text-textgray mb-2.5 py-3.75">To inspire and empower every traveler to create their own story while contributing to a better world through responsible tourism. From the moment you choose us, we commit to turning your travel aspirations into tangible, meaningful, and sustainable experiences.”</p>
                                 </div>
                                 <div className="md:flex items-center gap-5.75">
-                                    <Link href="/team-1" className="btn btn-primary btn-hover">
+                                    <Link href="/" className="btn btn-primary btn-hover">
                                         <span>Let's Connect</span>
                                     </Link>
                                     <div className="flex items-center gap-5.75 md:mt-0 mt-2.5">

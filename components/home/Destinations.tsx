@@ -28,11 +28,11 @@ export default function Destinations() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
-            { title: "UAE", img: "/assets/images/destinations/large/img1.png" },
-            { title: "USA", img: "/assets/images/destinations/large/img2.png" },
+            { title: "Dubai", img: "/assets/images/dubai.png" },
+            { title: "Mexico", img: "/assets/images/maxico.png" },
             {
-              title: "Italy",
-              img: "/assets/images/destinations/large/img3.png",
+              title: "Europe",
+              img: "/assets/images/europe.png",
             },
           ].map((d) => (
             <Link

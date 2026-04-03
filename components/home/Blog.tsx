@@ -23,13 +23,13 @@ export default function Blog() {
                 </div>
                 <div className="lg:w-2/3 w-full">
                     {[
-                      { img: 'img1.png', tag: 'Insurance', title: 'Why Travel Insurance is a Must-Have for Every Vacation', thumb: 'pic1.png' },
-                      { img: 'img2.png', tag: 'Explore', title: 'The Ultimate Travel Checklist for Canadians Exploring the World', thumb: 'pic2.png' },
-                      { img: 'img3.png', tag: 'Affordable', title: 'Top 10 Affordable International Destinations for Canadian Travelers in 2025', thumb: 'pic3.png' }
+                      { img: 'Top-Travel-Hacks-to-Save-Money-on-Your-Next-International-Trip.png', tag: 'Insurance', title: 'Why Travel Insurance is a Must-Have for Every Vacation', thumb: 'pic1.png' },
+                      { img: 'The-Ultimate-Travel-Checklist-for-Canadians-Exploring-the-World.png', tag: 'Explore', title: 'The Ultimate Travel Checklist for Canadians Exploring the World', thumb: 'pic2.png' },
+                      { img: 'Top-10-Affordable-International-Destinations-for-Canadian-Travelers.png', tag: 'Affordable', title: 'Top 10 Affordable International Destinations for Canadian Travelers in 2025', thumb: 'pic3.png' }
                     ].map((blog, idx) => (
                         <div className="relative z-1 duration-200 md:flex group mb-5 bg-white rounded-xxl" key={idx}>
                             <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-auto sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                                <img src={`/assets/images/blog/list/${blog.img}`} alt="" className="size-full object-cover" />
+                                <img src={`/assets/images/${blog.img}`} alt="" className="size-full object-cover" />
                             </div>
                             <div className="md:ps-7.5 p-2.5 py-5 relative flex flex-col">
                                 <div className="mb-2.5 flex-1">

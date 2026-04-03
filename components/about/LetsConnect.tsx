@@ -5,9 +5,7 @@ import Link from 'next/link';
 export default function LetsConnect() {
   return (
     <section>
-        <div className="hidden">
-            <h2 className="xl:text-6xl md:text-5xl text-4xl">Our Work</h2>
-        </div>
+        
         <div className="container-full">
             
             <div className="relative overflow-hidden">
@@ -26,7 +24,7 @@ export default function LetsConnect() {
             </div>
             <div className='flex justify-between items-center gap-5 flex-wrap bg-[#f2efe9] p-5 w-full'>
                 <h1 className=' text-2xl font-main'>Your Gateway to Incredible Journeys</h1>
-                <Link href="/" className="btn btn-primary btn-hover light mt-5" data-hover-init="true">
+                <Link href="/" className="btn btn-primary btn-hover light" data-hover-init="true">
                     <span>Get Started Today!</span>
                     <span className="gsap-clone" style={{ '--clone-left': '35px', '--clone-top': '14px' } as React.CSSProperties}>Get Started Today!</span>
                 </Link>

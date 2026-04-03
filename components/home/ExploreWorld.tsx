@@ -62,19 +62,12 @@ export default function ExploreWorld() {
       <div className="container relative z-1">
         <div className="xl:mb-10 sm:mb-5 mb-2.5">
           <span
-            className="text-white font-main"
-            style={{
-              textTransform: "capitalize",
-              fontSize: "32px",
-              color: "#ffffff",
-            }}
-          >
+            className="font-main text-[24px] md:text-[32px] text-[#ffffff] capitalize">
             Start Your Adventure Today
           </span>
           <h2
             className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase text-white"
-            style={{ fontSize: "82px" }}
-          >
+>
             Explore the World with Confidence
           </h2>
         </div>

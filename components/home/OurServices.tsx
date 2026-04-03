@@ -6,7 +6,7 @@ const services = [
   {
     title: "TOUR PACKAGES",
     tag: "Packages",
-    image: "/assets/images/gallery/img1.png", // Placeholder if specific one not found, though img1 looks like a beach
+    image: "/assets/images/tour-packages.png", // Placeholder if specific one not found, though img1 looks like a beach
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "See All Packages",
     link: "/",
@@ -14,7 +14,7 @@ const services = [
   {
     title: "TICKET BOOKING",
     tag: "Booking",
-    image: "/assets/images/gallery/img2.png",
+    image: "/assets/images/ticket-booking.png",
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "Book Now",
     link: "/",
@@ -22,7 +22,7 @@ const services = [
   {
     title: "TRAVEL INSURANCE",
     tag: "Insurance",
-    image: "/assets/images/gallery/img5.png", // Desert-ish image
+    image: "/assets/images/travel-insurence.png", // Desert-ish image
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "Get Insurance",
     link: "/",
@@ -35,9 +35,8 @@ export default function OurServices() {
       <div className="container px-4 mx-auto relative z-1 max-w-[1330px]">
         <div className="text-center mb-12">
           <span
-            className="block font-main text-[#072032] text-2xl mb-4 italic"
-            style={{ fontSize: "32px", textTransform: "none" }}
-          >
+            className="font-main text-[24px] md:text-[32px] capitalize text-[#072032]"
+>
             Service We Offer Is Specifically Designed To Meet Your Needs.
           </span>
           <h2 className="text-[#072032] font-bold lg:text-8xl md:text-6xl text-4xl uppercase tracking-tighter">

@@ -18,7 +18,7 @@ export default function AboutHoliday() {
                     <div className="lg:w-2/5 md:w-1/2 w-full mb-5">
                         <div className="p-5 rounded-2lg bg-[#F2EFEA]">
                             <div className="relative overflow-hidden rounded-2lg">
-                                <img src="/assets/images/tour/style3/img1.png" alt="" className="size-full object-cover" />
+                                <img src="/assets/images/Tailored-Itineraries.jpg" alt="" className="size-full object-cover" />
                             </div>
                             <div className="pb-2.5 pt-4 px-7.5 text-center">
                                 <h3 className="text-2xl font-medium mb-2.5 uppercase">Tailored Itineraries</h3>
@@ -44,7 +44,7 @@ export default function AboutHoliday() {
                     <div className="lg:w-2/5 md:w-1/2 w-full mb-5">
                         <div className="p-5 rounded-2lg bg-[#F2EFEA]">
                             <div className="relative overflow-hidden rounded-2lg">
-                                <img src="/assets/images/tour/style3/img3.png" alt="" className="size-full object-cover" />
+                                <img src="/assets/images/Round-the-Clock-Support.jpg" alt="" className="size-full object-cover" />
                             </div>
                             <div className="pb-2.5 pt-4 px-7.5 text-center">
                                 <h3 className="text-2xl font-medium mb-2.5 uppercase">Round-the-Clock Support</h3>

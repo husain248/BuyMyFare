@@ -20,10 +20,10 @@ export default function ProcessSection() {
                 What We Offer
               </h2>
             </div>
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                     <div className="relative overflow-hidden rounded-2lg">
-                        <img src="/assets/images/tour/style3/img1.png" alt="" className="size-full object-cover w-full" />
+                        <img src="/assets/images/Handpicked-Destinations.png" alt="" className="size-full object-cover w-full" />
                     </div>
                     <div className="">
                         <h3 className="text-2xl font-medium mb-2.5  font-main">Handpicked Destinations</h3>
@@ -32,7 +32,7 @@ export default function ProcessSection() {
                 </div>
                 <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                     <div className="relative overflow-hidden rounded-2lg">
-                        <img src="/assets/images/tour/style3/img1.png" alt="" className="size-full object-cover w-full" />
+                        <img src="/assets/images/Custom-Travel-Plans.png" alt="" className="size-full object-cover w-full" />
                     </div>
                     <div className="">
                         <h3 className="text-2xl font-medium mb-2.5  font-main">Custom Travel Plans</h3>
@@ -41,7 +41,7 @@ export default function ProcessSection() {
                 </div>
                 <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                     <div className="relative overflow-hidden rounded-2lg">
-                        <img src="/assets/images/tour/style3/img1.png" alt="" className="size-full object-cover w-full" />
+                        <img src="/assets/images/Hassle-Free-Services.png" alt="" className="size-full object-cover w-full" />
                     </div>
                     <div className="">
                         <h3 className="text-2xl font-medium mb-2.5  font-main">Hassle-Free Services</h3>
@@ -50,7 +50,7 @@ export default function ProcessSection() {
                 </div>
                 <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                     <div className="relative overflow-hidden rounded-2lg">
-                        <img src="/assets/images/tour/style3/img1.png" alt="" className="size-full object-cover w-full" />
+                        <img src="/assets/images/Travel-with-Purpose.png" alt="" className="size-full object-cover w-full" />
                     </div>
                     <div className="">
                         <h3 className="text-2xl font-medium mb-2.5  font-main">Travel with Purpose</h3>

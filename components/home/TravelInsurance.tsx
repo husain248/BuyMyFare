@@ -29,8 +29,8 @@ export default function TravelInsurance() {
                 </p>
               </div>
               <div className="sm:mb-10 mb-7.5">
-                <ul className="flex flex-wrap text-secondary grid-2 font-medium mb-7.5">
-                  <li className="w-1/2 relative p-1.25 ps-9.5 xl:text-xl text-sm font-medium before:absolute before:left-0 before:bg-no-repeat before:size-7 before:bg-check before:top-1">
+                <ul className="flex flex-wrap flex-col md:flex-row text-secondary grid-2 font-medium mb-7.5">
+                  <li className="w-full md:w-1/2 relative p-1.25 ps-9.5 xl:text-xl text-sm font-medium before:absolute before:left-0 before:bg-no-repeat before:size-7 before:bg-check before:top-1">
                     {" "}
                     24/7 Support
                     <p className="text-sm">
@@ -38,7 +38,7 @@ export default function TravelInsurance() {
                       Always here when you need assistance.{" "}
                     </p>
                   </li>
-                  <li className="w-1/2 relative p-1.25 ps-9.5 xl:text-xl text-sm font-medium before:absolute before:left-0 before:bg-no-repeat before:size-7 before:bg-check before:top-1">
+                  <li className="w-full md:w-1/2 relative p-1.25 ps-9.5 xl:text-xl text-sm font-medium before:absolute before:left-0 before:bg-no-repeat before:size-7 before:bg-check before:top-1">
                     {" "}
                     Tailored Solutions
                     <p className="text-sm">
@@ -67,7 +67,7 @@ export default function TravelInsurance() {
                 </div>
 
                 <div className="w-full text-center relative before:absolute before:top-0 before:right-0 before:w-full before:h-0.5 before:bg-white lg:before:hidden">
-                  <div className="flex flex-wrap items-center gap-7.5 justify-center">
+                  <div className="flex flex-wrap items-center gap-7.5 justify-center mt-5">
                     <Link
                       href="/"
                       className="btn btn-primary btn-hover"
@@ -122,7 +122,7 @@ export default function TravelInsurance() {
               >
                 <div className="-rotate-6 bg-white p-2.5 shadow-1">
                   <img
-                    src="/assets/images/about/img1.png"
+                    src="/assets/images/travel-Insurance-banner-1.jpg"
                     alt=""
                     className="w-full"
                   />
@@ -134,7 +134,7 @@ export default function TravelInsurance() {
               >
                 <div className="rotate-2 bg-white p-2.5 shadow-1">
                   <img
-                    src="/assets/images/about/img2.png"
+                    src="/assets/images/travel-Insurance-banner-2.jpg"
                     alt=""
                     className="w-full"
                   />
@@ -143,7 +143,7 @@ export default function TravelInsurance() {
               <div className="flex items-center justify-start -mt-12.5 relative">
                 <div className="rotate-6 bg-white p-2.5 shadow-1">
                   <img
-                    src="/assets/images/about/img3.png"
+                    src="/assets/images/travel-Insurance-banner-3.jpg"
                     alt=""
                     className="w-full wow fadeInUp"
                     data-wow-delay="1s"
