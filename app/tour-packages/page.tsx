@@ -103,7 +103,7 @@ function page() {
         </div>
       </div>
       <section className="lg:pt-25 lg:pb-45 sm:py-25 py-18 overflow-hidden">
-        <div className="container-left max-w-[1330px]">
+        <div className="container-left max-w-[1330px] mx-auto">
           <div className="text-center mb-12">
             <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase lg:mb-4 headline">
               Popular Packages
@@ -160,16 +160,16 @@ function page() {
                             <path
                               d="M5 12H19"
                               stroke="white"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             ></path>
                             <path
                               d="M12 5L19 12L12 19"
                               stroke="white"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             ></path>
                           </svg>
                         </div>

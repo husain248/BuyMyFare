@@ -110,7 +110,7 @@ function page() {
                         type="text"
                         name="name"
                         required
-                        value={""}
+                        defaultValue=""
                         placeholder="John Doe"
                         className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#f2efea]"
                       />
@@ -123,7 +123,7 @@ function page() {
                         type="email"
                         name="email"
                         required
-                        value={""}
+                        defaultValue=""
                         placeholder="your@email.com"
                         className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#f2efea]"
                       />
@@ -135,7 +135,7 @@ function page() {
                       <input
                         type="tel"
                         name="phone"
-                        value={""}
+                        defaultValue=""
                         placeholder="+1 (780) 000-0000"
                         className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#f2efea]"
                       />
@@ -150,7 +150,7 @@ function page() {
                       name="message"
                       required
                       rows={4}
-                      value={""}
+                      defaultValue=""
                       placeholder="Tell us about your trip..."
                       className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#f2efea]"
                     />

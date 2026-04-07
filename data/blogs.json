@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "How to Create a Stunning Travel Blog",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img1.png",
+    "slug": "how-to-create-a-stunning-travel-blog",
+    "content": "Creating a travel blog is one of the most rewarding ways to document your adventures and share them with the world. From choosing the right platform to capturing the perfect sunset photo, every detail matters. In this guide, we'll walk you through the essential steps to make your blog stand out in a crowded digital landscape.",
+    "tags": ["Blogging", "Travel", "Creativity"]
+  },
+  {
+    "id": 2,
+    "title": "Journeys Around the World: A Guide",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img2.png",
+    "slug": "journeys-around-the-world-a-guide",
+    "content": "The world is vast and full of wonders, from the ancient ruins of Machu Picchu to the neon-lit streets of Tokyo. Navigating these diverse destinations requires more than just a passport; it requires a sense of curiosity and a willingness to step outside your comfort zone. Join us as we explore the best ways to experience the globe.",
+    "tags": ["Adventure", "Global", "Guide"]
+  },
+  {
+    "id": 3,
+    "title": "Inspiring Travel Experiences to Have",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img3.png",
+    "slug": "inspiring-travel-experiences-to-have",
+    "content": "Travel is not just about seeing new places; it's about the experiences that change you. Whether it's volunteering at an elephant sanctuary in Thailand or learning to cook pasta from a nonna in Tuscany, these moments define our journeys. Discover the experiences that should be on every traveler's bucket list.",
+    "tags": ["Inspiration", "Culture", "Experience"]
+  },
+  {
+    "id": 4,
+    "title": "Stories from Our Recent Journeys",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img4.png",
+    "slug": "stories-from-our-recent-journeys",
+    "content": "Our team has been busy exploring the four corners of the earth, and we have plenty of stories to tell. From the rugged coastlines of Iceland to the vibrant markets of Marrakech, our recent travels have been full of surprises. Read on for a glimpse into our latest adventures and the lessons we learned along the way.",
+    "tags": ["Stories", "Recent", "Adventure"]
+  },
+  {
+    "id": 5,
+    "title": "Destination Stories & Travel Guides",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img5.png",
+    "slug": "destination-stories-travel-guides",
+    "content": "Every destination has a story to tell, and our travel guides are designed to help you uncover them. Whether you're planning a romantic getaway or a family vacation, our curated guides provide everything you need to know, from the best local eateries to must-visit landmarks.",
+    "tags": ["Destinations", "Guides", "Planning"]
+  },
+  {
+    "id": 6,
+    "title": "Explore Destinations Worldwide with Us",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img6.png",
+    "slug": "explore-destinations-worldwide-with-us",
+    "content": "Join us on a journey to the most beautiful and exciting places on earth. Our mission is to inspire you to explore and discover the beauty of our planet. From pristine beaches to historic cities, there's always something new to see. Let's explore the world together.",
+    "tags": ["Explore", "Worldwide", "Discovery"]
+  },
+  {
+    "id": 7,
+    "title": "Your Trusted Travel Guide for 2025",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img7.png",
+    "slug": "your-trusted-travel-guide-for-2025",
+    "content": "In an ever-changing world, having a trusted source for travel information is more important than ever. As we look ahead to 2025, we're committed to providing you with the most up-to-date and reliable advice for all your travel needs. Trust us to be your companion on your next big adventure.",
+    "tags": ["Trust", "Guide", "2025"]
+  },
+  {
+    "id": 8,
+    "title": "Where Every Journey Begins: Tips",
+    "date": "15 May 2025",
+    "author": "Liam Anderson",
+    "image": "/assets/images/blog/grid/img8.png",
+    "slug": "where-every-journey-begins-tips",
+    "content": "The start of a journey is always a mix of excitement and anticipation. To ensure a smooth start, it's essential to be well-prepared. From packing efficiently to understanding local customs, our top travel tips will help you hit the ground running wherever your journey takes you.",
+    "tags": ["Tips", "Preparation", "Travel"]
+  }
+]

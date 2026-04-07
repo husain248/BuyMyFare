@@ -86,7 +86,7 @@ export default function Header() {
                 className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden"
               />
               <img
-                src="/assets/images/Buy-My-Fare-Logo.PNG"
+                src="/assets/images/Buy-My-Fare-Logo.png"
                 alt=""
                 className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden"
               />
@@ -123,7 +123,7 @@ export default function Header() {
                 onClick={closeMenu}
               >
                 <img
-                  src="/assets/images/Buy-My-Fare-Logo.PNG"
+                  src="/assets/images/Buy-My-Fare-Logo.png"
                   alt=""
                   className="object-contain duration-500"
                 />

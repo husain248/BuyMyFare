@@ -1,8 +1,15 @@
-"use client";
 import React from "react";
+import BlogBanner from "../../components/blogs/BlogBanner";
+import BlogGrid from "../../components/blogs/BlogGrid";
+import blogsData from "../../data/blogs.json";
 
-function page() {
-  return <div>Blogs page</div>;
+function Page() {
+  return (
+    <>
+      <BlogBanner title="Blogs" />
+      <BlogGrid blogs={blogsData} />
+    </>
+  );
 }
 
-export default page;
+export default Page;
