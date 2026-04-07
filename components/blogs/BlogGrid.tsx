@@ -26,7 +26,7 @@ const BlogGrid: React.FC<BlogGridProps> = ({ blogs }) => {
 
   return (
     <section className="xl:pb-42.5 pb-20 md:pt-42.5 pt-25 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-12 gap-5 loadmore-content">
           {visibleBlogs.map((blog) => (
             <div key={blog.id} className="xl:col-span-4 md:col-span-6 col-span-12">
