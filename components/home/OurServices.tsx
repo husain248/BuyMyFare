@@ -34,9 +34,7 @@ export default function OurServices() {
     <section className="py-20 bg-[#F5F2EB]">
       <div className="container px-4 mx-auto relative z-1 max-w-[1330px]">
         <div className="text-center mb-12">
-          <span
-            className="font-main text-[24px] md:text-[32px] capitalize text-[#072032]"
->
+          <span className="font-main text-[24px] md:text-[32px] capitalize text-[#072032]">
             Service We Offer Is Specifically Designed To Meet Your Needs.
           </span>
           <h2 className="text-[#072032] font-bold lg:text-8xl md:text-6xl text-4xl uppercase tracking-tighter">

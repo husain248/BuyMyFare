@@ -5,7 +5,7 @@
   --heading: #072032;
   --body-bg: #fff;
   --body-color: #666666;
-  --light: #F2EFEA;
+  --light: #f2efea;
   --card: #fff;
   --btn-radius: 50px;
 }
@@ -45,15 +45,15 @@
   --bs-gutter-x: 30px;
   --bs-gutter-y: 0;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
-.row>* {
+.row > * {
   max-width: 100%;
   flex-shrink: 0;
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
 }
 
@@ -67,7 +67,6 @@
 }
 
 @media only screen and (min-width: 576px) {
-
   .container-xl,
   .container-lg,
   .container-md,
@@ -78,7 +77,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-
   .container-xl,
   .container-lg,
   .container-md,
@@ -89,7 +87,6 @@
 }
 
 @media only screen and (min-width: 992px) {
-
   .container-xl,
   .container-lg,
   .container-md,
@@ -100,7 +97,6 @@
 }
 
 @media (min-width: 1200px) {
-
   .container-xl,
   .container-lg,
   .container-md,
@@ -111,7 +107,6 @@
 }
 
 @media only screen and (min-width: 1400px) {
-
   .container-xl,
   .container-lg,
   .container-md,
@@ -246,7 +241,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -294,7 +289,7 @@ button {
   background-color: var(--color-secondary);
   --tw-duration: 500ms;
   transition-duration: 500ms;
-  --tw-content: '';
+  --tw-content: "";
   content: var(--tw-content);
 }
 
@@ -336,7 +331,7 @@ button {
   width: 100%;
 }
 
-.my-sticky+.pin-spacer,
+.my-sticky + .pin-spacer,
 .pin-spacer:has(.my-sticky) {
   width: auto !important;
   flex: 0 1 auto !important;
@@ -367,240 +362,241 @@ button {
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-ExtraLight.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-ExtraLight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-ExtraLightItalic.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-ExtraLightItalic.woff2")
+    format("woff2");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-Light.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-LightItalic.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-LightItalic.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-Regular.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-RegularItalic.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-RegularItalic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-Medium.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-MediumItalic.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-MediumItalic.woff2") format("woff2");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-SemiBold.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-SemiBoldItalic.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-SemiBoldItalic.woff2") format("woff2");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-Bold.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/poppins/Poppins-BoldItalic.woff2') format('woff2');
+  font-family: "Poppins";
+  src: url("/assets/fonts/poppins/Poppins-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/assets/fonts/Oswald/static/Oswald-ExtraLight.ttf');
+  font-family: "Oswald";
+  src: url("/assets/fonts/Oswald/static/Oswald-ExtraLight.ttf");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/assets/fonts/Oswald/static/Oswald-Light.ttf');
+  font-family: "Oswald";
+  src: url("/assets/fonts/Oswald/static/Oswald-Light.ttf");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/assets/fonts/Oswald/static/Oswald-Regular.ttf');
+  font-family: "Oswald";
+  src: url("/assets/fonts/Oswald/static/Oswald-Regular.ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/assets/fonts/Oswald/static/Oswald-Medium.ttf');
+  font-family: "Oswald";
+  src: url("/assets/fonts/Oswald/static/Oswald-Medium.ttf");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/assets/fonts/Oswald/static/Oswald-SemiBold.ttf');
+  font-family: "Oswald";
+  src: url("/assets/fonts/Oswald/static/Oswald-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/assets/fonts/Oswald/static/Oswald-Bold.ttf');
+  font-family: "Oswald";
+  src: url("/assets/fonts/Oswald/static/Oswald-Bold.ttf");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-ExtraLight.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-ExtraLight.ttf");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-ExtraLightItalic.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-ExtraLightItalic.ttf");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Light.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Light.ttf");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-LightItalic.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-LightItalic.ttf");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Regular.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Regular.ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-RegularItalic.html');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-RegularItalic.html");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Medium.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Medium.ttf");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-MediumItalic.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-MediumItalic.ttf");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-SemiBold.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-SemiBoldItalic.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-SemiBoldItalic.ttf");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Bold.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-Bold.ttf");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('/assets/fonts/Roboto_Condensed/static/RobotoCondensed-BoldItalic.ttf');
+  font-family: "Roboto Condensed";
+  src: url("/assets/fonts/Roboto_Condensed/static/RobotoCondensed-BoldItalic.ttf");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -877,22 +873,21 @@ button {
 }
 
 @keyframes bounceShake {
-
   0%,
   100% {
-    transform: translateY(0)rotate(0);
+    transform: translateY(0) rotate(0);
   }
 
   25% {
-    transform: translateY(-20px)rotate(-10deg);
+    transform: translateY(-20px) rotate(-10deg);
   }
 
   50% {
-    transform: translateY(0)rotate(10deg);
+    transform: translateY(0) rotate(10deg);
   }
 
   75% {
-    transform: translateY(-10px)rotate(-5deg);
+    transform: translateY(-10px) rotate(-5deg);
   }
 }
 
@@ -911,7 +906,6 @@ button {
 }
 
 @keyframes sk-bounce {
-
   0%,
   100% {
     transform: scale(0);
@@ -1029,7 +1023,7 @@ button {
   background-color: var(--color-secondary);
   --tw-duration: 300ms;
   transition-duration: 300ms;
-  --tw-content: '';
+  --tw-content: "";
   content: var(--tw-content);
 }
 
@@ -1090,7 +1084,7 @@ button {
 }
 
 .pxl-history-carousel.layout-1 .item-des,
-.pxl-history-carousel.layout-1 .item-des>* {
+.pxl-history-carousel.layout-1 .item-des > * {
   margin-inline: auto;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -1153,20 +1147,24 @@ button {
 .pxl-history-carousel.layout-1 .item-slide {
   position: absolute;
   top: 64.5%;
-  left: calc(1/2 * 100%);
+  left: calc(1 / 2 * 100%);
   display: flex;
   height: auto;
   width: calc(var(--spacing) * 115);
   --tw-translate-x: calc(calc(1/2 * 100%) * -1);
   --tw-translate-y: calc(calc(1/2 * 100%) * -1);
   translate: var(--tw-translate-x) var(--tw-translate-y);
-  transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
+  transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+    var(--tw-skew-x,) var(--tw-skew-y,);
   align-items: center;
   justify-content: center;
   overflow: hidden;
   padding: calc(var(--spacing) * 0);
   transition-property: width, height;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-timing-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
   transition-duration: var(--tw-duration, var(--default-transition-duration));
   --tw-duration: 1000ms;
   transition-duration: 1000ms;
@@ -1221,7 +1219,10 @@ button {
     height: calc(var(--spacing) * 375);
   }
 
-  .pxl-history-carousel.layout-1 .pxl-swiper-wrapper .item-slide:nth-child(even) .item-image {
+  .pxl-history-carousel.layout-1
+    .pxl-swiper-wrapper
+    .item-slide:nth-child(even)
+    .item-image {
     opacity: 0 !important;
     transition: all 300ms ease-in-out 0s;
   }
@@ -1230,11 +1231,12 @@ button {
 .pxl-history-carousel.layout-1 .box-pev-next {
   position: absolute;
   bottom: 20%;
-  left: calc(1/2 * 100%);
+  left: calc(1 / 2 * 100%);
   z-index: 10;
   --tw-translate-x: calc(calc(1/2 * 100%) * -1);
   translate: var(--tw-translate-x) var(--tw-translate-y);
-  transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
+  transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+    var(--tw-skew-x,) var(--tw-skew-y,);
   text-align: center;
 }
 
@@ -1274,7 +1276,12 @@ button {
 }
 
 .pxl-history-carousel.layout-1 .box-pev-next .text-pev-next::after {
-  background: linear-gradient(90deg, rgba(25, 27, 29, 0) 0%, rgb(87 87 90 / 40%) 50.5%, rgba(25, 27, 29, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(25, 27, 29, 0) 0%,
+    rgb(87 87 90 / 40%) 50.5%,
+    rgba(25, 27, 29, 0) 100%
+  );
 }
 
 .pxl-history-carousel.layout-1 .pxl-swiper-dots {
@@ -1289,7 +1296,8 @@ button {
   --tw-scale-y: 100%;
   --tw-scale-z: 100%;
   scale: var(--tw-scale-x) var(--tw-scale-y);
-  transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
+  transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+    var(--tw-skew-x,) var(--tw-skew-y,);
   opacity: 60%;
 }
 
@@ -1379,7 +1387,9 @@ button {
   left: 0;
 }
 
-.modal.status-modal .status-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+.modal.status-modal
+  .status-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
   width: 100%;
   transition: 3.5s linear;
 }
@@ -1424,7 +1434,11 @@ button {
   }
 }
 
-.custom-accordion.style-1 .accordion-item .accordion-header.open .arrow.active i {
+.custom-accordion.style-1
+  .accordion-item
+  .accordion-header.open
+  .arrow.active
+  i {
   rotate: 90deg;
 }
 
@@ -1529,11 +1543,19 @@ button {
   line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 
-.custom-accordion.style-2 .accordion-item .accordion-header.open .arrow.active .fa-minus {
+.custom-accordion.style-2
+  .accordion-item
+  .accordion-header.open
+  .arrow.active
+  .fa-minus {
   display: block;
 }
 
-.custom-accordion.style-2 .accordion-item .accordion-header.open .arrow.active .fa-plus {
+.custom-accordion.style-2
+  .accordion-item
+  .accordion-header.open
+  .arrow.active
+  .fa-plus {
   display: none;
 }
 
@@ -1616,7 +1638,7 @@ button {
   right: 28px;
   width: 8px;
   height: 8px;
-  transition: .3s all;
+  transition: 0.3s all;
 }
 
 .select-items {
@@ -1635,7 +1657,7 @@ button {
   transform: translateY(0px);
   min-width: 200px;
   scrollbar-width: thin;
-  transition: .3s all;
+  transition: 0.3s all;
   padding: 10px 0;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   right: 0;
@@ -1668,7 +1690,9 @@ button {
   opacity: 0;
   pointer-events: none;
   transform: translateY(5px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .custom-select.is-open .select-items {
@@ -1748,7 +1772,7 @@ button {
   }
 }
 
-.xmenu-toggler.open~.menu-close.fade-overlay {
+.xmenu-toggler.open ~ .menu-close.fade-overlay {
   pointer-events: auto;
   visibility: visible;
   opacity: 50%;
@@ -1784,7 +1808,9 @@ button {
   z-index: 0;
   width: var(--indicator-width, 0);
   transform: translateY(-50%) translateX(var(--indicator-x, 0));
-  transition: transform 0.3s ease, width 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
 }
 
 .nav-link:hover,
@@ -1804,7 +1830,7 @@ button {
 
 .clipped {
   position: absolute;
-  top: calc(calc(1/5 * 100%) * -1);
+  top: calc(calc(1 / 5 * 100%) * -1);
   right: calc(var(--spacing) * 0);
   bottom: calc(var(--spacing) * 0);
   left: calc(var(--spacing) * -1.5);
@@ -1815,7 +1841,7 @@ button {
   }
 
   @media (width >=576px) {
-    top: calc(calc(1/12 * 100%) * -1);
+    top: calc(calc(1 / 12 * 100%) * -1);
   }
 
   @media (width >=576px) {
@@ -1827,7 +1853,7 @@ button {
   }
 
   @media (width >=1199px) {
-    top: calc(1/5 * 100%);
+    top: calc(1 / 5 * 100%);
   }
 
   clip-path: url(#svgTextPath);
@@ -1853,7 +1879,9 @@ button {
   background-position: center;
   opacity: 0;
   transform: scale(1.12);
-  transition: opacity 0.4s ease, transform 1.2s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 1.2s ease;
   will-change: transform, opacity;
 }
 
@@ -1946,7 +1974,7 @@ button {
 .pxl-team-list .project::after {
   pointer-events: none;
   position: absolute;
-  left: calc(1/2 * 100%);
+  left: calc(1 / 2 * 100%);
   z-index: var(--z-index-1);
   display: none;
   height: calc(var(--spacing) * 0);
@@ -1954,7 +1982,7 @@ button {
   --tw-translate-x: calc(calc(1/2 * 100%) * -1);
   translate: var(--tw-translate-x) var(--tw-translate-y);
   background-repeat: no-repeat;
-  --tw-content: '';
+  --tw-content: "";
   content: var(--tw-content);
 
   @media (width >=576px) {
@@ -1965,12 +1993,12 @@ button {
 }
 
 .pxl-team-list .project::before {
-  bottom: calc(1/2 * 100%);
+  bottom: calc(1 / 2 * 100%);
   background-color: var(--color-primary);
 }
 
 .pxl-team-list .project::after {
-  top: calc(1/2 * 100%);
+  top: calc(1 / 2 * 100%);
   background-color: var(--color-primary);
 }
 
@@ -1979,7 +2007,7 @@ button {
   height: 51%;
 
   @media (width >=576px) {
-    height: calc(1/2 * 100%);
+    height: calc(1 / 2 * 100%);
   }
 }
 
@@ -2047,7 +2075,7 @@ button {
 }
 
 .service-card.active .content {
-  left: calc(1/2 * 100%);
+  left: calc(1 / 2 * 100%);
   --tw-translate-x: calc(calc(1/2 * 100%) * -1);
   translate: var(--tw-translate-x) var(--tw-translate-y);
 }
@@ -2424,8 +2452,8 @@ button {
 }
 
 @layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *,
     ::before,
     ::after,
@@ -2502,9 +2530,8 @@ button {
   }
 }
 
-
 .font-main {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 
 /* Override Lightbox image scaling to fill viewport */

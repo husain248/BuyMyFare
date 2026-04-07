@@ -61,13 +61,10 @@ export default function ExploreWorld() {
       ))}
       <div className="container relative z-1">
         <div className="xl:mb-10 sm:mb-5 mb-2.5">
-          <span
-            className="font-main text-[24px] md:text-[32px] text-[#ffffff] capitalize">
+          <span className="font-main text-[24px] md:text-[32px] text-[#ffffff] capitalize">
             Start Your Adventure Today
           </span>
-          <h2
-            className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase text-white"
->
+          <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase text-white">
             Explore the World with Confidence
           </h2>
         </div>
@@ -79,10 +76,7 @@ export default function ExploreWorld() {
                 destinations, and complete peace of mind. Your next adventure
                 begins here.
               </p>
-              <Link
-                href="/"
-                className="btn btn-primary btn-hover light"
-              >
+              <Link href="/" className="btn btn-primary btn-hover light">
                 <span>Click Here</span>
               </Link>
             </div>

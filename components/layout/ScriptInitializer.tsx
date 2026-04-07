@@ -1,14 +1,21 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import Script from 'next/script';
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Script from "next/script";
 
 function runInit() {
   const w = window as any;
-  try { if (typeof w.plexify === 'function') w.plexify().init(); } catch {}
-  try { if (typeof w.plexifyCarousel === 'function') w.plexifyCarousel().load(); } catch {}
-  try { if (typeof w.plexifyCarouselAround === 'function') w.plexifyCarouselAround(); } catch {}
+  try {
+    if (typeof w.plexify === "function") w.plexify().init();
+  } catch {}
+  try {
+    if (typeof w.plexifyCarousel === "function") w.plexifyCarousel().load();
+  } catch {}
+  try {
+    if (typeof w.plexifyCarouselAround === "function")
+      w.plexifyCarouselAround();
+  } catch {}
 }
 
 export default function ScriptInitializer() {

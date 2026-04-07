@@ -68,10 +68,7 @@ export default function TravelInsurance() {
 
                 <div className="w-full text-center relative before:absolute before:top-0 before:right-0 before:w-full before:h-0.5 before:bg-white lg:before:hidden">
                   <div className="flex flex-wrap items-center gap-7.5 justify-center mt-5">
-                    <Link
-                      href="/"
-                      className="btn btn-primary btn-hover"
-                    >
+                    <Link href="/" className="btn btn-primary btn-hover">
                       <span>Book Now</span>
                     </Link>
                     <div className="inline-flex items-center gap-3.75">

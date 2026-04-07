@@ -30,7 +30,10 @@ export default function SubscribeBanner() {
                 >
                   <span className="md:block hidden">Subscribe</span>
                   <span className="md:hidden">
-                    <i className="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    <i
+                      className="fa-solid fa-paper-plane"
+                      aria-hidden="true"
+                    ></i>
                   </span>
                 </button>
               </div>

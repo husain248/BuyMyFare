@@ -95,8 +95,7 @@ export default function TourPackages() {
     <section className="lg:pt-25 lg:pb-45 sm:py-25 py-18 overflow-hidden">
       <div className="container-left relative z-1 max-w-[1330px]">
         <div className="lg:mb-10 sm:mb-5 mb-2.5">
-          <span
-            className="font-main text-[24px] md:text-[32px] text-[#072032] capitalize">
+          <span className="font-main text-[24px] md:text-[32px] text-[#072032] capitalize">
             Discover Your Next Adventure
           </span>
           <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase font-medium headline">
@@ -111,10 +110,7 @@ export default function TourPackages() {
                 traveler. Whether it’s a relaxing escape or an action-packed
                 journey, we make it unforgettable.{" "}
               </p>
-              <Link
-                href="/"
-                className="btn btn-primary btn-hover"
-              >
+              <Link href="/" className="btn btn-primary btn-hover">
                 <span>View All</span>
               </Link>
             </div>
@@ -128,7 +124,11 @@ export default function TourPackages() {
                   { img: "img3.png", title: "Mexico", amt: "$965" },
                   { img: "img4.png", title: "Caribbean", amt: "$1315" },
                   { img: "img5.png", title: "Costa Rica", amt: "$1345" },
-                  { img: "img6.png", title: "Dominican Republic", amt: "$1035" },
+                  {
+                    img: "img6.png",
+                    title: "Dominican Republic",
+                    amt: "$1035",
+                  },
                   { img: "img7.png", title: "Spain", amt: "$2109" },
                   { img: "img8.png", title: "Paris", amt: "$1645" },
                 ].map((tour, idx) => (

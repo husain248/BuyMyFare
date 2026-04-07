@@ -1,23 +1,23 @@
 const activities = [
   {
-    img: '/assets/images/tour/style3/img1.png',
-    title: 'Restaurants',
-    desc: 'Savor local flavors at top-rated spots.',
+    img: "/assets/images/tour/style3/img1.png",
+    title: "Restaurants",
+    desc: "Savor local flavors at top-rated spots.",
   },
   {
-    img: '/assets/images/tour/style3/img2.png',
-    title: 'Sightseeing',
-    desc: 'Explore iconic sights and hidden gems.',
+    img: "/assets/images/tour/style3/img2.png",
+    title: "Sightseeing",
+    desc: "Explore iconic sights and hidden gems.",
   },
   {
-    img: '/assets/images/tour/style3/img3.png',
-    title: 'Where to Stay',
-    desc: 'Find comfort in top-rated stays.',
+    img: "/assets/images/tour/style3/img3.png",
+    title: "Where to Stay",
+    desc: "Find comfort in top-rated stays.",
   },
   {
-    img: '/assets/images/tour/style3/img4.png',
-    title: 'Shops & Boutiques',
-    desc: 'Discover unique finds and local treasures.',
+    img: "/assets/images/tour/style3/img4.png",
+    title: "Shops & Boutiques",
+    desc: "Discover unique finds and local treasures.",
   },
 ];
 
@@ -34,7 +34,9 @@ export default function EnjoyHoliday() {
           <div className="xl:w-1/3 w-full">
             <div className="mb-10 relative after:absolute after:top-full after:right-[20%] after:w-px xl:after:h-100 after:h-60 after:bg-black/50 max-xl:after:hidden">
               <p className="text-sm">
-                From iconic landmarks to local hidden gems, we tailor every experience to create unforgettable memories. Your perfect holiday is just a booking away.
+                From iconic landmarks to local hidden gems, we tailor every
+                experience to create unforgettable memories. Your perfect
+                holiday is just a booking away.
               </p>
             </div>
           </div>
@@ -44,10 +46,16 @@ export default function EnjoyHoliday() {
                 <div key={i} className="lg:w-2/5 md:w-1/2 w-full mb-5">
                   <div className="p-5 rounded-2lg bg-[#F2EFEA]">
                     <div className="relative overflow-hidden rounded-2lg">
-                      <img src={a.img} alt={a.title} className="size-full object-cover" />
+                      <img
+                        src={a.img}
+                        alt={a.title}
+                        className="size-full object-cover"
+                      />
                     </div>
                     <div className="pb-2.5 pt-4 px-7.5 text-center">
-                      <h3 className="text-2xl font-medium mb-2.5 uppercase">{a.title}</h3>
+                      <h3 className="text-2xl font-medium mb-2.5 uppercase">
+                        {a.title}
+                      </h3>
                       <p className="text-base">{a.desc}</p>
                     </div>
                   </div>
@@ -59,10 +67,16 @@ export default function EnjoyHoliday() {
                 <div key={i} className="lg:w-2/5 md:w-1/2 w-full mb-5">
                   <div className="p-5 rounded-2lg bg-[#F2EFEA]">
                     <div className="relative overflow-hidden rounded-2lg">
-                      <img src={a.img} alt={a.title} className="size-full object-cover" />
+                      <img
+                        src={a.img}
+                        alt={a.title}
+                        className="size-full object-cover"
+                      />
                     </div>
                     <div className="pb-2.5 pt-4 px-7.5 text-center">
-                      <h3 className="text-2xl font-medium mb-2.5 uppercase">{a.title}</h3>
+                      <h3 className="text-2xl font-medium mb-2.5 uppercase">
+                        {a.title}
+                      </h3>
                       <p className="text-base">{a.desc}</p>
                     </div>
                   </div>

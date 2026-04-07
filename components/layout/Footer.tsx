@@ -9,7 +9,6 @@ const footerLinks = {
     { label: "Testimonials", href: "/testimonials" },
     { label: "Ticket Booking", href: "/ticket-booking" },
     { label: "Tours Packages", href: "/tour-packages" },
-    { label: "Gallery", href: "/gallery" },
     { label: "Travel Insurance", href: "/travel-insurance" },
   ],
 };
@@ -47,11 +46,14 @@ export default function Footer() {
                     alt="BuyMyFare"
                     className="h-20 w-auto object-contain"
                   />
-                  <span className="block text-primary text-sm mt-1">where memories begin</span>
+                  <span className="block text-primary text-sm mt-1">
+                    where memories begin
+                  </span>
                 </Link>
                 <p className="text-white/80 text-base leading-relaxed mb-7 max-w-lg">
-                  Bringing the world closer to you with personalized travel packages, 
-                  seamless journeys, and unforgettable experiences designed for your dreams.
+                  Bringing the world closer to you with personalized travel
+                  packages, seamless journeys, and unforgettable experiences
+                  designed for your dreams.
                 </p>
               </div>
 
@@ -81,20 +83,43 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-4 text-base mb-8">
                   <li className="flex items-start gap-3 text-white/80">
-                    <i className="fa-solid fa-paper-plane text-primary mt-1.5 w-4" aria-hidden="true"></i>
+                    <i
+                      className="fa-solid fa-paper-plane text-primary mt-1.5 w-4"
+                      aria-hidden="true"
+                    ></i>
                     <span>10431 Cityscape Drive NE, Calgary AB - T3N 1N5</span>
                   </li>
                   <li className="flex items-center gap-3 text-white/80">
-                    <i className="fa-solid fa-phone text-primary w-4" aria-hidden="true"></i>
-                    <a href="tel:+17806001550" className="hover:text-primary transition-colors">+1 780 600 1550</a>
+                    <i
+                      className="fa-solid fa-phone text-primary w-4"
+                      aria-hidden="true"
+                    ></i>
+                    <a
+                      href="tel:+17806001550"
+                      className="hover:text-primary transition-colors"
+                    >
+                      +1 780 600 1550
+                    </a>
                   </li>
                   <li className="flex items-center gap-3 text-white/80">
-                    <i className="fa-solid fa-envelope text-primary w-4" aria-hidden="true"></i>
-                    <a href="mailto:travel@buymyfare.ca" className="hover:text-primary transition-colors">travel@buymyfare.ca</a>
+                    <i
+                      className="fa-solid fa-envelope text-primary w-4"
+                      aria-hidden="true"
+                    ></i>
+                    <a
+                      href="mailto:travel@buymyfare.ca"
+                      className="hover:text-primary transition-colors"
+                    >
+                      travel@buymyfare.ca
+                    </a>
                   </li>
                 </ul>
                 <div className="mt-8">
-                   <img src="/assets/images/IATA-TIDS.png" alt="TIDS IATA" className="h-25 w-auto" />
+                  <img
+                    src="/assets/images/IATA-TIDS.png"
+                    alt="TIDS IATA"
+                    className="h-25 w-auto"
+                  />
                 </div>
               </div>
 
@@ -105,7 +130,10 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-4">
                   {businessHours.map((item, idx) => (
-                    <li key={idx} className={`flex justify-between items-center pb-4 ${idx !== businessHours.length - 1 ? 'border-b border-dotted border-white/20' : ''}`}>
+                    <li
+                      key={idx}
+                      className={`flex justify-between items-center pb-4 ${idx !== businessHours.length - 1 ? "border-b border-dotted border-white/20" : ""}`}
+                    >
                       <span className="text-white/80">{item.day}</span>
                       <span className="text-white/80">{item.hours}</span>
                     </li>
@@ -120,10 +148,8 @@ export default function Footer() {
         <div className="border-t border-white/10">
           <div className="container">
             <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-y-4">
-              <p className="text-white/60 text-base mb-0">
-                © 2025 Buy My Fare
-              </p>
-              
+              <p className="text-white/60 text-base mb-0">© 2025 Buy My Fare</p>
+
               <ul className="flex items-center gap-3">
                 {socialLinks.map((s) => (
                   <li key={s.icon}>
@@ -134,7 +160,10 @@ export default function Footer() {
                       href={s.href}
                       className="size-10 flex items-center justify-center border border-white/20 text-white/80 hover:bg-primary hover:border-primary hover:text-secondary transition-all"
                     >
-                      <i className={`fa-brands ${s.icon} text-base`} aria-hidden="true"></i>
+                      <i
+                        className={`fa-brands ${s.icon} text-base`}
+                        aria-hidden="true"
+                      ></i>
                     </a>
                   </li>
                 ))}

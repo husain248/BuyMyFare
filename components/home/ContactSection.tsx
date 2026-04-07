@@ -46,7 +46,6 @@ export default function ContactSection() {
               hours.
             </p>
           </div>
-
         </div>
       </div>
       <div className="relative">
@@ -54,7 +53,10 @@ export default function ContactSection() {
           {/* Background image in form */}
           <div
             className="absolute inset-0 bg-no-repeat bg-right-bottom pointer-events-none -z-0"
-            style={{ backgroundImage: "url(/assets/images/background/bg4.png)", backgroundSize: "cover" }}
+            style={{
+              backgroundImage: "url(/assets/images/background/bg4.png)",
+              backgroundSize: "cover",
+            }}
           ></div>
           <div className="container">
             <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 relative z-1">
@@ -147,6 +149,6 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 }

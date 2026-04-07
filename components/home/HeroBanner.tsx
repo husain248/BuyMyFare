@@ -1,34 +1,36 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const slides = [
   {
-    image: '/assets/images/hero-banner/banner-1.webp',
-    alt: 'Travel Packages',
-    smallHeading: 'your journey, perfectly planned',
-    mainHeading: 'Travel Packages',
-    description: 'Experience stress-free travel with all-inclusive packages covering flights, hotels, transfers, and more. Every detail tailored for your dream getaway.',
-    buttonLabel: 'Plan Your Dream Trip',
+    image: "/assets/images/hero-banner/banner-1.webp",
+    alt: "Travel Packages",
+    smallHeading: "your journey, perfectly planned",
+    mainHeading: "Travel Packages",
+    description:
+      "Experience stress-free travel with all-inclusive packages covering flights, hotels, transfers, and more. Every detail tailored for your dream getaway.",
+    buttonLabel: "Plan Your Dream Trip",
   },
   {
-    image: '/assets/images/hero-banner/banner-2.png',
-    alt: 'effortless ticket booking',
-    smallHeading: 'effortless ticket booking',
-    mainHeading: 'International Flights',
-    description: 'Fly to your favorite destinations with our reliable international ticket booking service, offering competitive prices and flexible options..',
-    buttonLabel: 'Book Your Flight Now ',
+    image: "/assets/images/hero-banner/banner-2.png",
+    alt: "effortless ticket booking",
+    smallHeading: "effortless ticket booking",
+    mainHeading: "International Flights",
+    description:
+      "Fly to your favorite destinations with our reliable international ticket booking service, offering competitive prices and flexible options..",
+    buttonLabel: "Book Your Flight Now ",
   },
   {
-    image: '/assets/images/hero-banner/banner-3.png',
-    alt: 'peace of mind',
-    smallHeading: 'peace of mind',
-    mainHeading: 'Travel Insurance',
-    description: 'Protect your trips with comprehensive travel insurance. From unexpected delays to medical emergencies, we’ve got you covered.',
-    buttonLabel: 'Get Insured Today ',
+    image: "/assets/images/hero-banner/banner-3.png",
+    alt: "peace of mind",
+    smallHeading: "peace of mind",
+    mainHeading: "Travel Insurance",
+    description:
+      "Protect your trips with comprehensive travel insurance. From unexpected delays to medical emergencies, we’ve got you covered.",
+    buttonLabel: "Get Insured Today ",
   },
-  
 ];
 
 export default function HeroBanner() {
@@ -44,7 +46,8 @@ export default function HeroBanner() {
   }, [totalSlides]);
 
   const slide = slides[currentSlide];
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  const prevSlide = () =>
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
 
   return (
@@ -57,8 +60,8 @@ export default function HeroBanner() {
             alt={item.alt}
             width={1920}
             height={1000}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-            fetchPriority={index === currentSlide ? 'high' : 'auto'}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
+            fetchPriority={index === currentSlide ? "high" : "auto"}
             decoding="async"
           />
         ))}
@@ -71,16 +74,31 @@ export default function HeroBanner() {
               <div className="relative z-1 xl:p-20 lg:p-15 md:py-12.5 py-6 md:px-5 px-5 sm:pe-20 bottom-[50px] md:bottom-[250px]">
                 <div className="mb-5">
                   <h1 className="flex items-center gap-3.5 cursor-pointer relative z-1">
-                    <span className="text-white font-main capitalize text-[24px] md:text-[32px]">{slide.smallHeading}</span>
+                    <span className="text-white font-main capitalize text-[24px] md:text-[32px]">
+                      {slide.smallHeading}
+                    </span>
                   </h1>
                 </div>
-                <h1 className="3xl:text-15xl 2xxl:text-10xl xl:text-10xl md:text-8xl sm:text-6xl text-4xxl font-bold mb-2.5 text-white leading-none! uppercase wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">
+                <h1
+                  className="3xl:text-15xl 2xxl:text-10xl xl:text-10xl md:text-8xl sm:text-6xl text-4xxl font-bold mb-2.5 text-white leading-none! uppercase wow fadeInUp"
+                  data-wow-delay="0.2s"
+                  data-wow-duration="0.8s"
+                >
                   {slide.mainHeading}
                 </h1>
                 <p className="text-white">{slide.description}</p>
-                <Link href="/" className="btn btn-primary btn-hover light mt-5" data-hover-init="true">
+                <Link
+                  href="/"
+                  className="btn btn-primary btn-hover light mt-5"
+                  data-hover-init="true"
+                >
                   <span>{slide.buttonLabel}</span>
-                  <span className="gsap-clone" style={{ '--clone-left': '35px', '--clone-top': '14px' } as any}>
+                  <span
+                    className="gsap-clone"
+                    style={
+                      { "--clone-left": "35px", "--clone-top": "14px" } as any
+                    }
+                  >
                     {slide.buttonLabel}
                   </span>
                 </Link>
@@ -95,8 +113,7 @@ export default function HeroBanner() {
                       y="320"
                       fontFamily="Roboto Condensed, sans-serif"
                       fontWeight="900"
-                    >
-                    </text>
+                    ></text>
                   </clipPath>
                 </defs>
               </svg>
@@ -106,11 +123,28 @@ export default function HeroBanner() {
       </div>
 
       <div className="absolute right-7.5 bottom-20 flex flex-col gap-2.5 items-center z-1 max-sm:hidden">
-        <span className="block text-white text-2sm font-medium uppercase [writing-mode:tb]">Scroll Down</span>
-        <button type="button" aria-label="Scroll to next section" className="scroll-down-arrow size-12 flex items-center justify-center rounded-full bg-white text-black cursor-pointer" data-scroll-target="#nextSection">
+        <span className="block text-white text-2sm font-medium uppercase [writing-mode:tb]">
+          Scroll Down
+        </span>
+        <button
+          type="button"
+          aria-label="Scroll to next section"
+          className="scroll-down-arrow size-12 flex items-center justify-center rounded-full bg-white text-black cursor-pointer"
+          data-scroll-target="#nextSection"
+        >
           <svg width="14" height="23" viewBox="0 0 14 23" fill="none">
-            <path d="M6.83 0.75V21.32" stroke="black" strokeWidth="1.5" strokeLinecap="round"/>
-            <path d="M12.67 15.49L6.83 21.33L1 15.49" stroke="black" strokeWidth="2" strokeLinecap="round"/>
+            <path
+              d="M6.83 0.75V21.32"
+              stroke="black"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M12.67 15.49L6.83 21.33L1 15.49"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
       </div>
@@ -122,8 +156,20 @@ export default function HeroBanner() {
           onClick={prevSlide}
           className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white transition hover:bg-white hover:text-black"
         >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11 4L6 9L11 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 4L6 9L11 14"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
       </div>
@@ -135,8 +181,20 @@ export default function HeroBanner() {
           onClick={nextSlide}
           className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white transition hover:bg-white hover:text-black"
         >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 4L12 9L7 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 4L12 9L7 14"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
       </div>
@@ -148,7 +206,7 @@ export default function HeroBanner() {
             type="button"
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => setCurrentSlide(index)}
-            className={`h-3 w-3 rounded-full transition-colors ${index === currentSlide ? 'bg-white' : 'bg-white/50'}`}
+            className={`h-3 w-3 rounded-full transition-colors ${index === currentSlide ? "bg-white" : "bg-white/50"}`}
           />
         ))}
       </div>
