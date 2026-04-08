@@ -1,51 +1,24 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import {
+  exploreWorldBgImages,
+  exploreWorldFeatures,
+} from "../../data/home-explore-world";
 
 export default function ExploreWorld() {
   const [activeBg, setActiveBg] = useState(0);
-  const bgImages = [
-    "/assets/images/destinations/large/img1.png",
-    "/assets/images/destinations/large/img2.png",
-  ];
-
-  const features = [
-    {
-      img: "/assets/images/destinations/img1.png",
-      icon: "/assets/images/icons/world-icon-1.svg",
-      title: "Tailored Itineraries",
-      desc: "We design journeys that reflect your interests, preferences, and pace.",
-    },
-    {
-      img: "/assets/images/destinations/img2.png",
-      icon: "/assets/images/icons/world-icon-2.svg",
-      title: "Exclusive Deals",
-      desc: "Our partnerships with top airlines, hotels, and tour operators mean you get the best value without compromising quality.",
-    },
-    {
-      img: "/assets/images/destinations/img3.png",
-      icon: "/assets/images/icons/world-icon-3.svg",
-      title: "Round-the-Clock Support",
-      desc: "Your peace of mind is our priority—before, during, and after your trip.",
-    },
-    {
-      img: "/assets/images/destinations/img4.png",
-      icon: "/assets/images/icons/world-icon-4.svg",
-      title: "Hassle-Free Service",
-      desc: "From planning your itinerary to ensuring a smooth journey, we handle the details so you can focus on enjoying your trip.",
-    },
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveBg((prev) => (prev + 1) % bgImages.length);
+      setActiveBg((prev) => (prev + 1) % exploreWorldBgImages.length);
     }, 3500); // 3.5 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="destination-section lg:py-37.5 sm:py-25 py-18 relative overflow-hidden before:absolute before:inset-0 before:bg-black/50 before:z-1">
-      {bgImages.map((img, idx) => (
+      {exploreWorldBgImages.map((img, idx) => (
         <div
           key={img}
           className={`destination-bg bg-${idx + 1}${activeBg === idx ? " is-active" : ""}`}
@@ -83,7 +56,7 @@ export default function ExploreWorld() {
           </div>
           <div className="xl:w-2/3 w-full">
             <div className="grid grid-cols-12 gap-5">
-              {features.map((f, i) => (
+              {exploreWorldFeatures.map((f, i) => (
                 <div key={i} className="md:col-span-6 col-span-12">
                   <div className="relative destination-card">
                     {/* Icon in top right */}

@@ -16,6 +16,11 @@ function runInit() {
     if (typeof w.plexifyCarouselAround === "function")
       w.plexifyCarouselAround();
   } catch {}
+  try {
+    if (w.__plexifyGsapInstance && typeof w.__plexifyGsapInstance.applySticky === "function") {
+      w.__plexifyGsapInstance.applySticky();
+    }
+  } catch {}
 }
 
 export default function ScriptInitializer() {

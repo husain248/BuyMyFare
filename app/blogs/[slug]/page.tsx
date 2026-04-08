@@ -45,7 +45,7 @@ function Page({ params }: { params: Promise<{ slug: string }> }) {
                   <img
                     src={blog.image}
                     alt="greetings"
-                    className="w-full max-h-[400px] object-cover mx-auto mt-16"
+                    className="w-full max-h-[400px] object-cover mx-auto"
                   />
                 </div>
                 <BlogDetailsContent blog={blog} />
@@ -53,7 +53,7 @@ function Page({ params }: { params: Promise<{ slug: string }> }) {
 
               {/* Sidebar */}
               <div className="xl:w-1/4 w-full px-4">
-                <aside className="sticky top-25">
+                <aside className="my-sticky sidebar-sticky space-top-0">
                   <AboutWorkSidebar />
                   <ContactFormSidebar />
                 </aside>
@@ -64,8 +64,6 @@ function Page({ params }: { params: Promise<{ slug: string }> }) {
 
         {/* Bottom Slider Section */}
         <RecentBlogsSlider currentSlug={slug} />
-
-
       </div>
     </>
   );

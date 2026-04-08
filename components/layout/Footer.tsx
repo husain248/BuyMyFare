@@ -1,30 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
-const footerLinks = {
-  quickLinks: [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about-us" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "Ticket Booking", href: "/ticket-booking" },
-    { label: "Tours Packages", href: "/tour-packages" },
-    { label: "Travel Insurance", href: "/travel-insurance" },
-  ],
-};
-
-const businessHours = [
-  { day: "Monday-Friday:", hours: "09:00 AM – 09:00 PM" },
-  { day: "Saturday:", hours: "09:00 AM – 09:00 PM" },
-  { day: "Sunday:", hours: "09:00 AM – 09:00 PM" },
-];
-
-const socialLinks = [
-  { icon: "fa-facebook-f", label: "Facebook", href: "#" },
-  { icon: "fa-x-twitter", label: "Twitter", href: "#" },
-  { icon: "fa-linkedin-in", label: "LinkedIn", href: "#" },
-  { icon: "fa-instagram", label: "Instagram", href: "#" },
-];
+import { businessHours, footerLinks, socialLinks } from "../../data/footer";
 
 export default function Footer() {
   return (

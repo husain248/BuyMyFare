@@ -1,5 +1,17 @@
 import React from "react";
 
+type BlogDetailsSection = {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+};
+
+type BlogDetails = {
+  intro?: string[];
+  sections?: BlogDetailsSection[];
+  conclusion?: string[];
+};
+
 interface BlogDetailsContentProps {
   blog: {
     title: string;
@@ -8,10 +20,39 @@ interface BlogDetailsContentProps {
     image: string;
     content: string;
     tags: string[];
+    details?: BlogDetails;
   };
 }
 
 const BlogDetailsContent: React.FC<BlogDetailsContentProps> = ({ blog }) => {
+  const details = blog.details;
+
+  const renderParagraph = (text: string, key: React.Key) => {
+    const trimmed = text.trim();
+    const isExample = /^example:/i.test(trimmed);
+    if (!isExample) {
+      return (
+        <p
+          key={key}
+          className="xl:text-xl sm:text-lg text-sm font-light leading-relaxed text-secondary/80"
+        >
+          {text}
+        </p>
+      );
+    }
+
+    const rest = trimmed.replace(/^example:\s*/i, "");
+    return (
+      <p
+        key={key}
+        className="xl:text-xl sm:text-lg text-sm font-light leading-relaxed text-secondary/80"
+      >
+        <span className="italic font-medium text-secondary">Example:</span>{" "}
+        {rest}
+      </p>
+    );
+  };
+
   return (
     <div className="xl:pt-20 sm:pt-15 pt-10">
       <div className="container mx-auto px-4 max-w-4xl">
@@ -19,41 +60,58 @@ const BlogDetailsContent: React.FC<BlogDetailsContentProps> = ({ blog }) => {
           <div className="w-full">
             <div className="mb-15">
               <div className="lg:mb-15 mb-7.5">
-                <p className="xl:text-xl sm:text-lg text-sm font-light leading-relaxed text-secondary/80">
-                  {blog.content}
-                </p>
+                {(details?.intro?.length ? details.intro : [blog.content]).map(
+                  (p, idx) => (
+                    <div key={idx} className={idx === 0 ? "" : "mt-4"}>
+                      {renderParagraph(p, idx)}
+                    </div>
+                  ),
+                )}
               </div>
 
-              <div className="lg:mb-15 mb-7.5">
-                <h4 className="text-3xl mb-5 font-semibold">
-                  The Power of Inspiration
-                </h4>
-                <p className="xl:text-xl sm:text-lg text-sm font-light sm:mb-7.5 mb-2.5 text-secondary/80">
-                  Every design begins with inspiration—a spark that ignites
-                  creativity. Inspiration can come from anywhere:
-                </p>
-                <ul className="xl:text-xl sm:text-lg text-sm font-light mb-7.5 space-y-2">
-                  <li className="ps-8.75 relative before:absolute before:left-3.5 before:top-3 before:size-1.5 before:rounded-full before:bg-primary">
-                    A walk through nature, observing{" "}
-                    <span className="border-b border-primary text-secondary">
-                      patterns and textures.
-                    </span>
-                  </li>
-                  <li className="ps-8.75 relative before:absolute before:left-3.5 before:top-3 before:size-1.5 before:rounded-full before:bg-primary">
-                    Art, architecture, or cultural motifs that speak to a
-                    designer’s soul.
-                  </li>
-                  <li className="ps-8.75 relative before:absolute before:left-3.5 before:top-3 before:size-1.5 before:rounded-full before:bg-primary">
-                    Everyday problems that demand innovative solutions.
-                  </li>
-                </ul>
-                <p className="xl:text-xl sm:text-lg text-sm font-light text-secondary/80">
-                  For example, the minimalist trend in modern design often draws
-                  from natural simplicity and functionality, showing how
-                  external influences shape creative thought. The key is to
-                  remain curious, open, and receptive to the world around you.
-                </p>
-              </div>
+              {details?.sections?.length ? (
+                <div className="lg:mb-15 mb-7.5">
+                  {details.sections.map((section, idx) => (
+                    <div key={idx} className={idx === 0 ? "" : "mt-10"}>
+                      <h4 className="text-3xl mb-5 font-semibold">
+                        {idx + 1}. {section.title}
+                      </h4>
+
+                      {section.paragraphs?.length ? (
+                        <div className="space-y-4">
+                          {section.paragraphs.map((p, pIdx) =>
+                            renderParagraph(p, `${idx}-p-${pIdx}`),
+                          )}
+                        </div>
+                      ) : null}
+
+                      {section.bullets?.length ? (
+                        <ul className="xl:text-xl sm:text-lg text-sm font-light mt-5 space-y-2">
+                          {section.bullets.map((b, bIdx) => (
+                            <li
+                              key={`${idx}-b-${bIdx}`}
+                              className="ps-8.75 relative before:absolute before:left-3.5 before:top-3 before:size-1.5 before:rounded-full before:bg-primary"
+                            >
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              {details?.conclusion?.length ? (
+                <div className="lg:mb-15 mb-7.5">
+                  <h4 className="text-3xl mb-5 font-semibold">Conclusion</h4>
+                  <div className="space-y-4">
+                    {details.conclusion.map((p, idx) =>
+                      renderParagraph(p, `c-${idx}`),
+                    )}
+                  </div>
+                </div>
+              ) : null}
 
               <div className="mb-7.5 pt-5 border-t border-black/10">
                 <ul className="flex flex-wrap items-center gap-4">

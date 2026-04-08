@@ -5,7 +5,7 @@ import blogsData from "../../data/blogs.json";
 
 const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) => {
   const swiperRef = useRef<HTMLDivElement>(null);
-  
+
   // Filter out the current blog and take the latest ones
   const recentBlogs = blogsData
     .filter((b) => b.slug !== currentSlug)
@@ -42,20 +42,20 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) =
       <div className="container mx-auto px-4">
         <div className="mb-10 text-center">
           <h2 className="text-4xl font-bold uppercase headline mb-2">
-            Recent Stories
+            Related Posts
           </h2>
           <p className="text-secondary/60">Discover more adventures from our blog</p>
         </div>
-        
+
         <div className="swiper recent-blog-swiper" ref={swiperRef}>
           <div className="swiper-wrapper">
             {recentBlogs.map((blog) => (
               <div className="swiper-slide" key={blog.id}>
                 <div className="group blog-card-small bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
                   <div className="relative h-60 overflow-hidden">
-                    <img 
-                      src={blog.image} 
-                      alt={blog.title} 
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
                       className="w-full h-full object-cover duration-500 group-hover:scale-110"
                     />
                     <div className="absolute top-4 left-4 bg-primary text-secondary text-xs font-bold px-3 py-1 rounded-full">
@@ -68,11 +68,11 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) =
                         {blog.title}
                       </Link>
                     </h4>
-                    <Link 
+                    <Link
                       href={`/blogs/${blog.slug}`}
                       className="text-primary font-medium text-sm flex items-center group/link"
                     >
-                      Read More 
+                      Read More
                       <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
                     </Link>
                   </div>

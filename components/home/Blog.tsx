@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { homeBlogHighlights } from "../../data/home-blog-highlights";
 
 export default function Blog() {
   return (
@@ -37,28 +38,7 @@ export default function Blog() {
             </div>
           </div>
           <div className="lg:w-2/3 w-full">
-            {[
-              {
-                img: "Top-Travel-Hacks-to-Save-Money-on-Your-Next-International-Trip.png",
-                tag: "Insurance",
-                title: "Why Travel Insurance is a Must-Have for Every Vacation",
-                thumb: "pic1.png",
-              },
-              {
-                img: "The-Ultimate-Travel-Checklist-for-Canadians-Exploring-the-World.png",
-                tag: "Explore",
-                title:
-                  "The Ultimate Travel Checklist for Canadians Exploring the World",
-                thumb: "pic2.png",
-              },
-              {
-                img: "Top-10-Affordable-International-Destinations-for-Canadian-Travelers.png",
-                tag: "Affordable",
-                title:
-                  "Top 10 Affordable International Destinations for Canadian Travelers in 2025",
-                thumb: "pic3.png",
-              },
-            ].map((blog, idx) => (
+            {homeBlogHighlights.map((blog, idx) => (
               <div
                 className="relative z-1 duration-200 md:flex group mb-5 bg-white rounded-xxl"
                 key={idx}

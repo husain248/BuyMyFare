@@ -13,7 +13,7 @@ const BlogBanner: React.FC<BlogBannerProps> = ({
 }) => {
   return (
     <div
-      className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/20"
+      className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/40"
       style={{ backgroundImage: `url('${bgImage}')` }}
     >
       <div className="container relative z-1 table h-full mx-auto">
@@ -28,7 +28,7 @@ const BlogBanner: React.FC<BlogBannerProps> = ({
           >
             {subtitle}
           </span>
-          <h1 className="2xxl:text-11xxl xl:text-10xl sm:text-8xl text-5xl mb-2.5 text-white">
+          <h1 className="xl:text-7xl sm:text-5xl text-2xl mb-2.5 text-white">
             {title}
           </h1>
         </div>

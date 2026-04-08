@@ -2,40 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
-const slides = [
-  {
-    image: "/assets/images/hero-banner/banner-1.webp",
-    alt: "Travel Packages",
-    smallHeading: "your journey, perfectly planned",
-    mainHeading: "Travel Packages",
-    description:
-      "Experience stress-free travel with all-inclusive packages covering flights, hotels, transfers, and more. Every detail tailored for your dream getaway.",
-    buttonLabel: "Plan Your Dream Trip",
-  },
-  {
-    image: "/assets/images/hero-banner/banner-2.png",
-    alt: "effortless ticket booking",
-    smallHeading: "effortless ticket booking",
-    mainHeading: "International Flights",
-    description:
-      "Fly to your favorite destinations with our reliable international ticket booking service, offering competitive prices and flexible options..",
-    buttonLabel: "Book Your Flight Now ",
-  },
-  {
-    image: "/assets/images/hero-banner/banner-3.png",
-    alt: "peace of mind",
-    smallHeading: "peace of mind",
-    mainHeading: "Travel Insurance",
-    description:
-      "Protect your trips with comprehensive travel insurance. From unexpected delays to medical emergencies, we’ve got you covered.",
-    buttonLabel: "Get Insured Today ",
-  },
-];
+import { heroSlides } from "../../data/home-hero-slides";
 
 export default function HeroBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = slides.length;
+  const totalSlides = heroSlides.length;
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -45,7 +16,7 @@ export default function HeroBanner() {
     return () => window.clearInterval(interval);
   }, [totalSlides]);
 
-  const slide = slides[currentSlide];
+  const slide = heroSlides[currentSlide];
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -53,7 +24,7 @@ export default function HeroBanner() {
   return (
     <div className="group relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-130 after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
       <div className="absolute inset-0">
-        {slides.map((item, index) => (
+        {heroSlides.map((item, index) => (
           <img
             key={item.alt}
             src={item.image}
@@ -200,7 +171,7 @@ export default function HeroBanner() {
       </div>
 
       <div className="absolute left-5 bottom-20 flex gap-2.5 z-1">
-        {slides.map((_, index) => (
+        {heroSlides.map((_, index) => (
           <button
             key={index}
             type="button"

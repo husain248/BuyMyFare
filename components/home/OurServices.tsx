@@ -1,33 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
-const services = [
-  {
-    title: "TOUR PACKAGES",
-    tag: "Packages",
-    image: "/assets/images/tour-packages.png", // Placeholder if specific one not found, though img1 looks like a beach
-    desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
-    btnText: "See All Packages",
-    link: "/",
-  },
-  {
-    title: "TICKET BOOKING",
-    tag: "Booking",
-    image: "/assets/images/ticket-booking.png",
-    desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
-    btnText: "Book Now",
-    link: "/",
-  },
-  {
-    title: "TRAVEL INSURANCE",
-    tag: "Insurance",
-    image: "/assets/images/travel-insurence.png", // Desert-ish image
-    desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
-    btnText: "Get Insurance",
-    link: "/",
-  },
-];
+import { homeServices } from "../../data/home-services";
 
 export default function OurServices() {
   return (
@@ -43,7 +17,7 @@ export default function OurServices() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {homeServices.map((service, index) => (
             <div
               key={index}
               className="bg-[#f4f4f4] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300"

@@ -610,19 +610,25 @@ const plexifyGsap = function () {
       initCustomScroll();
       initImageHover();
     },
+    applySticky() {
+      initApplySticky();
+    },
     resize() {},
   };
 };
 
+// Keep a single instance so we don't recreate ScrollSmoother on route changes.
+window.__plexifyGsapInstance = window.__plexifyGsapInstance || plexifyGsap();
+
 window.addEventListener("load", () => {
-  plexifyGsap().init();
+  window.__plexifyGsapInstance.init();
 });
 
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
-    plexifyGsap().resize();
+    window.__plexifyGsapInstance.resize();
     ScrollTrigger.refresh();
   }, 250);
 });

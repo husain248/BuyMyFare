@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import BlogCard from "./BlogCard";
+import { RefreshCcw } from "lucide-react";
 
 interface Blog {
   id: number;
   title: string;
   date: string;
+  comments: string;
   author: string;
   image: string;
   slug: string;
@@ -43,7 +45,7 @@ const BlogGrid: React.FC<BlogGridProps> = ({ blogs }) => {
               onClick={handleLoadMore}
             >
               <span>Load More</span>
-              <span className="block ms-2.5">
+              {/* <span className="block ms-2.5">
                 <svg
                   width="20"
                   height="20"
@@ -83,7 +85,11 @@ const BlogGrid: React.FC<BlogGridProps> = ({ blogs }) => {
                     </clipPath>
                   </defs>
                 </svg>
+              </span> */}
+              <span className="ms-2.5 duration-200 group-hover:text-white rotate-0 group-hover:rotate-180">
+                <RefreshCcw />
               </span>
+
             </button>
           </div>
         )}

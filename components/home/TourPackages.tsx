@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { homeTourPackages } from "../../data/home-tour-packages";
 
 export default function TourPackages() {
   const swiperRef = useRef<HTMLDivElement>(null);
@@ -118,20 +119,7 @@ export default function TourPackages() {
           <div className="lg:w-[73%] w-full">
             <div className="swiper tour-swiper" ref={swiperRef}>
               <div className="swiper-wrapper">
-                {[
-                  { img: "img1.png", title: "Cuba", amt: "$625" },
-                  { img: "img2.png", title: "Jamaica", amt: "$1175" },
-                  { img: "img3.png", title: "Mexico", amt: "$965" },
-                  { img: "img4.png", title: "Caribbean", amt: "$1315" },
-                  { img: "img5.png", title: "Costa Rica", amt: "$1345" },
-                  {
-                    img: "img6.png",
-                    title: "Dominican Republic",
-                    amt: "$1035",
-                  },
-                  { img: "img7.png", title: "Spain", amt: "$2109" },
-                  { img: "img8.png", title: "Paris", amt: "$1645" },
-                ].map((tour, idx) => (
+                {homeTourPackages.map((tour, idx) => (
                   <div className="swiper-slide" key={idx}>
                     <div className="relative tour-card">
                       <div className="relative overflow-hidden rounded-xxl before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60">

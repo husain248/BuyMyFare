@@ -2,49 +2,75 @@ import React from "react";
 
 const ContactFormSidebar: React.FC = () => {
   return (
-    <div className="sm:mb-11.25 mb-5 bg-white border border-secondary/10 p-8 rounded-2xl">
-      <h4 className="text-xl uppercase mb-6 font-semibold text-secondary border-b border-secondary/10 pb-4">
-        Contact Us
-      </h4>
-      <form className="space-y-4">
-        <div>
-          <label htmlFor="side-name" className="block text-sm font-medium mb-1.5 text-secondary">
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="side-name"
-            placeholder="Your Name"
-            className="w-full py-2.5 px-4 bg-transparent border border-secondary/20 rounded-lg focus:border-primary focus:outline-none transition-colors text-sm"
-          />
+    <div className="p-5 bg-[#F4F4F4] rounded-xxl">
+      <div className="text-center flex flex-col gap-2.5 items-center justify-center">
+        <span className="font-main capitalize text-[28px] text-[#222222]">
+          Reach Us{" "}
+        </span>
+        <h1 className="2xxl:text-3xxl xl:text-3xl sm:text-3xl text-3xl mb-5 text-black">
+          Get in Touch{" "}
+        </h1>
+      </div>
+      <form className="space-y-5">
+        <div className="grid md:grid-cols-1 gap-5">
+          <div>
+            <label className="block text-sm font-semibold text-secondary/50 mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              required
+              defaultValue=""
+              placeholder="John Doe"
+              className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#ffffff]"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-secondary/50 mb-2">
+              Email Address
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              defaultValue=""
+              placeholder="your@email.com"
+              className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#ffffff]"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-secondary/50 mb-2">
+              Phone
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              defaultValue=""
+              placeholder="+1 (780) 000-0000"
+              className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#ffffff]"
+            />
+          </div>
         </div>
+
         <div>
-          <label htmlFor="side-email" className="block text-sm font-medium mb-1.5 text-secondary">
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="side-email"
-            placeholder="info@example.com"
-            className="w-full py-2.5 px-4 bg-transparent border border-secondary/20 rounded-lg focus:border-primary focus:outline-none transition-colors text-sm"
-          />
-        </div>
-        <div>
-          <label htmlFor="side-message" className="block text-sm font-medium mb-1.5 text-secondary">
-            Message
+          <label className="block text-sm font-semibold text-secondary/50 mb-2">
+            Your Message
           </label>
           <textarea
-            id="side-message"
+            name="message"
+            required
             rows={4}
-            placeholder="How can we help?"
-            className="w-full py-2.5 px-4 bg-transparent border border-secondary/20 rounded-lg focus:border-primary focus:outline-none transition-colors text-sm resize-none"
+            defaultValue=""
+            placeholder="Tell us about your trip..."
+            className="w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors bg-[#ffffff]"
           />
         </div>
         <button
           type="submit"
-          className="w-full btn btn-primary btn-hover py-3 rounded-lg"
+          className="btn btn-primary btn-hover w-full justify-center"
         >
-          <span>Send Message</span>
+          <span>Submit</span>
         </button>
       </form>
     </div>

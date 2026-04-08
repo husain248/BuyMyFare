@@ -6,14 +6,7 @@ import Counter from "yet-another-react-lightbox/plugins/counter";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/counter.css";
-
-const galleryImgNums = [1, 2, 3, 4, 5, 6, 7];
-// Triple the array so the infinite ticker has enough items
-const tickerImages = [
-  ...galleryImgNums,
-  ...galleryImgNums,
-  ...galleryImgNums,
-].map((num) => ({ src: `/assets/images/gallery/img${num}.png`, num }));
+import { galleryImgNums, galleryTickerImages } from "../../data/home-gallery";
 
 export default function GallerySection() {
   const [lightboxIndex, setLightboxIndex] = useState<number>(-1);
@@ -36,7 +29,7 @@ export default function GallerySection() {
       {/* Infinite horizontal ticker strip */}
       <div className="overflow-hidden w-full pb-3">
         <div className="flex items-center gap-2.5 px-5 animate-ticker hover:[animation-play-state:paused]">
-          {tickerImages.map((img, idx) => (
+          {galleryTickerImages.map((img, idx) => (
             <div
               key={idx}
               className="relative overflow-hidden rounded-2lg lg:min-w-65 sm:min-w-50 min-w-35 cursor-pointer group shrink-0"

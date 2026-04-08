@@ -1,5 +1,4 @@
 "use client";
-import Blog from "../../components/home/Blog";
 import AboutBanner from "../../components/about/AboutBanner";
 import AboutWork from "../../components/about/AboutWork";
 import AboutHoliday from "../../components/about/AboutHoliday";

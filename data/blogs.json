@@ -1,82 +1,554 @@
 [
   {
     "id": 1,
-    "title": "How to Create a Stunning Travel Blog",
+    "title": "Why Travel Insurance is a Must-Have for Every Vacation",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img1.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/Top-Travel-Hacks-to-Save-Money-on-Your-Next-International-Trip.png",
     "slug": "how-to-create-a-stunning-travel-blog",
-    "content": "Creating a travel blog is one of the most rewarding ways to document your adventures and share them with the world. From choosing the right platform to capturing the perfect sunset photo, every detail matters. In this guide, we'll walk you through the essential steps to make your blog stand out in a crowded digital landscape.",
-    "tags": ["Blogging", "Travel", "Creativity"]
+    "content": "Vacations are a time to relax, explore, and make unforgettable memories. However, unforeseen events like flight cancellations, medical emergencies, or lost luggage can quickly turn a dream trip into a nightmare. This is where travel insurance comes in—a vital safeguard to ensure peace of mind and financial security while you’re away.",
+    "details": {
+      "intro": [
+        "Vacations are a time to relax, explore, and make unforgettable memories. However, unforeseen events like flight cancellations, medical emergencies, or lost luggage can quickly turn a dream trip into a nightmare.",
+        "Travel insurance helps protect your investment and reduces stress when plans change unexpectedly. Below are the most valuable coverages travelers should understand before booking their next trip."
+      ],
+      "sections": [
+        {
+          "title": "Coverage Against Trip Cancellations",
+          "paragraphs": [
+            "Life happens. Trip cancellation coverage can reimburse eligible prepaid, non-refundable costs when you must cancel due to covered reasons.",
+            "Example: If you fall ill or a family emergency arises just before your trip, insurance may help recover costs like flights and hotel deposits."
+          ]
+        },
+        {
+          "title": "Coverage for Medical Emergencies",
+          "paragraphs": [
+            "Medical treatment abroad can be expensive, and your provincial plan may not cover international healthcare costs.",
+            "Example: Emergency medical coverage can help with hospital bills, doctor visits, and prescriptions while you’re traveling."
+          ]
+        },
+        {
+          "title": "Lost or Delayed Baggage",
+          "paragraphs": [
+            "Baggage delays and lost luggage can derail your itinerary. Coverage may reimburse essentials you need to buy while you wait.",
+            "Example: If your bags are delayed for 24 hours, insurance may reimburse the cost of clothing and toiletries."
+          ]
+        },
+        {
+          "title": "Emergency Evacuation and Repatriation",
+          "paragraphs": [
+            "In remote areas or serious situations, you may need transport to the nearest suitable medical facility—or back home. These costs can be very high without insurance.",
+            "Example: Medical evacuation can cost thousands of dollars depending on the destination and severity."
+          ]
+        },
+        {
+          "title": "Coverage for Flight Delays or Cancellations",
+          "paragraphs": [
+            "Weather, airline disruptions, and missed connections can lead to unexpected expenses like meals and hotels.",
+            "Example: Delay coverage may reimburse reasonable extra costs when your flight is significantly delayed."
+          ]
+        },
+        {
+          "title": "Protection for Personal Belongings",
+          "paragraphs": [
+            "Travel insurance can help cover theft or damage to personal items such as phones, cameras, and luggage—subject to policy limits.",
+            "Example: If your bag is stolen, insurance may reimburse eligible items after you file a police report."
+          ]
+        },
+        {
+          "title": "Adventure and Sports Coverage",
+          "paragraphs": [
+            "If your vacation includes adventure activities (skiing, scuba diving, hiking, etc.), confirm you’re covered—some activities require add-ons.",
+            "Example: A standard plan may exclude certain sports unless you add the appropriate rider."
+          ]
+        },
+        {
+          "title": "Peace of Mind for Every Traveler",
+          "paragraphs": [
+            "Beyond reimbursement, travel insurance gives you access to support when you need it most—help arranging care, replacing documents, and navigating emergencies.",
+            "Example: Many plans include 24/7 assistance to help coordinate care and travel changes."
+          ]
+        }
+      ],
+      "conclusion": [
+        "Travel insurance is more than an add-on—it’s a smart layer of protection for your time, money, and health while you explore the world.",
+        "Before you purchase, compare coverage limits, exclusions, and deductibles so your policy matches your trip style and destination."
+      ]
+    },
+    "tags": [
+      "Blogging",
+      "Travel",
+      "Creativity"
+    ]
   },
   {
     "id": 2,
-    "title": "Journeys Around the World: A Guide",
+    "title": "The Ultimate Travel Checklist for Canadians Exploring the World",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img2.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/The-Ultimate-Travel-Checklist-for-Canadians-Exploring-the-World.png",
     "slug": "journeys-around-the-world-a-guide",
     "content": "The world is vast and full of wonders, from the ancient ruins of Machu Picchu to the neon-lit streets of Tokyo. Navigating these diverse destinations requires more than just a passport; it requires a sense of curiosity and a willingness to step outside your comfort zone. Join us as we explore the best ways to experience the globe.",
-    "tags": ["Adventure", "Global", "Guide"]
+    "details": {
+      "intro": [
+        "International travel is exciting, but the best trips start with the right preparation. Use this checklist to make sure you’re ready before takeoff.",
+        "Whether you’re heading to a beach escape or a multi-country adventure, these essentials will save you time, money, and stress."
+      ],
+      "sections": [
+        {
+          "title": "Passport, Visas, and Entry Requirements",
+          "paragraphs": [
+            "Check your passport expiry (many countries require 6+ months validity). Confirm visa or eTA requirements for every country on your itinerary.",
+            "Example: Some destinations require proof of onward travel or hotel bookings at immigration."
+          ]
+        },
+        {
+          "title": "Travel Insurance and Health Documents",
+          "paragraphs": [
+            "Buy coverage that matches your trip length and activities. Carry a digital + printed copy of your policy and emergency contact numbers.",
+            "Example: If you take prescription medication, pack it in original containers and bring a doctor’s note if needed."
+          ]
+        },
+        {
+          "title": "Money, Cards, and Notifications",
+          "paragraphs": [
+            "Bring at least two payment methods and some local cash. Notify your bank about travel to avoid card blocks.",
+            "Example: Keep a backup card separate from your wallet in case of loss."
+          ]
+        },
+        {
+          "title": "Phone Setup and Connectivity",
+          "paragraphs": [
+            "Consider an eSIM or local SIM. Download offline maps and translation packs before you leave.",
+            "Example: Save your hotel address offline so you can show it to a taxi driver without internet."
+          ]
+        },
+        {
+          "title": "Packing Essentials (Carry-On First)",
+          "paragraphs": [
+            "Pack essentials in your carry-on: documents, medication, chargers, a change of clothes, and basic toiletries.",
+            "Example: If checked baggage is delayed, you can still start your trip comfortably."
+          ]
+        },
+        {
+          "title": "Safety and Copies of Important Documents",
+          "paragraphs": [
+            "Store digital copies of your passport, visas, itinerary, and insurance in a secure cloud folder. Share your itinerary with a trusted contact.",
+            "Example: Email yourself scanned copies so you can access them from any device."
+          ]
+        }
+      ],
+      "conclusion": [
+        "A little planning goes a long way. Use this checklist as your pre-departure routine and you’ll travel with confidence.",
+        "Once the essentials are handled, you’re free to focus on what matters most—enjoying the journey."
+      ]
+    },
+    "tags": [
+      "Adventure",
+      "Global",
+      "Guide"
+    ]
   },
   {
     "id": 3,
-    "title": "Inspiring Travel Experiences to Have",
+    "title": "Top 10 Affordable International Destinations for Canadian Travelers in 2025",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img3.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/Top-10-Affordable-International-Destinations-for-Canadian-Travelers-in-2025.png",
     "slug": "inspiring-travel-experiences-to-have",
     "content": "Travel is not just about seeing new places; it's about the experiences that change you. Whether it's volunteering at an elephant sanctuary in Thailand or learning to cook pasta from a nonna in Tuscany, these moments define our journeys. Discover the experiences that should be on every traveler's bucket list.",
-    "tags": ["Inspiration", "Culture", "Experience"]
+    "details": {
+      "intro": [
+        "You don’t need a luxury budget to travel internationally. With the right timing and destination, you can get incredible value on flights, stays, and experiences.",
+        "Here are 10 wallet-friendly destinations that tend to offer great value for Canadian travelers in 2025."
+      ],
+      "sections": [
+        {
+          "title": "Mexico (Beyond the Resorts)",
+          "paragraphs": [
+            "Mexico offers excellent value on food, transport, and accommodations—especially outside the busiest resort zones.",
+            "Example: Explore cultural cities and beach towns with affordable local dining and transit."
+          ]
+        },
+        {
+          "title": "Dominican Republic",
+          "paragraphs": [
+            "All-inclusive packages can be extremely cost-effective when you want predictable pricing and simple planning.",
+            "Example: Bundles often include flights, meals, and airport transfers."
+          ]
+        },
+        {
+          "title": "Portugal",
+          "paragraphs": [
+            "One of Western Europe’s best values, with affordable food, beautiful coastline, and walkable cities.",
+            "Example: Lisbon and Porto offer budget-friendly day trips and public transit."
+          ]
+        },
+        {
+          "title": "Vietnam",
+          "paragraphs": [
+            "A top destination for budget travelers thanks to low-cost meals, transport, and stays.",
+            "Example: Street food and local guesthouses can stretch your travel dollars significantly."
+          ]
+        },
+        {
+          "title": "Thailand",
+          "paragraphs": [
+            "Thailand balances affordability with comfort—great infrastructure, food, beaches, and culture.",
+            "Example: Island hopping and markets can be done on a modest daily budget."
+          ]
+        },
+        {
+          "title": "Morocco",
+          "paragraphs": [
+            "A vibrant mix of markets, history, and landscapes with generally affordable lodging and local dining.",
+            "Example: Day trips to deserts or coastal towns can be great value with shared tours."
+          ]
+        },
+        {
+          "title": "Turkey",
+          "paragraphs": [
+            "Strong value on hotels, food, and historic experiences—especially in cities beyond the most tourist-heavy areas.",
+            "Example: Local cuisine and public transit keep daily costs manageable."
+          ]
+        },
+        {
+          "title": "Greece (Shoulder Season)",
+          "paragraphs": [
+            "Greece can be surprisingly affordable when you travel in shoulder season and choose less touristy islands.",
+            "Example: Ferries + smaller islands often cost less than peak Santorini/Mykonos."
+          ]
+        },
+        {
+          "title": "Costa Rica (Smart Itineraries)",
+          "paragraphs": [
+            "Costa Rica can be affordable with the right route and mix of destinations (nature, beaches, local stays).",
+            "Example: Combine national parks with smaller towns and local transport."
+          ]
+        },
+        {
+          "title": "Japan (Deal Hunting)",
+          "paragraphs": [
+            "Japan isn’t always “cheap,” but flight deals and smart planning can make it surprisingly attainable.",
+            "Example: Stay near transit hubs, use convenience stores and set-meals, and book rail passes strategically."
+          ]
+        }
+      ],
+      "conclusion": [
+        "Affordability is a mix of destination, timing, and planning. Traveling in shoulder season and being flexible with dates often unlocks the best deals.",
+        "Pick one destination from this list, set price alerts, and plan early—you’ll be surprised how far your budget can go."
+      ]
+    },
+    "tags": [
+      "Inspiration",
+      "Culture",
+      "Experience"
+    ]
   },
   {
     "id": 4,
-    "title": "Stories from Our Recent Journeys",
+    "title": "Top Travel Hacks to Save Money on Your Next International Trip",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img4.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/How-to-Choose-the-Perfect-Travel-Package-for-Your-Next-Getaway-1024x572.png",
     "slug": "stories-from-our-recent-journeys",
     "content": "Our team has been busy exploring the four corners of the earth, and we have plenty of stories to tell. From the rugged coastlines of Iceland to the vibrant markets of Marrakech, our recent travels have been full of surprises. Read on for a glimpse into our latest adventures and the lessons we learned along the way.",
-    "tags": ["Stories", "Recent", "Adventure"]
+    "details": {
+      "intro": [
+        "Travel doesn’t have to be expensive. With a few smart strategies, you can reduce costs on flights, hotels, food, and activities—without sacrificing comfort.",
+        "Here are practical money-saving hacks you can apply to almost any international trip."
+      ],
+      "sections": [
+        {
+          "title": "Be Flexible With Dates (Even by 1–2 Days)",
+          "paragraphs": [
+            "Shifting your departure by a day or two can dramatically lower fares. Mid-week flights are often cheaper than weekends.",
+            "Example: Compare Tue/Wed departures versus Friday departures before booking."
+          ]
+        },
+        {
+          "title": "Bundle When It Makes Sense",
+          "paragraphs": [
+            "Packages can be cheaper than booking each part separately—especially for resorts, cruises, and all-inclusive trips.",
+            "Example: A flight + hotel bundle may include airport transfers and perks."
+          ]
+        },
+        {
+          "title": "Use a “Carry-On Only” Strategy",
+          "paragraphs": [
+            "Avoid checked baggage fees and save time at airports. Packing lighter also makes local transport easier.",
+            "Example: Use packing cubes and a capsule wardrobe for 7–10 day trips."
+          ]
+        },
+        {
+          "title": "Eat Like a Local",
+          "paragraphs": [
+            "Local markets, street food, and neighborhood restaurants usually offer better value than tourist zones.",
+            "Example: Ask hotel staff where they personally eat—those spots are often gems."
+          ]
+        },
+        {
+          "title": "Book Activities in Advance (But Not All of Them)",
+          "paragraphs": [
+            "High-demand attractions can sell out and cost more last-minute. But leave room for spontaneous finds too.",
+            "Example: Pre-book must-dos, then keep 1–2 free days for local recommendations."
+          ]
+        },
+        {
+          "title": "Avoid Dynamic Currency Conversion",
+          "paragraphs": [
+            "When paying by card abroad, choose to be charged in the local currency to avoid hidden conversion rates.",
+            "Example: If the terminal asks CAD vs local currency, pick local."
+          ]
+        }
+      ],
+      "conclusion": [
+        "Saving money on travel is mostly about planning smarter, not traveling less. A few small decisions can add up to hundreds of dollars saved.",
+        "Try two or three hacks on your next trip and you’ll feel the difference immediately."
+      ]
+    },
+    "tags": [
+      "Stories",
+      "Recent",
+      "Adventure"
+    ]
   },
   {
     "id": 5,
-    "title": "Destination Stories & Travel Guides",
+    "title": "How to Choose the Perfect Travel Package for Your Next Getaway",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img5.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/Why-Travel-Insurance-is-a-Must-Have-for-Every-Vacation-1024x572.png",
     "slug": "destination-stories-travel-guides",
     "content": "Every destination has a story to tell, and our travel guides are designed to help you uncover them. Whether you're planning a romantic getaway or a family vacation, our curated guides provide everything you need to know, from the best local eateries to must-visit landmarks.",
-    "tags": ["Destinations", "Guides", "Planning"]
+    "details": {
+      "intro": [
+        "A great travel package removes stress, saves time, and can offer better value than booking everything separately.",
+        "But not every package fits every traveler. Use the steps below to choose a package that matches your budget, comfort level, and travel style."
+      ],
+      "sections": [
+        {
+          "title": "Define Your Trip Style",
+          "paragraphs": [
+            "Are you looking for relaxation, adventure, culture, or a mix? Start with your non-negotiables.",
+            "Example: If you want a beach-first trip, prioritize resort location and beach quality over city tours."
+          ]
+        },
+        {
+          "title": "Understand What’s Included (and What’s Not)",
+          "paragraphs": [
+            "Packages vary: some include flights, transfers, meals, and tours; others include only a hotel.",
+            "Example: Always confirm airport transfers and baggage rules before booking."
+          ]
+        },
+        {
+          "title": "Check Hotel/Resort Details Carefully",
+          "paragraphs": [
+            "Room category, resort size, on-site amenities, and reviews can change your experience.",
+            "Example: A “partial ocean view” may not mean beachfront—verify photos and room descriptions."
+          ]
+        },
+        {
+          "title": "Compare Total Cost (Not Just Sticker Price)",
+          "paragraphs": [
+            "Account for taxes, resort fees, meals, baggage, and transportation.",
+            "Example: A cheaper package may cost more after adding meals and transfers."
+          ]
+        },
+        {
+          "title": "Know the Cancellation/Change Policy",
+          "paragraphs": [
+            "Read the fine print. Flexible policies can be worth paying a bit more for.",
+            "Example: Confirm deadlines for free changes and refund rules for cancellations."
+          ]
+        }
+      ],
+      "conclusion": [
+        "The best package is the one that fits your priorities and reduces planning friction—without unexpected costs.",
+        "If you’re unsure, short-list 2–3 options and compare inclusions side-by-side before deciding."
+      ]
+    },
+    "tags": [
+      "Destinations",
+      "Guides",
+      "Planning"
+    ]
   },
   {
     "id": 6,
     "title": "Explore Destinations Worldwide with Us",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img6.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/Why-Travel-Insurance-is-a-Must-Have-for-Every-Vacation-1024x572.png",
     "slug": "explore-destinations-worldwide-with-us",
     "content": "Join us on a journey to the most beautiful and exciting places on earth. Our mission is to inspire you to explore and discover the beauty of our planet. From pristine beaches to historic cities, there's always something new to see. Let's explore the world together.",
-    "tags": ["Explore", "Worldwide", "Discovery"]
+    "details": {
+      "intro": [
+        "The world is full of experiences that can change the way you see life—new cultures, landscapes, flavors, and friendships.",
+        "If you’re ready to explore, here’s a simple framework to plan a trip that feels exciting, safe, and unforgettable."
+      ],
+      "sections": [
+        {
+          "title": "Pick a Theme for Your Trip",
+          "paragraphs": [
+            "Themes make planning easier: beaches, food, history, nature, festivals, or a mix.",
+            "Example: A “food + culture” trip can be built around markets, local cooking classes, and neighborhood walks."
+          ]
+        },
+        {
+          "title": "Choose the Best Time to Go",
+          "paragraphs": [
+            "Weather, prices, and crowds vary a lot by season. Shoulder season often offers the best balance.",
+            "Example: Traveling just before peak season can save money and still deliver great weather."
+          ]
+        },
+        {
+          "title": "Build a Simple 3-Part Itinerary",
+          "paragraphs": [
+            "Plan 1–2 must-see activities, 1 local experience, and 1 rest day for every 3–4 days.",
+            "Example: This keeps your trip flexible while still feeling “full.”"
+          ]
+        },
+        {
+          "title": "Book the Big Pieces Early",
+          "paragraphs": [
+            "Flights, core accommodations, and any limited-capacity attractions should be booked ahead.",
+            "Example: Popular tours and peak travel dates sell out quickly."
+          ]
+        }
+      ],
+      "conclusion": [
+        "Exploring the world doesn’t require perfection—just a good plan and the willingness to be curious.",
+        "Start with one destination, keep your itinerary balanced, and let the journey do the rest."
+      ]
+    },
+    "tags": [
+      "Explore",
+      "Worldwide",
+      "Discovery"
+    ]
   },
   {
     "id": 7,
     "title": "Your Trusted Travel Guide for 2025",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img7.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/Why-Travel-Insurance-is-a-Must-Have-for-Every-Vacation-1024x572.png",
     "slug": "your-trusted-travel-guide-for-2025",
     "content": "In an ever-changing world, having a trusted source for travel information is more important than ever. As we look ahead to 2025, we're committed to providing you with the most up-to-date and reliable advice for all your travel needs. Trust us to be your companion on your next big adventure.",
-    "tags": ["Trust", "Guide", "2025"]
+    "details": {
+      "intro": [
+        "Travel in 2025 is full of opportunity—but also more variables: changing entry rules, airline policies, and cost fluctuations.",
+        "Use this guide as your foundation for planning smarter, traveling safer, and getting better value."
+      ],
+      "sections": [
+        {
+          "title": "Start With the Essentials: Documents & Rules",
+          "paragraphs": [
+            "Always confirm passport validity, visa/eTA needs, and entry requirements before booking non-refundable travel.",
+            "Example: Some countries require proof of onward travel or travel insurance at entry."
+          ]
+        },
+        {
+          "title": "Book With Flexibility in Mind",
+          "paragraphs": [
+            "Prioritize refundable or changeable options when possible. If not, protect your trip with insurance.",
+            "Example: A slightly higher fare may save you more if plans shift."
+          ]
+        },
+        {
+          "title": "Balance Your Itinerary",
+          "paragraphs": [
+            "Avoid overplanning. A good rhythm is: explore, explore, rest—repeat.",
+            "Example: Leave buffer time for delays, weather, and spontaneous experiences."
+          ]
+        },
+        {
+          "title": "Smart Budgeting",
+          "paragraphs": [
+            "Split your budget into fixed costs (flight/hotel), daily costs (food/transport), and experience costs (tours/activities).",
+            "Example: Tracking expenses by category helps prevent overspending early in the trip."
+          ]
+        }
+      ],
+      "conclusion": [
+        "A trusted travel guide isn’t about telling you where to go—it’s about helping you make better decisions before and during your trip.",
+        "Plan the essentials, stay flexible, and travel with confidence in 2025."
+      ]
+    },
+    "tags": [
+      "Trust",
+      "Guide",
+      "2025"
+    ]
   },
   {
     "id": 8,
     "title": "Where Every Journey Begins: Tips",
     "date": "15 May 2025",
     "author": "Liam Anderson",
-    "image": "/assets/images/blog/grid/img8.png",
+    "comments": "No Comments",
+    "image": "/assets/images/blog/Why-Travel-Insurance-is-a-Must-Have-for-Every-Vacation-1024x572.png",
     "slug": "where-every-journey-begins-tips",
     "content": "The start of a journey is always a mix of excitement and anticipation. To ensure a smooth start, it's essential to be well-prepared. From packing efficiently to understanding local customs, our top travel tips will help you hit the ground running wherever your journey takes you.",
-    "tags": ["Tips", "Preparation", "Travel"]
+    "details": {
+      "intro": [
+        "The start of a journey is always a mix of excitement and anticipation. A few small habits can make your trip smoother from day one.",
+        "Use these practical tips before departure and during your first 24 hours in a new destination."
+      ],
+      "sections": [
+        {
+          "title": "Plan Your First Day (Lightly)",
+          "paragraphs": [
+            "Keep day one simple: check-in, a good meal, and a short walk. Save big activities for day two.",
+            "Example: Jet lag hits differently—give yourself time to adapt."
+          ]
+        },
+        {
+          "title": "Pack a “First Night” Kit",
+          "paragraphs": [
+            "In your carry-on, pack essentials: charger, toiletries, medication, and one change of clothes.",
+            "Example: If luggage is delayed, you’ll still be comfortable."
+          ]
+        },
+        {
+          "title": "Keep Documents Easy to Access",
+          "paragraphs": [
+            "Store passport, insurance, and booking confirmations in one place (digital + printed).",
+            "Example: Save screenshots of key reservations in case you lose internet access."
+          ]
+        },
+        {
+          "title": "Learn 5 Local Phrases",
+          "paragraphs": [
+            "Hello, thank you, please, excuse me, and help are enough to improve interactions instantly.",
+            "Example: Even basic effort often gets you better service and friendlier conversations."
+          ]
+        },
+        {
+          "title": "Stay Aware (Not Anxious)",
+          "paragraphs": [
+            "Know the common scams in your destination, avoid flashing valuables, and use reputable transport options.",
+            "Example: Keep a small amount of cash separate for quick purchases."
+          ]
+        }
+      ],
+      "conclusion": [
+        "Great trips start with simple preparation and realistic pacing. The goal is not perfection—it’s ease.",
+        "Once you’ve got the basics covered, you can focus on the best part: experiencing somewhere new."
+      ]
+    },
+    "tags": [
+      "Tips",
+      "Preparation",
+      "Travel"
+    ]
   }
 ]

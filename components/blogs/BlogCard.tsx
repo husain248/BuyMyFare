@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { Calendar, MessageCircle } from "lucide-react";
 
 interface BlogCardProps {
   blog: {
     id: number;
     title: string;
     date: string;
+    comments: string;
     author: string;
     image: string;
     slug: string;
@@ -36,12 +38,15 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
               {blog.title}
             </Link>
           </h4>
-          <ul>
-            <li className="xl:text-base text-sm pe-2.5 inline-block relative before:absolute before:h-px before:w-2.5 before:left-0 before:top-1/2 before:-translate-y-1/2 first:before:hidden before:bg-bodycolor">
+          <ul className="flex items-center">
+            <li className="xl:text-base text-sm pe-2.5 relative before:absolute before:h-px before:w-2.5 before:left-0 before:top-1/2 before:-translate-y-1/2 first:before:hidden before:bg-bodycolor flex items-center gap-1">
+              <Calendar size={20} />
               {blog.date}
             </li>
-            <li className="xl:text-base text-sm ps-5 inline-block relative before:absolute before:h-px before:w-2.5 before:left-0 before:top-1/2 before:-translate-y-1/2 first:before:hidden before:bg-bodycolor">
-              By {blog.author}
+            <li className="xl:text-base text-sm ps-5 relative before:absolute before:h-px before:w-2.5 before:left-0 before:top-1/2 before:-translate-y-1/2 first:before:hidden before:bg-bodycolor flex items-center gap-1">
+              {/* By {blog.author} */}
+              <MessageCircle size={20} />
+              {blog.comments}
             </li>
           </ul>
         </div>
@@ -58,7 +63,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              className="stroke-secondary"
+              className="stroke-white"
               d="M7.5 17L17.5 7"
               stroke="black"
               strokeWidth="2"
@@ -66,7 +71,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
               strokeLinejoin="round"
             />
             <path
-              className="stroke-secondary"
+              className="stroke-white"
               d="M7.5 7H17.5V17"
               stroke="black"
               strokeWidth="2"

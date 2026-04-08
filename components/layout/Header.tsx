@@ -3,16 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
-
-const navRoutes = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about-us" },
-  { label: "Tour Packages", path: "/tour-packages" },
-  { label: "Ticket Booking", path: "/ticket-booking" },
-  { label: "Testimonials", path: "/testimonials" },
-  { label: "Blogs", path: "/blogs" },
-  { label: "Contact", path: "/contact" },
-];
+import { navRoutes } from "../../data/navigation";
 
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);

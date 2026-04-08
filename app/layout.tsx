@@ -80,66 +80,66 @@ export default function RootLayout({
           </div>
         </div>
 
-        {/* Vendor scripts loaded before interactive so template init fires correctly */}
+        {/* Vendor scripts loaded after hydration to avoid DOM mismatches */}
         <Script
           src="/assets/vendor/three/three.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/gsap/gsap.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/gsap/ScrollSmoother.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/SplitText/SplitText.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/gsap/ScrollTrigger.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/gsap/Draggable.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/gsap/InertiaPlugin.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/swiper/swiper-bundle.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/masonry/masonry-4.2.2.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/masonry/isotope.pkgd.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/imagesloaded/imagesloaded.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/xmenu/xmenu.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script
           src="/assets/vendor/hovereffect/hover-effect.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
-        <Script src="/assets/js/dz.carousel.js" strategy="beforeInteractive" />
-        <Script src="/assets/js/dz.ajax.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/dz.carousel.js" strategy="afterInteractive" />
+        <Script src="/assets/js/dz.ajax.js" strategy="afterInteractive" />
         <Script
           src="/assets/js/custom.carousel.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
-        <Script src="/assets/js/animation.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/animation.js" strategy="afterInteractive" />
 
         {/* custom.js loaded via ScriptInitializer (client component) so onLoad can be used */}
       </body>

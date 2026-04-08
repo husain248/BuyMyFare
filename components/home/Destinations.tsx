@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { homeDestinations } from "../../data/home-destinations";
 
 export default function Destinations() {
   return (
@@ -27,14 +28,7 @@ export default function Destinations() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {[
-            { title: "Dubai", img: "/assets/images/dubai.png" },
-            { title: "Mexico", img: "/assets/images/maxico.png" },
-            {
-              title: "Europe",
-              img: "/assets/images/europe.png",
-            },
-          ].map((d) => (
+          {homeDestinations.map((d) => (
             <Link
               key={d.title}
               href="/"

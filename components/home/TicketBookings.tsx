@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { homeTicketBookings } from "../../data/home-ticket-bookings";
 
 // Extend the Window interface to include Masonry
 declare global {
@@ -50,24 +51,7 @@ export default function TicketBookings() {
             </p>
           </div>
 
-          {[
-            {
-              img: "img1.png",
-              title: "Vancouver to Mumbai",
-              tag: "One-Way Trip",
-            },
-            {
-              img: "img2.png",
-              title: "Vancouver to Delhi",
-              tag: "One-Way Trip",
-            },
-            { img: "img3.png", title: "Calgary to Seattle", tag: "Round Trip" },
-            {
-              img: "img4.png",
-              title: "Calgary to Las Vegas",
-              tag: "Round Trip",
-            },
-          ].map((ticket, idx) => (
+          {homeTicketBookings.map((ticket, idx) => (
             <div className="card-container xl:w-1/2 w-full mb-5" key={idx}>
               <div className="relative z-1 p-2.5 h-full duration-200 bg-white rounded-2xl md:flex group">
                 <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-full sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
