@@ -8,6 +8,7 @@ import { navRoutes } from "../../data/navigation";
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, x: 0 });
   const pathname = usePathname();
 
@@ -18,42 +19,28 @@ export default function Header() {
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsFixed(window.scrollY > 100);
-    };
-
+    const handleScroll = () => setIsFixed(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check on mount
-
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Sync indicator with active link or hover
   const updateIndicator = (el: HTMLElement | null) => {
     if (el && navRef.current) {
       const rect = el.getBoundingClientRect();
       const navRect = navRef.current.getBoundingClientRect();
-      setIndicatorStyle({
-        width: rect.width,
-        x: rect.left - navRect.left,
-      });
+      setIndicatorStyle({ width: rect.width, x: rect.left - navRect.left });
     }
   };
 
   useEffect(() => {
-    // Find active link on load/route change
-    const activeRouteIdx = navRoutes.findIndex(
-      (route) => route.path === pathname,
-    );
+    const activeRouteIdx = navRoutes.findIndex((r) => r.path === pathname);
     if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
       updateIndicator(linkRefs.current[activeRouteIdx]);
     }
   }, [pathname]);
 
-  // Close menu on route change
-  useEffect(() => {
-    closeMenu();
-  }, [pathname]);
+  useEffect(() => { closeMenu(); }, [pathname]);
 
   return (
     <header
@@ -61,29 +48,18 @@ export default function Header() {
     >
       <div className="main-bar relative lg:text-white text-secondary w-full">
         <div className="container max-w-8xl flex items-center">
-          {/* Website Logo */}
-          <div
-            className="flex items-center align-middle me-2 logo-dark"
-            style={{ width: "200px" }}
-          >
-            <Link
-              aria-label="Go to homepage"
-              href="/"
-              className="table-cell align-middle"
-            >
-              <img
-                src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png"
-                alt="logo"
-                className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden"
-              />
-              <img
-                src="/assets/images/Buy-My-Fare-Logo.png"
-                alt=""
-                className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden"
-              />
+
+          {/* Logo */}
+          <div className="flex items-center align-middle me-2 logo-dark" style={{ width: "200px" }}>
+            <Link aria-label="Go to homepage" href="/" className="table-cell align-middle">
+              <img src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png" alt="logo"
+                className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden" />
+              <img src="/assets/images/Buy-My-Fare-Logo.png" alt=""
+                className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden" />
             </Link>
           </div>
 
+          {/* Mobile hamburger */}
           <button
             aria-label="Open menu"
             className="xmenu-toggler lg:hidden float-right sm:mt-4.5 sm:mb-4 sm:ml-7 ml-4 my-2.5 size-11 bg-white rounded-md relative cursor-pointer max-lg:order-1 [.sticky-header-wrapper.is-fixed_&]:bg-secondary"
@@ -94,39 +70,30 @@ export default function Header() {
             <span className="block absolute left-2.5 h-0.5 rounded-px bg-secondary [.sticky-header-wrapper.is-fixed_&]:bg-white duration-0 top-5.5 w-6.25"></span>
             <span className="block absolute left-2.5 h-0.5 rounded-px bg-secondary [.sticky-header-wrapper.is-fixed_&]:bg-white duration-300 top-8 w-4"></span>
           </button>
+
+          {/* Mobile overlay */}
           <div
             className={`lg:hidden fixed top-0 left-0 bg-black size-full duration-300 z-999 menu-close fade-overlay ${isOpen ? "opacity-60 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
             onClick={closeMenu}
-          ></div>
+          />
 
+          {/* Nav drawer */}
           <div
             className="flex lg:basis-auto lg:mx-auto max-lg:flex-col lg:justify-center justify-start lg:items-center max-lg:fixed max-lg:h-screen max-lg:px-5 max-lg:top-0 max-lg:z-9999 max-lg:w-72 max-lg:overflow-auto max-lg:duration-700 header-nav custom-scroll lg:rounded-6xl lg:bg-secondary/40 bg-white p-1.5"
-            style={{
-              left: isOpen ? "0" : "-300px",
-              transition: "left 0.4s ease",
-            }}
+            style={{ left: isOpen ? "0" : "-300px", transition: "left 0.4s ease" }}
           >
             <div className="flex items-center relative z-9 py-6.25 lg:hidden w-33.75 h-15.25">
-              <Link
-                aria-label="Go to homepage"
-                href="/"
-                className="table-cell align-middle"
-                onClick={closeMenu}
-              >
-                <img
-                  src="/assets/images/Buy-My-Fare-Logo.png"
-                  alt=""
-                  className="object-contain duration-500"
-                />
+              <Link aria-label="Go to homepage" href="/" className="table-cell align-middle" onClick={closeMenu}>
+                <img src="/assets/images/Buy-My-Fare-Logo.png" alt="" className="object-contain duration-500" />
               </Link>
             </div>
+
             <ul
               ref={navRef}
               className="lg:flex flex-wrap navbar-nav nav-wrapper relative"
               onMouseLeave={() => {
-                const activeRouteIdx = navRoutes.findIndex(
-                  (route) => route.path === pathname,
-                );
+                setHoveredIdx(null);
+                const activeRouteIdx = navRoutes.findIndex((r) => r.path === pathname);
                 if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
                   updateIndicator(linkRefs.current[activeRouteIdx]);
                 } else {
@@ -134,6 +101,7 @@ export default function Header() {
                 }
               }}
             >
+              {/* Sliding indicator pill */}
               <li
                 className="nav-indicator"
                 style={{
@@ -150,22 +118,43 @@ export default function Header() {
                   visibility: indicatorStyle.width > 0 ? "visible" : "hidden",
                   opacity: indicatorStyle.width > 0 ? 1 : 0,
                 }}
-              ></li>
+              />
+
               {navRoutes.map((route, idx) => {
                 const isActive = pathname === route.path;
+                const isHovered = hoveredIdx === idx;
+
+                // Desktop color logic:
+                // - Hovered item → text-secondary (sits on white pill)
+                // - Active item → text-secondary ONLY when nothing is hovered
+                // - All other items → text-white (or text-secondary when header is fixed)
+                const desktopTextColor =
+                  isHovered
+                    ? "lg:text-secondary"
+                    : isActive && hoveredIdx === null
+                      ? isFixed ? "lg:text-secondary" : "lg:text-secondary"
+                      : isFixed
+                        ? "lg:text-secondary"
+                        : "lg:text-white";
+
                 return (
                   <li
                     key={idx}
                     className="lg:inline-block block max-lg:border-b max-lg:border-gray-200 group relative z-1"
                   >
                     <Link
-                      ref={(el) => {
-                        linkRefs.current[idx] = el;
-                      }}
-                      className={`lg:py-2.5 py-2 xl:px-4 lg:px-2 relative z-1 lg:inline-block block xl:text-base text-2sm leading-none! font-medium rounded-8xl transition-all duration-300 nav-link ${isActive || isFixed ? "text-secondary active" : "text-white"} lg:group-hover:text-secondary`}
+                      ref={(el) => { linkRefs.current[idx] = el; }}
+                      className={`lg:py-2.5 py-2 xl:px-4 lg:px-2 relative z-1 lg:inline-block block xl:text-base text-2sm leading-none! font-medium rounded-8xl transition-all duration-300 nav-link
+                        ${desktopTextColor}
+                        max-lg:text-secondary
+                        ${isActive ? "active" : ""}
+                      `}
                       href={route.path}
                       onClick={closeMenu}
-                      onMouseEnter={(e) => updateIndicator(e.currentTarget)}
+                      onMouseEnter={(e) => {
+                        setHoveredIdx(idx);
+                        updateIndicator(e.currentTarget);
+                      }}
                     >
                       <span className="inline-block lg:leading-5 leading-7.5">
                         {route.label}
@@ -175,48 +164,27 @@ export default function Header() {
                 );
               })}
             </ul>
+
+            {/* Mobile social icons */}
             <div className="lg:hidden block max-lg:p-5 text-center mt-auto">
               <ul>
-                <li className="inline-block mx-0.5">
-                  <a
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                    className="size-10 leading-10! border border-black/10 text-center text-secondary hover:bg-primary hover:border-primary fab fa-facebook-f"
-                    target="_blank"
-                    href="/"
-                  ></a>
-                </li>
-                <li className="inline-block mx-0.5">
-                  <a
-                    rel="noopener noreferrer"
-                    aria-label="Twitter"
-                    className="size-10 leading-10! border border-black/10 text-center text-secondary hover:bg-primary hover:border-primary fab fa-twitter"
-                    target="_blank"
-                    href="/"
-                  ></a>
-                </li>
-                <li className="inline-block mx-0.5">
-                  <a
-                    rel="noopener noreferrer"
-                    aria-label="Linkedin"
-                    className="size-10 leading-10! border border-black/10 text-center text-secondary hover:bg-primary hover:border-primary fab fa-linkedin-in"
-                    target="_blank"
-                    href="/"
-                  ></a>
-                </li>
-                <li className="inline-block mx-0.5">
-                  <a
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="size-10 leading-10! border border-black/10 text-center text-secondary hover:bg-primary hover:border-primary fab fa-instagram"
-                    target="_blank"
-                    href="/"
-                  ></a>
-                </li>
+                {[
+                  { label: "Facebook", icon: "fab fa-facebook-f" },
+                  { label: "Twitter", icon: "fab fa-twitter" },
+                  { label: "Linkedin", icon: "fab fa-linkedin-in" },
+                  { label: "Instagram", icon: "fab fa-instagram" },
+                ].map(({ label, icon }) => (
+                  <li key={label} className="inline-block mx-0.5">
+                    <a rel="noopener noreferrer" aria-label={label}
+                      className={`size-10 leading-10! border border-black/10 text-center text-secondary hover:bg-primary hover:border-primary ${icon}`}
+                      target="_blank" href="/" />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
+          {/* CTA button */}
           <div className="extra-nav flex items-center h-12.5 3xl:pl-7.5 max-lg:ms-auto">
             <div className="flex items-center w-full">
               <ul className="lg:ml-5 sm:ml-3.75 flex items-center gap-5 w-full justify-between">
@@ -228,6 +196,7 @@ export default function Header() {
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </header>
