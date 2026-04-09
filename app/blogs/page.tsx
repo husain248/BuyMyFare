@@ -1,4 +1,3 @@
-import React from "react";
 import BlogBanner from "../../components/blogs/BlogBanner";
 import BlogGrid from "../../components/blogs/BlogGrid";
 import blogsData from "../../data/blogs.json";

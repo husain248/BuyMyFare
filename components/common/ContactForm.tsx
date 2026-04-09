@@ -79,7 +79,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

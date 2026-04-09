@@ -9,8 +9,8 @@ interface TicketCardProps {
 
 const TicketCard: React.FC<TicketCardProps> = ({ type, destination, price, image }) => {
   return (
-    <div className="relative tour-card group cursor-pointer overflow-hidden rounded-xxl">
-      <div className="relative overflow-hidden before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60 before:z-1">
+    <div className="relative tour-card group cursor-pointer overflow-hidden rounded-xxl h-full">
+      <div className="relative overflow-hidden before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60 before:z-1 h-full min-h-[260px]">
         <img
           src={image}
           alt={destination}

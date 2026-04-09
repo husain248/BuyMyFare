@@ -3,8 +3,6 @@ import Link from "next/link";
 import { tourPackages } from "../../data/tour-packages";
 
 function page() {
-  const packages = tourPackages;
-
   return (
     <>
       <div
@@ -37,7 +35,7 @@ function page() {
             </h2>
           </div>
           <div className="grid grid-cols-12 gap-8">
-            {packages.map((pkg, index) => (
+            {tourPackages.map((pkg, index) => (
               <div key={index} className="xl:col-span-6 col-span-12">
                 <div className="relative z-1 p-2.5 h-full duration-200 bg-[#F4F4F4] rounded-2xl md:flex group">
                   <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-full sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
