@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { homeBlogHighlights } from "../../data/home-blog-highlights";
+import blogsData from "../../data/blogs.json";
+import { Calendar, MessageCircle } from "lucide-react";
 
 export default function Blog() {
+  const blogs = blogsData.slice(0, 3);
+
   return (
     <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 relative z-1 bg-light">
       <div className="container relative z-1 max-w-7xl">
@@ -38,50 +41,46 @@ export default function Blog() {
             </div>
           </div>
           <div className="lg:w-2/3 w-full">
-            {homeBlogHighlights.map((blog, idx) => (
+            {blogs.map((blog) => (
               <div
-                className="relative z-1 duration-200 md:flex group mb-5 bg-white rounded-xxl"
-                key={idx}
+                className="relative z-1 duration-200 md:flex group mb-5 bg-white rounded-xxl overflow-hidden"
+                key={blog.id}
               >
                 <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-auto sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
                   <img
-                    src={`/assets/images/${blog.img}`}
-                    alt=""
+                    src={blog.image}
+                    alt={blog.title}
                     className="size-full object-cover"
                   />
                 </div>
-                <div className="md:ps-7.5 p-2.5 py-5 relative flex flex-col">
+                <div className="md:ps-7.5 p-2.5 py-5 relative flex flex-col w-full">
                   <div className="mb-2.5 flex-1">
                     <span className="rounded-2lg text-sm font-normal px-2.5 py-1.25 bg-[#EBEBEB] text-secondary inline-block mb-3">
-                      {blog.tag}
+                      {blog.tags[0] || "Travel"}
                     </span>
-                    <h3 className="xl:text-3xl text-xl font-medium mb-2.5 uppercase">
-                      <Link href="/blog-details">{blog.title}</Link>
+                    <h3 className="xl:text-3xl text-xl font-medium mb-2.5 uppercase hover:text-primary transition-colors">
+                      <Link href={`/blogs/${blog.slug}`}>{blog.title}</Link>
                     </h3>
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center gap-2.5">
-                      <img
-                        src={`/assets/images/avatar/${blog.thumb}`}
-                        alt=""
-                        className="size-10 rounded-full"
-                      />
-                      <ul className="flex items-center gap-2.5">
-                        <li className="text-base text-black/40 ">
-                          By{" "}
-                          <Link href="/blog-details" className="text-black">
-                            Admin
-                          </Link>
+
+                      <ul className="flex flex-wrap items-center gap-x-2.5">
+                        <li className="text-sm md:text-base text-black/40 flex items-center gap-1">
+                          <MessageCircle size={20} />
+                          {blog.comments}
                         </li>
-                        <li className="text-base text-black/40 ">
-                          | January 26, 2025{" "}
+                        <li className="text-sm md:text-base text-black/40 hidden sm:flex items-center gap-1">
+                          |
+                          <Calendar size={20} />
+                          {blog.date}
                         </li>
                       </ul>
                     </div>
                     <Link
-                      href="/"
+                      href={`/blogs/${blog.slug}`}
                       aria-label="Read blog post"
-                      className="size-12.5 flex items-center justify-center rounded-full bg-primary"
+                      className="size-12.5 flex items-center justify-center rounded-full bg-primary hover:bg-secondary transition-colors group/btn"
                     >
                       <svg
                         width="24"
@@ -89,17 +88,18 @@ export default function Blog() {
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
                       >
                         <path
                           d="M7 17L17 7"
-                          stroke="black"
+                          className="group-hover/btn:stroke-white stroke-black transition-colors"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                         <path
                           d="M7 7H17V17"
-                          stroke="black"
+                          className="group-hover/btn:stroke-white stroke-black transition-colors"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -116,3 +116,4 @@ export default function Blog() {
     </section>
   );
 }
+
