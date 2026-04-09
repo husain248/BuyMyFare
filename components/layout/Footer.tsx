@@ -23,9 +23,6 @@ export default function Footer() {
                     alt="BuyMyFare"
                     className="h-20 w-auto object-contain"
                   />
-                  <span className="block text-primary text-sm mt-1">
-                    where memories begin
-                  </span>
                 </Link>
                 <p className="text-white/80 text-base leading-relaxed mb-7 max-w-lg">
                   Bringing the world closer to you with personalized travel

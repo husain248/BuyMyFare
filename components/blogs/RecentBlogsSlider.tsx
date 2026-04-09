@@ -12,12 +12,13 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) =
     .slice(0, 6);
 
   useEffect(() => {
+    let swiperInstance: any = null;
     if (
       typeof window !== "undefined" &&
       (window as any).Swiper &&
       swiperRef.current
     ) {
-      new (window as any).Swiper(swiperRef.current, {
+      swiperInstance = new (window as any).Swiper(swiperRef.current, {
         speed: 1500,
         slidesPerView: 1,
         spaceBetween: 30,
@@ -35,6 +36,12 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) =
         },
       });
     }
+
+    return () => {
+      if (swiperInstance && typeof swiperInstance.destroy === 'function') {
+        swiperInstance.destroy(true, true);
+      }
+    };
   }, []);
 
   return (

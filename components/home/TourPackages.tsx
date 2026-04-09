@@ -8,13 +8,14 @@ export default function TourPackages() {
   const swiperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let swiperInstance: any = null;
     // Check if Swiper is loaded globally from the layout script
     if (
       typeof window !== "undefined" &&
       (window as any).Swiper &&
       swiperRef.current
     ) {
-      new (window as any).Swiper(swiperRef.current, {
+      swiperInstance = new (window as any).Swiper(swiperRef.current, {
         speed: 1500,
         parallax: true,
         slidesPerView: 1,
@@ -65,18 +66,18 @@ export default function TourPackages() {
           targetY = e.clientY - rect.top;
         };
 
-        card.addEventListener("mouseenter", (e: MouseEvent) => {
+        const onMouseEnter = (e: MouseEvent) => {
           updateTarget(e);
           badge.classList.add("is-active");
 
           if (!rafId) {
             rafId = requestAnimationFrame(animate);
           }
-        });
+        };
 
-        card.addEventListener("mousemove", updateTarget);
+        const onMouseMove = (e: MouseEvent) => updateTarget(e);
 
-        card.addEventListener("mouseleave", () => {
+        const onMouseLeave = () => {
           badge.classList.remove("is-active");
 
           if (rafId) {
@@ -87,9 +88,19 @@ export default function TourPackages() {
           x = 0;
           y = 0;
           badge.style.transform = "";
-        });
+        };
+
+        card.addEventListener("mouseenter", onMouseEnter);
+        card.addEventListener("mousemove", onMouseMove);
+        card.addEventListener("mouseleave", onMouseLeave);
       });
     }
+
+    return () => {
+      if (swiperInstance && typeof swiperInstance.destroy === "function") {
+        swiperInstance.destroy(true, true);
+      }
+    };
   }, []);
 
   return (

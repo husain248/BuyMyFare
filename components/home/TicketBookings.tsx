@@ -13,12 +13,18 @@ declare global {
 
 export default function TicketBookings() {
   useEffect(() => {
+    let msnry: any = null;
     if (typeof window !== "undefined" && window.Masonry) {
       const elem = document.getElementById("masonry");
       if (elem) {
-        new window.Masonry(elem, { percentPosition: true });
+        msnry = new window.Masonry(elem, { percentPosition: true });
       }
     }
+    return () => {
+      if (msnry && typeof msnry.destroy === 'function') {
+        msnry.destroy();
+      }
+    };
   }, []);
 
   return (
@@ -27,6 +33,7 @@ export default function TicketBookings() {
         <div
           className="row"
           id="masonry"
+          suppressHydrationWarning
           data-masonry='{"percentPosition": true}'
         >
           <div className="grid-sizer w-1/12"></div>

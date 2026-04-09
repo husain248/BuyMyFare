@@ -11,13 +11,16 @@ export default function Feedback() {
   const loopThumbTestimonials = repeatTestimonials(homeTestimonials, 2);
 
   useEffect(() => {
+    let swiperThumb: any = null;
+    let swiperMain: any = null;
+
     if (
       typeof window !== "undefined" &&
       (window as any).Swiper &&
       thumbSwiperRef.current &&
       mainSwiperRef.current
     ) {
-      const swiperThumb = new (window as any).Swiper(thumbSwiperRef.current, {
+      swiperThumb = new (window as any).Swiper(thumbSwiperRef.current, {
         loop: true,
         spaceBetween: 4.5,
         slidesPerView: Math.min(4, homeTestimonials.length),
@@ -34,7 +37,7 @@ export default function Feedback() {
         },
       });
 
-      new (window as any).Swiper(mainSwiperRef.current, {
+      swiperMain = new (window as any).Swiper(mainSwiperRef.current, {
         loop: true,
         spaceBetween: 10,
         autoplay: {
@@ -45,6 +48,11 @@ export default function Feedback() {
         },
       });
     }
+
+    return () => {
+      if (swiperThumb && typeof swiperThumb.destroy === 'function') swiperThumb.destroy(true, true);
+      if (swiperMain && typeof swiperMain.destroy === 'function') swiperMain.destroy(true, true);
+    };
   }, [homeTestimonials.length]);
 
   return (

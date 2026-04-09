@@ -20,9 +20,7 @@ export const businessHours: BusinessHour[] = [
 export type SocialLink = { icon: string; label: string; href: string };
 
 export const socialLinks: SocialLink[] = [
-  { icon: "fa-facebook-f", label: "Facebook", href: "#" },
-  { icon: "fa-x-twitter", label: "Twitter", href: "#" },
-  { icon: "fa-linkedin-in", label: "LinkedIn", href: "#" },
-  { icon: "fa-instagram", label: "Instagram", href: "#" },
+  { icon: "fa-facebook-f", label: "Facebook", href: "https://www.facebook.com/buymyfare" },
+  { icon: "fa-instagram", label: "Instagram", href: "https://www.instagram.com/buymyfare/" },
 ];
 

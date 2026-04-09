@@ -7,6 +7,7 @@ import { navRoutes } from "../../data/navigation";
 
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, x: 0 });
@@ -19,6 +20,7 @@ export default function Header() {
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setIsFixed(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -40,22 +42,37 @@ export default function Header() {
     }
   }, [pathname]);
 
-  useEffect(() => { closeMenu(); }, [pathname]);
+  useEffect(() => {
+    closeMenu();
+  }, [pathname]);
 
   return (
     <header
-      className={`site-header sticky-header-wrapper absolute top-0 left-0 w-full z-999 lg:pt-7.5 [.sticky-header-wrapper.is-fixed]:fixed [.sticky-header-wrapper.is-fixed]:bg-white lg:[.sticky-header-wrapper.is-fixed]:pb-4 lg:[.sticky-header-wrapper.is-fixed]:pt-4 [.sticky-header-wrapper.is-fixed]:animate-headerSlideDown ${isFixed ? "is-fixed" : ""}`}
+      suppressHydrationWarning
+      className={`site-header sticky-header-wrapper absolute top-0 left-0 w-full z-999 lg:pt-7.5 [.sticky-header-wrapper.is-fixed]:fixed [.sticky-header-wrapper.is-fixed]:bg-white lg:[.sticky-header-wrapper.is-fixed]:pb-4 lg:[.sticky-header-wrapper.is-fixed]:pt-4 [.sticky-header-wrapper.is-fixed]:animate-headerSlideDown ${mounted && isFixed ? "is-fixed" : ""}`}
     >
       <div className="main-bar relative lg:text-white text-secondary w-full">
         <div className="container max-w-8xl flex items-center">
-
           {/* Logo */}
-          <div className="flex items-center align-middle me-2 logo-dark" style={{ width: "200px" }}>
-            <Link aria-label="Go to homepage" href="/" className="table-cell align-middle">
-              <img src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png" alt="logo"
-                className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden" />
-              <img src="/assets/images/Buy-My-Fare-Logo.png" alt=""
-                className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden" />
+          <div
+            className="flex items-center align-middle me-2 logo-dark"
+            style={{ width: "200px" }}
+          >
+            <Link
+              aria-label="Go to homepage"
+              href="/"
+              className="table-cell align-middle"
+            >
+              <img
+                src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png"
+                alt="logo"
+                className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden"
+              />
+              <img
+                src="/assets/images/Buy-My-Fare-Logo.png"
+                alt=""
+                className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden"
+              />
             </Link>
           </div>
 
@@ -80,11 +97,23 @@ export default function Header() {
           {/* Nav drawer */}
           <div
             className="flex lg:basis-auto lg:mx-auto max-lg:flex-col lg:justify-center justify-start lg:items-center max-lg:fixed max-lg:h-screen max-lg:px-5 max-lg:top-0 max-lg:z-9999 max-lg:w-72 max-lg:overflow-auto max-lg:duration-700 header-nav custom-scroll lg:rounded-6xl lg:bg-secondary/40 bg-white p-1.5"
-            style={{ left: isOpen ? "0" : "-300px", transition: "left 0.4s ease" }}
+            style={{
+              left: isOpen ? "0" : "-300px",
+              transition: "left 0.4s ease",
+            }}
           >
             <div className="flex items-center relative z-9 py-6.25 lg:hidden w-33.75 h-15.25">
-              <Link aria-label="Go to homepage" href="/" className="table-cell align-middle" onClick={closeMenu}>
-                <img src="/assets/images/Buy-My-Fare-Logo.png" alt="" className="object-contain duration-500" />
+              <Link
+                aria-label="Go to homepage"
+                href="/"
+                className="table-cell align-middle"
+                onClick={closeMenu}
+              >
+                <img
+                  src="/assets/images/Buy-My-Fare-Logo.png"
+                  alt=""
+                  className="object-contain duration-500"
+                />
               </Link>
             </div>
 
@@ -93,7 +122,9 @@ export default function Header() {
               className="lg:flex flex-wrap navbar-nav nav-wrapper relative"
               onMouseLeave={() => {
                 setHoveredIdx(null);
-                const activeRouteIdx = navRoutes.findIndex((r) => r.path === pathname);
+                const activeRouteIdx = navRoutes.findIndex(
+                  (r) => r.path === pathname,
+                );
                 if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
                   updateIndicator(linkRefs.current[activeRouteIdx]);
                 } else {
@@ -128,14 +159,15 @@ export default function Header() {
                 // - Hovered item → text-secondary (sits on white pill)
                 // - Active item → text-secondary ONLY when nothing is hovered
                 // - All other items → text-white (or text-secondary when header is fixed)
-                const desktopTextColor =
-                  isHovered
-                    ? "lg:text-secondary"
-                    : isActive && hoveredIdx === null
-                      ? isFixed ? "lg:text-secondary" : "lg:text-secondary"
-                      : isFixed
-                        ? "lg:text-secondary"
-                        : "lg:text-white";
+                const desktopTextColor = isHovered
+                  ? "lg:text-secondary"
+                  : isActive && hoveredIdx === null
+                    ? isFixed
+                      ? "lg:text-secondary"
+                      : "lg:text-secondary"
+                    : isFixed
+                      ? "lg:text-secondary"
+                      : "lg:text-white";
 
                 return (
                   <li
@@ -143,7 +175,9 @@ export default function Header() {
                     className="lg:inline-block block max-lg:border-b max-lg:border-gray-200 group relative z-1"
                   >
                     <Link
-                      ref={(el) => { linkRefs.current[idx] = el; }}
+                      ref={(el) => {
+                        linkRefs.current[idx] = el;
+                      }}
                       className={`lg:py-2.5 py-2 xl:px-4 lg:px-2 relative z-1 lg:inline-block block xl:text-base text-2sm leading-none! font-medium rounded-8xl transition-all duration-300 nav-link
                         ${desktopTextColor}
                         max-lg:text-secondary
@@ -169,15 +203,25 @@ export default function Header() {
             <div className="lg:hidden block max-lg:p-5 text-center mt-auto">
               <ul>
                 {[
-                  { label: "Facebook", icon: "fab fa-facebook-f" },
-                  { label: "Twitter", icon: "fab fa-twitter" },
-                  { label: "Linkedin", icon: "fab fa-linkedin-in" },
-                  { label: "Instagram", icon: "fab fa-instagram" },
-                ].map(({ label, icon }) => (
+                  {
+                    label: "Facebook",
+                    icon: "fab fa-facebook-f",
+                    href: "https://www.facebook.com/buymyfare",
+                  },
+                  {
+                    label: "Instagram",
+                    icon: "fab fa-instagram",
+                    href: "https://www.instagram.com/buymyfare/",
+                  },
+                ].map(({ label, icon, href }) => (
                   <li key={label} className="inline-block mx-0.5">
-                    <a rel="noopener noreferrer" aria-label={label}
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={href}
+                      aria-label={label}
                       className={`size-10 leading-10! border border-black/10 text-center text-secondary hover:bg-primary hover:border-primary ${icon}`}
-                      target="_blank" href="/" />
+                    />
                   </li>
                 ))}
               </ul>
@@ -196,7 +240,6 @@ export default function Header() {
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </header>
