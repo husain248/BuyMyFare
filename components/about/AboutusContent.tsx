@@ -65,15 +65,15 @@ export default function AboutusContent() {
                 data-wow-delay="1s"
               >
                 <div className="-rotate-6 bg-white p-2.5 shadow-1">
-                    <Image
-                      src="/assets/images/about/img1.png"
-                      alt="About 1"
-                      width={450}
-                      height={350}
-                      className="w-full h-auto"
-                      style={{ height: "auto" }}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+                  <img
+                    src="/assets/images/about/img1.png"
+                    alt="About 1"
+                    width={450}
+                    height={350}
+                    className="w-full h-auto"
+                    style={{ height: "auto" }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
               <div
@@ -81,29 +81,29 @@ export default function AboutusContent() {
                 data-wow-delay="1s"
               >
                 <div className="rotate-2 bg-white p-2.5 shadow-1">
-                    <Image
-                      src="/assets/images/about/img2.png"
-                      alt="About 2"
-                      width={450}
-                      height={350}
-                      className="w-full h-auto"
-                      style={{ height: "auto" }}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+                  <img
+                    src="/assets/images/about/img2.png"
+                    alt="About 2"
+                    width={450}
+                    height={350}
+                    className="w-full h-auto"
+                    style={{ height: "auto" }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
               <div className="flex items-center justify-start -mt-12.5 relative">
                 <div className="rotate-6 bg-white p-2.5 shadow-1">
-                    <Image
-                      src="/assets/images/about/img3.png"
-                      alt="About 3"
-                      width={450}
-                      height={350}
-                      className="w-full h-auto wow fadeInUp"
-                      data-wow-delay="1s"
-                      style={{ height: "auto" }}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+                  <img
+                    src="/assets/images/about/img3.png"
+                    alt="About 3"
+                    width={450}
+                    height={350}
+                    className="w-full h-auto wow fadeInUp"
+                    data-wow-delay="1s"
+                    style={{ height: "auto" }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
             </div>

@@ -119,7 +119,7 @@ export default function TravelInsurance() {
                 data-wow-delay="1s"
               >
                 <div className="-rotate-6 bg-white p-2.5 shadow-1">
-                  <Image
+                  <img
                     src="/assets/images/travel-Insurance-banner-1.jpg"
                     alt="Travel Insurance 1"
                     width={400}
@@ -135,7 +135,7 @@ export default function TravelInsurance() {
                 data-wow-delay="1s"
               >
                 <div className="rotate-2 bg-white p-2.5 shadow-1">
-                  <Image
+                  <img
                     src="/assets/images/travel-Insurance-banner-2.jpg"
                     alt="Travel Insurance 2"
                     width={400}
@@ -148,7 +148,7 @@ export default function TravelInsurance() {
               </div>
               <div className="flex items-center justify-start -mt-12.5 relative">
                 <div className="rotate-6 bg-white p-2.5 shadow-1">
-                  <Image
+                  <img
                     src="/assets/images/travel-Insurance-banner-3.jpg"
                     alt="Travel Insurance 3"
                     width={400}
