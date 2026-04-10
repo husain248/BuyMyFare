@@ -28,7 +28,7 @@ export default function ContactSection() {
       <div className="relative">
         <div className="py-5 md:p-12 text-left relative overflow-hidden">
           <div
-            className="absolute inset-0 bg-no-repeat bg-bottom-right pointer-events-none z-0 opacity-50"
+            className="absolute inset-0 bg-no-repeat bg-bottom-right pointer-events-none z-0"
             style={{
               backgroundImage: "url(/assets/images/background/bg4.png)",
               backgroundSize: "cover",
@@ -39,9 +39,9 @@ export default function ContactSection() {
               <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center sm:text-left">
                 Contact Us Today
               </h3>
-              <ContactForm 
-                inputBgColor="bg-[#f2f2f2]" 
-                layoutClasses="md:grid-cols-3" 
+              <ContactForm
+                inputBgColor="bg-[#f2f2f2]"
+                layoutClasses="md:grid-cols-3"
               />
             </div>
           </div>
