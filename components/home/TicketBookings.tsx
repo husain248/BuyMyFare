@@ -82,15 +82,14 @@ export default function TicketBookings() {
           {homeTicketBookings.map((ticket, idx) => (
             <div className="card-container xl:w-1/2 w-full mb-5" key={idx}>
               <div className="relative z-1 p-2.5 h-full duration-200 bg-white rounded-2xl md:flex group">
-                <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-auto sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-10 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
+                <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-62.5 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-10 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
                   <Image
                     src={`/assets/images/tour/style2/${ticket.img}`}
                     alt={ticket.title}
-                    width={400}
-                    height={300}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
                     className="size-full object-cover relative z-1 transition-transform duration-500 group-hover:scale-110"
                     priority={idx < 2}
-                    style={{ width: "auto", height: "auto" }}
                   />
                   <span className="absolute top-5 left-5 rounded-3xl text-xs font-medium px-2.5 py-1.5 bg-green text-secondary z-20">
                     Hot Deal
