@@ -161,7 +161,7 @@ export default function TourPackages() {
                           style={{ height: "auto" }}
                         />
                       </div>
-                      <div className="absolute left-0 bottom-0 sm:p-7.5 p-4.5 flex items-center justify-between w-full">
+                      <div className="absolute left-0 bottom-0 sm:p-7.5 p-4.5 flex items-center justify-between w-full z-10">
                         <div className="flex-1">
                           <h3 className="text-2xxl font-medium text-white max-w-50 uppercase mb-2.5">
                             {tour.title}
