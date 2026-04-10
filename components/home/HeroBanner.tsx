@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { heroSlides } from "../../data/home-hero-slides";
@@ -25,15 +26,14 @@ export default function HeroBanner() {
     <div className="group relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-130 after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
       <div className="absolute inset-0">
         {heroSlides.map((item, index) => (
-          <img
+          <Image
             key={item.alt}
             src={item.image}
             alt={item.alt}
-            width={1920}
-            height={1000}
+            fill
+            sizes="100vw"
+            priority={index === 0}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
-            fetchPriority={index === currentSlide ? "high" : "auto"}
-            decoding="async"
           />
         ))}
       </div>

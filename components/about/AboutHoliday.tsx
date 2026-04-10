@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutHoliday() {
   return (
     <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 relative z-1 after:absolute after:bottom-0 lg:after:-left-55 after:left-0 after:size-full after:bg-no-repeat after:bg-bottom-left after:bg-[url('/assets/images/background/bg2.png')] after:-z-1 max-xl:after:bg-contain before:absolute before:top-0 before:right-0 before:size-full before:bg-no-repeat before:bg-top-right before:bg-[url('/assets/images/background/bg1.png')] before:-z-1">
@@ -19,11 +21,13 @@ export default function AboutHoliday() {
             <div className="row">
               <div className="lg:w-2/5 md:w-1/2 w-full mb-5">
                 <div className="p-5 rounded-2lg bg-[#F2EFEA]">
-                  <div className="relative overflow-hidden rounded-2lg">
-                    <img
+                  <div className="relative overflow-hidden rounded-2lg aspect-square">
+                    <Image
                       src="/assets/images/Tailored-Itineraries.jpg"
-                      alt=""
-                      className="size-full object-cover"
+                      alt="Tailored Itineraries"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
                     />
                   </div>
                   <div className="pb-2.5 pt-4 px-7.5 text-center">
@@ -39,11 +43,13 @@ export default function AboutHoliday() {
               </div>
               <div className="lg:w-2/5 md:w-1/2 w-full mb-5">
                 <div className="p-5 rounded-2lg bg-[#F2EFEA]">
-                  <div className="relative overflow-hidden rounded-2lg">
-                    <img
+                  <div className="relative overflow-hidden rounded-2lg aspect-square">
+                    <Image
                       src="/assets/images/tour/style3/img2.png"
-                      alt=""
-                      className="size-full object-cover"
+                      alt="Exclusive Deals"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
                     />
                   </div>
                   <div className="pb-2.5 pt-4 px-7.5 text-center">
@@ -62,11 +68,13 @@ export default function AboutHoliday() {
             <div className="row justify-end">
               <div className="lg:w-2/5 md:w-1/2 w-full mb-5">
                 <div className="p-5 rounded-2lg bg-[#F2EFEA]">
-                  <div className="relative overflow-hidden rounded-2lg">
-                    <img
+                  <div className="relative overflow-hidden rounded-2lg aspect-square">
+                    <Image
                       src="/assets/images/Round-the-Clock-Support.jpg"
-                      alt=""
-                      className="size-full object-cover"
+                      alt="Round-the-Clock Support"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
                     />
                   </div>
                   <div className="pb-2.5 pt-4 px-7.5 text-center">
@@ -82,11 +90,13 @@ export default function AboutHoliday() {
               </div>
               <div className="lg:w-2/5 md:w-1/2 w-full mb-5">
                 <div className="p-5 rounded-2lg bg-[#F2EFEA]">
-                  <div className="relative overflow-hidden rounded-2lg">
-                    <img
+                  <div className="relative overflow-hidden rounded-2lg aspect-square">
+                    <Image
                       src="/assets/images/tour/style3/img4.png"
-                      alt=""
-                      className="size-full object-cover"
+                      alt="Hassle-Free Service"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
                     />
                   </div>
                   <div className="pb-2.5 pt-4 px-7.5 text-center">

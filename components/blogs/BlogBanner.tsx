@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface BlogBannerProps {
@@ -12,11 +13,15 @@ const BlogBanner: React.FC<BlogBannerProps> = ({
   bgImage = "/assets/images/banner/bnr2.png",
 }) => {
   return (
-    <div
-      className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/40"
-      style={{ backgroundImage: `url('${bgImage}')` }}
-    >
-      <div className="container relative z-1 table h-full mx-auto">
+    <div className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative overflow-hidden before:absolute before:inset-0 before:bg-black/40 before:z-1">
+      <Image
+        src={bgImage}
+        alt="Banner"
+        fill
+        priority
+        className="object-cover"
+      />
+      <div className="container relative z-10 table h-full mx-auto">
         <div className="text-center py-15 table-cell align-middle 2xxl:h-125 lg:h-125 sm:h-100 h-75">
           <span
             className="text-white font-main"

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import blogsData from "../../data/blogs.json";
 import { Calendar, MessageCircle } from "lucide-react";
@@ -32,10 +33,13 @@ export default function Blog() {
                 <span className="text-secondary font-title font-semibold xl:text-3xxl text-2xxl">
                   70% Off
                 </span>
-                <img
+                <Image
                   src="/assets/images/star.png"
-                  alt=""
+                  alt="star"
+                  width={200}
+                  height={200}
                   className="absolute -z-1 animate-rotate xl:size-49 size-40"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </span>
             </div>
@@ -46,10 +50,12 @@ export default function Blog() {
                 className="relative z-1 duration-200 md:flex group mb-5 bg-white rounded-xxl overflow-hidden"
                 key={blog.id}
               >
-                <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-auto sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img
+                <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-auto sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-1 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
+                  <Image
                     src={blog.image}
                     alt={blog.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="size-full object-cover"
                   />
                 </div>

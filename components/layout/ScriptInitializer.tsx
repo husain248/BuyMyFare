@@ -17,8 +17,16 @@ function runInit() {
       w.plexifyCarouselAround();
   } catch {}
   try {
-    if (w.__plexifyGsapInstance && typeof w.__plexifyGsapInstance.applySticky === "function") {
-      w.__plexifyGsapInstance.applySticky();
+    if (w.__plexifyGsapInstance) {
+      if (typeof w.__plexifyGsapInstance.init === "function") {
+        w.__plexifyGsapInstance.init();
+      }
+      if (typeof w.__plexifyGsapInstance.applySticky === "function") {
+        w.__plexifyGsapInstance.applySticky();
+      }
+    }
+    if (w.ScrollSmoother) {
+      w.ScrollSmoother.get()?.refresh();
     }
   } catch {}
 }
@@ -28,8 +36,19 @@ export default function ScriptInitializer() {
 
   // Re-run init on every client-side route change
   useEffect(() => {
+    // Immediate cleanup before new page settles
+    if (typeof window !== "undefined") {
+      const w = window as any;
+      if (w.ScrollTrigger) {
+        w.ScrollTrigger.getAll().forEach((t: any) => t.revert());
+        w.ScrollTrigger.refresh();
+      }
+    }
+    
     const timer = setTimeout(runInit, 500);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [pathname]);
 
   // Load custom.js here (client component) so we can use onReady

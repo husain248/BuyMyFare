@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import PageBanner from "../../components/layout/PageBanner";
 import ContactInfo from "../../components/contact/ContactInfo";
@@ -21,10 +22,12 @@ function Page() {
                 className="lg:w-[50vw] w-full lg:float-right relative lg:mb-25 mb-7.5 lg:pe-12.5 wow clip-right-animation"
                 data-wow-delay="1s"
               >
-                <img
+                <Image
                   src="/assets/images/about/img13.png"
                   alt="Contact Us"
-                  className="w-full"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
                 />
               </div>
               <ContactInfo />

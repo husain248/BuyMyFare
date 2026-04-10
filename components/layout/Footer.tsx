@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { businessHours, footerLinks, socialLinks } from "../../data/footer";
 
@@ -18,10 +19,13 @@ export default function Footer() {
                   aria-label="Go to homepage"
                   className="inline-block mb-10"
                 >
-                  <img
+                  <Image
                     src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png"
                     alt="BuyMyFare"
+                    width={200}
+                    height={69}
                     className="h-20 w-auto object-contain"
+                    style={{ width: "auto" }}
                   />
                 </Link>
                 <p className="text-white/80 text-base leading-relaxed mb-7 max-w-lg">
@@ -89,10 +93,13 @@ export default function Footer() {
                   </li>
                 </ul>
                 <div className="mt-8">
-                  <img
+                  <Image
                     src="/assets/images/IATA-TIDS.png"
                     alt="TIDS IATA"
+                    width={150}
+                    height={100}
                     className="h-25 w-auto"
+                    style={{ width: "auto" }}
                   />
                 </div>
               </div>

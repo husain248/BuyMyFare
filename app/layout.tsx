@@ -133,13 +133,8 @@ export default function RootLayout({
           src="/assets/vendor/hovereffect/hover-effect.js"
           strategy="afterInteractive"
         />
-        <Script src="/assets/js/dz.carousel.js" strategy="afterInteractive" />
-        <Script src="/assets/js/dz.ajax.js" strategy="afterInteractive" />
-        <Script
-          src="/assets/js/custom.carousel.js"
-          strategy="afterInteractive"
-        />
         <Script src="/assets/js/animation.js" strategy="afterInteractive" />
+
 
         {/* custom.js loaded via ScriptInitializer (client component) so onLoad can be used */}
       </body>

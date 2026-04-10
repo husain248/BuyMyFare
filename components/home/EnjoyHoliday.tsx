@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { holidayActivities } from "../../data/home-enjoy-holiday";
 
 export default function EnjoyHoliday() {
@@ -25,10 +26,12 @@ export default function EnjoyHoliday() {
                 <div key={i} className="lg:w-2/5 md:w-1/2 w-full mb-5">
                   <div className="p-5 rounded-2lg bg-[#F2EFEA]">
                     <div className="relative overflow-hidden rounded-2lg">
-                      <img
+                      <Image
                         src={a.img}
                         alt={a.title}
-                        className="size-full object-cover"
+                        width={400}
+                        height={300}
+                        className="w-full h-auto object-cover"
                       />
                     </div>
                     <div className="pb-2.5 pt-4 px-7.5 text-center">
@@ -46,10 +49,12 @@ export default function EnjoyHoliday() {
                 <div key={i} className="lg:w-2/5 md:w-1/2 w-full mb-5">
                   <div className="p-5 rounded-2lg bg-[#F2EFEA]">
                     <div className="relative overflow-hidden rounded-2lg">
-                      <img
+                      <Image
                         src={a.img}
                         alt={a.title}
-                        className="size-full object-cover"
+                        width={400}
+                        height={300}
+                        className="w-full h-auto object-cover"
                       />
                     </div>
                     <div className="pb-2.5 pt-4 px-7.5 text-center">

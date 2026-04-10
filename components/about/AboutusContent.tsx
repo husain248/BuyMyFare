@@ -1,25 +1,29 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutusContent() {
   return (
     <section
       id="nextSection"
-      className="relative md:py-20 py-15 before:absolute before:top-0 before:right-[21%] before:bg-[#f5f2eb] before:w-[22.35%] before:h-full before:-z-1 max-lg:before:hidden after:absolute after:-bottom-47.5 lg:after:-left-72.5 after:left-0 after:size-full after:bg-no-repeat after:bg-bottom-left after:bg-[url(/assets/images/background/bg1.png)] after:-z-1"
+      className="relative md:py-20 py-15 before:absolute before:top-0 before:right-[21%] before:bg-[#f5f2eb] before:w-[22.35%] before:h-full before:-z-1 max-lg:before:hidden overflow-hidden"
     >
+      <div className="absolute -bottom-47.5 lg:-left-72.5 left-0 size-full -z-1 pointer-events-none">
+        <Image
+          src="/assets/images/background/bg1.png"
+          alt="background"
+          fill
+          className="object-contain object-left-bottom"
+        />
+      </div>
       <div className="container max-w-[1330px] relative z-1">
         <div className="row">
           <div className="lg:w-1/2 w-full">
             <div className="lg:pt-20 relative mb-10">
               <div className="sm:mb-10 mb-5">
-                {/* <span className="block lg:text-3xl sm:text-2xl text-xl leading-none font-semibold text-primary capitalize mb-2.5 font-main">
-                  Welcome to Buy My Fare{" "}
-                </span> */}
                 <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase">
                   Welcome to Buy My Fare
                 </h2>
-                <p className="mt-5">
+                <p className="mt-5 text-gray-700 leading-relaxed">
                   {" "}
                   At Buy My Fare, we believe that travel is more than just a
                   journey; it’s a collection of moments, stories, and
@@ -43,7 +47,7 @@ export default function AboutusContent() {
                     </span>
                   </div>
                 </div>
-                <p className="mt-5">
+                <p className="mt-5 text-gray-700 leading-relaxed">
                   {" "}
                   With this foundation, <strong>Buy My Fare</strong> was created
                   to make travel not only hassle-free but also purposeful. We
@@ -62,10 +66,12 @@ export default function AboutusContent() {
                 data-wow-delay="1s"
               >
                 <div className="-rotate-6 bg-white p-2.5 shadow-1">
-                  <img
+                  <Image
                     src="/assets/images/about/img1.png"
-                    alt=""
-                    className="w-full"
+                    alt="About 1"
+                    width={450}
+                    height={350}
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -74,19 +80,23 @@ export default function AboutusContent() {
                 data-wow-delay="1s"
               >
                 <div className="rotate-2 bg-white p-2.5 shadow-1">
-                  <img
+                  <Image
                     src="/assets/images/about/img2.png"
-                    alt=""
-                    className="w-full"
+                    alt="About 2"
+                    width={450}
+                    height={350}
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
               <div className="flex items-center justify-start -mt-12.5 relative">
                 <div className="rotate-6 bg-white p-2.5 shadow-1">
-                  <img
+                  <Image
                     src="/assets/images/about/img3.png"
-                    alt=""
-                    className="w-full wow fadeInUp"
+                    alt="About 3"
+                    width={450}
+                    height={350}
+                    className="w-full h-auto wow fadeInUp"
                     data-wow-delay="1s"
                   />
                 </div>

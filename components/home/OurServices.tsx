@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { homeServices } from "../../data/home-services";
 
@@ -23,12 +24,14 @@ export default function OurServices() {
               className="bg-[#f4f4f4] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="relative mb-6 overflow-hidden rounded-2xl aspect-4/3">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-4 left-4 bg-green text-black px-4 py-1.5 rounded-full text-sm font-medium">
+                <span className="absolute top-4 left-4 bg-green text-black px-4 py-1.5 rounded-full text-sm font-medium z-1">
                   {service.tag}
                 </span>
               </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { repeatTestimonials, testimonials } from "../../data/testimonials";
 
@@ -13,45 +14,64 @@ export default function Feedback() {
   useEffect(() => {
     let swiperThumb: any = null;
     let swiperMain: any = null;
+    let intervalId: any = null;
 
-    if (
-      typeof window !== "undefined" &&
-      (window as any).Swiper &&
-      thumbSwiperRef.current &&
-      mainSwiperRef.current
-    ) {
-      swiperThumb = new (window as any).Swiper(thumbSwiperRef.current, {
-        loop: true,
-        spaceBetween: 4.5,
-        slidesPerView: Math.min(4, homeTestimonials.length),
-        freeMode: true,
-        watchSlidesProgress: true,
-        direction: "horizontal",
-        autoplay: {
-          delay: 3000,
-        },
-        breakpoints: {
-          360: { slidesPerView: 3.9, direction: "horizontal" },
-          567: { slidesPerView: 4.9, direction: "horizontal" },
-          1199: { slidesPerView: 4.7, direction: "vertical" },
-        },
-      });
+    const initSwiper = () => {
+      if (
+        typeof window !== "undefined" &&
+        (window as any).Swiper &&
+        thumbSwiperRef.current &&
+        mainSwiperRef.current &&
+        !swiperMain
+      ) {
+        swiperThumb = new (window as any).Swiper(thumbSwiperRef.current, {
+          loop: true,
+          spaceBetween: 4.5,
+          slidesPerView: Math.min(4, homeTestimonials.length),
+          freeMode: true,
+          watchSlidesProgress: true,
+          direction: "horizontal",
+          autoplay: {
+            delay: 3000,
+          },
+          breakpoints: {
+            360: { slidesPerView: 3.9, direction: "horizontal" },
+            567: { slidesPerView: 4.9, direction: "horizontal" },
+            1199: { slidesPerView: 4.7, direction: "vertical" },
+          },
+        });
 
-      swiperMain = new (window as any).Swiper(mainSwiperRef.current, {
-        loop: true,
-        spaceBetween: 10,
-        autoplay: {
-          delay: 3000,
-        },
-        thumbs: {
-          swiper: swiperThumb,
-        },
-      });
+        swiperMain = new (window as any).Swiper(mainSwiperRef.current, {
+          loop: true,
+          spaceBetween: 10,
+          autoplay: {
+            delay: 3000,
+          },
+          thumbs: {
+            swiper: swiperThumb,
+          },
+        });
+
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      }
+    };
+
+    // Try immediately
+    initSwiper();
+
+    // If not ready, poll for Swiper
+    if (!(window as any).Swiper) {
+      intervalId = setInterval(initSwiper, 100);
     }
 
     return () => {
-      if (swiperThumb && typeof swiperThumb.destroy === 'function') swiperThumb.destroy(true, true);
-      if (swiperMain && typeof swiperMain.destroy === 'function') swiperMain.destroy(true, true);
+      if (intervalId) clearInterval(intervalId);
+      if (swiperThumb && typeof swiperThumb.destroy === "function")
+        swiperThumb.destroy(true, true);
+      if (swiperMain && typeof swiperMain.destroy === "function")
+        swiperMain.destroy(true, true);
     };
   }, [homeTestimonials.length]);
 
@@ -73,9 +93,11 @@ export default function Feedback() {
                 <div className="swiper-slide" key={t.id}>
                   <div className="flex items-center justify-between max-lg:flex-col max-lg:gap-5">
                     <div className="relative overflow-hidden rounded-full md:border-10 border-4 border-white md:min-w-78.75 md:size-78.75 sm:min-w-60 sm:size-60 min-w-40 size-40">
-                      <img
+                      <Image
                         src={t.image}
                         alt={t.name}
+                        fill
+                        sizes="(max-width: 768px) 160px, 315px"
                         className="size-full object-cover"
                       />
                     </div>
@@ -119,10 +141,12 @@ export default function Feedback() {
               {loopThumbTestimonials.map((t, idx) => (
                 <div className="swiper-slide" key={`${t.id}-${idx}`}>
                   <div className="relative overflow-hidden rounded-full size-15.25 min-w-15.25 border-[3px] border-transparent [.swiper-slide.swiper-slide-thumb-active_&]:border-[#E6E6E6]">
-                    <img
+                    <Image
                       src={t.image}
                       className="size-full object-cover"
                       alt={t.name}
+                      fill
+                      sizes="61px"
                     />
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutExplore() {
   return (
@@ -99,9 +100,11 @@ export default function AboutExplore() {
                 <span className="text-secondary font-title font-semibold xl:text-xl text-base">
                   DISCOUNT{" "}
                 </span>
-                <img
+                <Image
                   src="/assets/images/star.png"
-                  alt=""
+                  alt="Discount Background"
+                  width={200}
+                  height={200}
                   className="absolute -z-1 animate-rotate xl:size-49 size-40"
                 />
               </span>
@@ -114,10 +117,12 @@ export default function AboutExplore() {
                 data-wow-delay="1s"
               >
                 <div className="-rotate-6 bg-white p-2.5 shadow-1">
-                  <img
+                  <Image
                     src="/assets/images/about/img1.png"
-                    alt=""
-                    className="w-full"
+                    alt="Explore Image 1"
+                    width={400}
+                    height={500}
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -126,19 +131,23 @@ export default function AboutExplore() {
                 data-wow-delay="1s"
               >
                 <div className="rotate-2 bg-white p-2.5 shadow-1">
-                  <img
+                  <Image
                     src="/assets/images/about/img2.png"
-                    alt=""
-                    className="w-full"
+                    alt="Explore Image 2"
+                    width={400}
+                    height={500}
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
               <div className="flex items-center justify-start -mt-12.5 relative">
                 <div className="rotate-6 bg-white p-2.5 shadow-1">
-                  <img
+                  <Image
                     src="/assets/images/about/img3.png"
-                    alt=""
-                    className="w-full wow fadeInUp"
+                    alt="Explore Image 3"
+                    width={400}
+                    height={500}
+                    className="w-full h-auto wow fadeInUp"
                     data-wow-delay="1s"
                   />
                 </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, MessageCircle } from "lucide-react";
 
 interface BlogCardProps {
@@ -23,10 +24,12 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
             href={`/blogs/${blog.slug}`}
             className="dz-hover-img relative block"
           >
-            <img
+            <Image
               src={blog.image}
               alt={blog.title}
-              className="w-full duration-500 group-hover:scale-[1.03] group-hover:translate-x-0.75"
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover duration-500 group-hover:scale-[1.03]"
             />
           </Link>
         </div>

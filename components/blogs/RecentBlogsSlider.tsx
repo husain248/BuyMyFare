@@ -1,44 +1,64 @@
 "use client";
+
+import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import blogsData from "../../data/blogs.json";
 
-const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) => {
+const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({
+  currentSlug,
+}) => {
   const swiperRef = useRef<HTMLDivElement>(null);
 
   // Filter out the current blog and take the latest ones
-  const recentBlogs = blogsData
-    .filter((b) => b.slug !== currentSlug)
-    .slice(0, 6);
+  const recentBlogs = blogsData.filter((b) => b.slug !== currentSlug).slice(0, 6);
 
   useEffect(() => {
     let swiperInstance: any = null;
-    if (
-      typeof window !== "undefined" &&
-      (window as any).Swiper &&
-      swiperRef.current
-    ) {
-      swiperInstance = new (window as any).Swiper(swiperRef.current, {
-        speed: 1500,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
+    let intervalId: any = null;
+
+    const initSwiper = () => {
+      if (
+        typeof window !== "undefined" &&
+        (window as any).Swiper &&
+        swiperRef.current &&
+        !swiperInstance
+      ) {
+        swiperInstance = new (window as any).Swiper(swiperRef.current, {
+          speed: 1500,
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoplay: {
+            delay: 3000,
           },
-          1024: {
-            slidesPerView: 3,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
           },
-        },
-      });
+        });
+
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      }
+    };
+
+    // Try immediately
+    initSwiper();
+
+    // If not ready, poll for Swiper
+    if (!(window as any).Swiper) {
+      intervalId = setInterval(initSwiper, 100);
     }
 
     return () => {
-      if (swiperInstance && typeof swiperInstance.destroy === 'function') {
+      if (intervalId) clearInterval(intervalId);
+      if (swiperInstance && typeof swiperInstance.destroy === "function") {
         swiperInstance.destroy(true, true);
       }
     };
@@ -51,7 +71,9 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) =
           <h2 className="text-4xl font-bold uppercase headline mb-2">
             Related Posts
           </h2>
-          <p className="text-secondary/60">Discover more adventures from our blog</p>
+          <p className="text-secondary/60">
+            Discover more adventures from our blog
+          </p>
         </div>
 
         <div className="swiper recent-blog-swiper" ref={swiperRef}>
@@ -60,12 +82,14 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({ currentSlug }) =
               <div className="swiper-slide" key={blog.id}>
                 <div className="group blog-card-small bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
                   <div className="relative h-60 overflow-hidden">
-                    <img
+                    <Image
                       src={blog.image}
                       alt={blog.title}
+                      width={450}
+                      height={300}
                       className="w-full h-full object-cover duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute top-4 left-4 bg-primary text-secondary text-xs font-bold px-3 py-1 rounded-full">
+                    <div className="absolute top-4 left-4 bg-primary text-secondary text-xs font-bold px-3 py-1 rounded-full z-1">
                       {blog.date}
                     </div>
                   </div>

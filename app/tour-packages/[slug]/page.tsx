@@ -126,6 +126,7 @@
 
 "use client";
 
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { tourPackages } from "../../../data/tour-packages";
 
@@ -141,11 +142,15 @@ export default function TourDetails() {
 
   return (
     <>
-      <div
-        className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/20"
-        style={{ backgroundImage: "url('/assets/images/banner/bnr2.png')" }}
-      >
-        <div className="container relative z-1 table h-full">
+      <div className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative overflow-hidden before:absolute before:inset-0 before:bg-black/20 before:z-1">
+        <Image
+          src="/assets/images/banner/bnr2.png"
+          alt="Banner"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="container relative z-10 table h-full">
           <div className="text-center py-15 table-cell align-middle 2xxl:h-125 lg:h-125 sm:h-100 h-75">
             <span
               className="text-white font-main"
@@ -164,19 +169,20 @@ export default function TourDetails() {
         </div>
       </div>
       <div className="bg-white min-h-screen py-20">
-        <div className="container max-w-7xl mx-auto">
+        <div className="container max-w-7xl mx-auto px-4">
           {/* Title */}
-          <h1 className="text-4xl font-semibold mb-4">{tour.title}</h1>
+          <h1 className="text-4xl font-semibold mb-4 uppercase">{tour.title}</h1>
 
           {/* Single Image */}
-          <div className="rounded-xl overflow-hidden relative">
-            <div className="absolute z-1 bg-[#06a8f9] text-white py-4 px-4 bottom-4 left-4 rounded-lg text-2xl font-bold">
+          <div className="rounded-xl overflow-hidden relative aspect-video md:aspect-[21/9]">
+            <div className="absolute z-10 bg-[#06a8f9] text-white py-4 px-4 bottom-4 left-4 rounded-lg text-2xl font-bold">
               <h1 className="text-white">Starting from {tour.price}</h1>
             </div>
-            <img
+            <Image
               src={tour.images[0]}
               alt={tour.title}
-              className="w-full h-[400px] object-cover"
+              fill
+              className="object-cover"
             />
           </div>
 
@@ -191,7 +197,7 @@ export default function TourDetails() {
             <p className="xl:text-lg sm:text-lg text-sm font-normal lg:mb-5 sm:mb-5 mb-2.5">
               {tour.description3}
             </p>
-            <h2 className="text-2xl font-semibold mb-10">Inclusions </h2>
+            <h2 className="text-2xl font-semibold mb-10 uppercase">Inclusions </h2>
 
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full">
               {tour.inclusions.map((inclusion, index) => (
@@ -199,16 +205,17 @@ export default function TourDetails() {
                   key={index}
                   className="xl:text-xl text-sm font-medium flex items-center gap-5 mb-10"
                 >
-                  <span className="w-[50px] h-[50px] flex items-center rounded-full bg-[#06a8f9] justify-center">
-                    <img
+                  <span className="w-[50px] h-[50px] flex items-center rounded-full bg-[#06a8f9] justify-center shrink-0">
+                    <Image
                       src={inclusion.icon}
                       alt={inclusion.title}
-                      className="w-6 h-6 min-w-[50px]"
+                      width={24}
+                      height={24}
                     />
                   </span>
                   <div>
-                    <h4 className="mb-2">{inclusion.title}</h4>
-                    <p className="text-sm">{inclusion.description}</p>
+                    <h4 className="mb-2 uppercase font-bold text-lg">{inclusion.title}</h4>
+                    <p className="text-sm text-gray-600">{inclusion.description}</p>
                   </div>
                 </div>
               ))}

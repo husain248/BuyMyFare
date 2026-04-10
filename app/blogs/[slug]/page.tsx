@@ -1,4 +1,6 @@
 "use client";
+
+import Image from "next/image";
 import React, { use } from "react";
 import blogsData from "../../../data/blogs.json";
 import { notFound } from "next/navigation";
@@ -42,11 +44,14 @@ function Page({ params }: { params: Promise<{ slug: string }> }) {
               {/* Main Content Area */}
               <div className="xl:w-3/4 w-full px-4 mb-10 xl:mb-0">
                 <div className="container mx-auto px-4 pb-20">
-                  <img
-                    src={blog.image}
-                    alt="greetings"
-                    className="w-full max-h-[400px] object-cover mx-auto"
-                  />
+                  <div className="relative w-full h-[400px] overflow-hidden rounded-2xl">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
                 <BlogDetailsContent blog={blog} />
               </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
@@ -36,12 +37,14 @@ export default function GallerySection() {
               style={{ aspectRatio: "4/3" }}
               onClick={() => setLightboxIndex(idx % galleryImgNums.length)}
             >
-              <img
+              <Image
                 src={img.src}
                 alt={`Gallery ${img.num}`}
+                fill
+                sizes="(max-width: 768px) 140px, 260px"
                 className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center z-10">
                 <i
                   className="fa-solid fa-expand text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   aria-hidden="true"

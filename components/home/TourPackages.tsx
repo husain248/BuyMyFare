@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { homeTourPackages } from "../../data/home-tour-packages";
@@ -9,94 +10,111 @@ export default function TourPackages() {
 
   useEffect(() => {
     let swiperInstance: any = null;
-    // Check if Swiper is loaded globally from the layout script
-    if (
-      typeof window !== "undefined" &&
-      (window as any).Swiper &&
-      swiperRef.current
-    ) {
-      swiperInstance = new (window as any).Swiper(swiperRef.current, {
-        speed: 1500,
-        parallax: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-        },
-        breakpoints: {
-          700: {
-            slidesPerView: 2,
+    let intervalId: any = null;
+
+    const initSwiper = () => {
+      if (
+        typeof window !== "undefined" &&
+        (window as any).Swiper &&
+        swiperRef.current &&
+        !swiperInstance
+      ) {
+        swiperInstance = new (window as any).Swiper(swiperRef.current, {
+          speed: 1500,
+          parallax: true,
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoplay: {
+            delay: 3000,
           },
-          1150: {
-            slidesPerView: 3,
+          breakpoints: {
+            700: {
+              slidesPerView: 2,
+            },
+            1150: {
+              slidesPerView: 3,
+            },
+            1400: {
+              slidesPerView: 2.7,
+              spaceBetween: 50,
+            },
           },
-          1400: {
-            slidesPerView: 2.7,
-            spaceBetween: 50,
-          },
-        },
-      });
+        });
 
-      // Initialize the view-detail hover animation for all cards (including Swiper clones)
-      const cards = swiperRef.current.querySelectorAll(".tour-card");
-      cards.forEach((card: any) => {
-        const badge = card.querySelector(".view-detail");
-        if (!badge) return;
+        // Initialize the view-detail hover animation for all cards (including Swiper clones)
+        const cards = swiperRef.current.querySelectorAll(".tour-card");
+        cards.forEach((card: any) => {
+          const badge = card.querySelector(".view-detail");
+          if (!badge) return;
 
-        let x = 0;
-        let y = 0;
-        let targetX = 0;
-        let targetY = 0;
-        let rafId: any = null;
+          let x = 0;
+          let y = 0;
+          let targetX = 0;
+          let targetY = 0;
+          let rafId: any = null;
 
-        const ease = 0.15;
+          const ease = 0.15;
 
-        const animate = () => {
-          x += (targetX - x) * ease;
-          y += (targetY - y) * ease;
+          const animate = () => {
+            x += (targetX - x) * ease;
+            y += (targetY - y) * ease;
 
-          badge.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-          rafId = requestAnimationFrame(animate);
-        };
-
-        const updateTarget = (e: MouseEvent) => {
-          const rect = card.getBoundingClientRect();
-          targetX = e.clientX - rect.left;
-          targetY = e.clientY - rect.top;
-        };
-
-        const onMouseEnter = (e: MouseEvent) => {
-          updateTarget(e);
-          badge.classList.add("is-active");
-
-          if (!rafId) {
+            badge.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
             rafId = requestAnimationFrame(animate);
-          }
-        };
+          };
 
-        const onMouseMove = (e: MouseEvent) => updateTarget(e);
+          const updateTarget = (e: MouseEvent) => {
+            const rect = card.getBoundingClientRect();
+            targetX = e.clientX - rect.left;
+            targetY = e.clientY - rect.top;
+          };
 
-        const onMouseLeave = () => {
-          badge.classList.remove("is-active");
+          const onMouseEnter = (e: MouseEvent) => {
+            updateTarget(e);
+            badge.classList.add("is-active");
 
-          if (rafId) {
-            cancelAnimationFrame(rafId);
-            rafId = null;
-          }
+            if (!rafId) {
+              rafId = requestAnimationFrame(animate);
+            }
+          };
 
-          x = 0;
-          y = 0;
-          badge.style.transform = "";
-        };
+          const onMouseMove = (e: MouseEvent) => updateTarget(e);
 
-        card.addEventListener("mouseenter", onMouseEnter);
-        card.addEventListener("mousemove", onMouseMove);
-        card.addEventListener("mouseleave", onMouseLeave);
-      });
+          const onMouseLeave = () => {
+            badge.classList.remove("is-active");
+
+            if (rafId) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+            }
+
+            x = 0;
+            y = 0;
+            badge.style.transform = "";
+          };
+
+          card.addEventListener("mouseenter", onMouseEnter);
+          card.addEventListener("mousemove", onMouseMove);
+          card.addEventListener("mouseleave", onMouseLeave);
+        });
+
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      }
+    };
+
+    // Try immediately
+    initSwiper();
+
+    // If not ready, poll for Swiper
+    if (!(window as any).Swiper) {
+      intervalId = setInterval(initSwiper, 100);
     }
 
     return () => {
+      if (intervalId) clearInterval(intervalId);
       if (swiperInstance && typeof swiperInstance.destroy === "function") {
         swiperInstance.destroy(true, true);
       }
@@ -132,12 +150,15 @@ export default function TourPackages() {
               <div className="swiper-wrapper">
                 {homeTourPackages.map((tour, idx) => (
                   <div className="swiper-slide" key={idx}>
-                    <div className="relative tour-card">
-                      <div className="relative overflow-hidden rounded-xxl before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60">
-                        <img
+                    <div className="relative tour-card group">
+                      <div className="relative overflow-hidden rounded-xxl before:absolute before:inset-0 before:z-1 before:block before:w-1/2 before:h-full before:-left-[75%] before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-black/60 after:z-2">
+                        <Image
                           src={`/assets/images/tour/style1/${tour.img}`}
                           alt={tour.title}
-                          className="size-full object-cover"
+                          width={450}
+                          height={560}
+                          className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 relative z-0"
+                          style={{ height: "auto" }}
                         />
                       </div>
                       <div className="absolute left-0 bottom-0 sm:p-7.5 p-4.5 flex items-center justify-between w-full">
@@ -170,10 +191,13 @@ export default function TourPackages() {
           </div>
         </div>
         <div>
-          <img
+          <Image
             src="/assets/images/bmg-in-1024x346.png"
             alt="greetings"
-            className="max-h-30 mx-auto mt-16"
+            width={1024}
+            height={346}
+            className="max-h-30 w-auto mx-auto mt-16 object-contain"
+            style={{ height: "auto" }}
           />
         </div>
       </div>

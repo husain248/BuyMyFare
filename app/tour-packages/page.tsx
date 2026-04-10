@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { tourPackages } from "../../data/tour-packages";
 
 function page() {
@@ -38,11 +39,13 @@ function page() {
             {tourPackages.map((pkg, index) => (
               <div key={index} className="xl:col-span-6 col-span-12">
                 <div className="relative z-1 p-2.5 h-full duration-200 bg-[#F4F4F4] rounded-2xl md:flex group">
-                  <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-full sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                    <img
+                  <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-full sm:h-62.5 h-50 relative overflow-hidden before:absolute before:inset-0 before:z-1 before:block before:w-1/2 before:h-full before:-left-[75%] before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
+                    <Image
                       src={pkg.img}
-                      alt=""
-                      className="size-full object-cover"
+                      alt={pkg.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110 relative z-0"
                     />
                     <span className="absolute top-5 left-5 rounded-3xl text-xs font-medium px-2.5 py-1.5 bg-green text-secondary">
                       {pkg.location}

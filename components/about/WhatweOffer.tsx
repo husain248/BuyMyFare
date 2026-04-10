@@ -21,10 +21,12 @@ export default function ProcessSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
               <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                 <div className="relative overflow-hidden rounded-2lg">
-                  <img
+                  <Image
                     src="/assets/images/Handpicked-Destinations.png"
-                    alt=""
-                    className="size-full object-cover w-full"
+                    alt="Handpicked Destinations"
+                    width={400}
+                    height={250}
+                    className="w-full h-auto object-cover"
                   />
                 </div>
                 <div className="">
@@ -39,10 +41,12 @@ export default function ProcessSection() {
               </div>
               <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                 <div className="relative overflow-hidden rounded-2lg">
-                  <img
+                  <Image
                     src="/assets/images/Custom-Travel-Plans.png"
-                    alt=""
-                    className="size-full object-cover w-full"
+                    alt="Custom Travel Plans"
+                    width={400}
+                    height={250}
+                    className="w-full h-auto object-cover"
                   />
                 </div>
                 <div className="">
@@ -57,10 +61,12 @@ export default function ProcessSection() {
               </div>
               <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                 <div className="relative overflow-hidden rounded-2lg">
-                  <img
+                  <Image
                     src="/assets/images/Hassle-Free-Services.png"
-                    alt=""
-                    className="size-full object-cover w-full"
+                    alt="Hassle-Free Services"
+                    width={400}
+                    height={250}
+                    className="w-full h-auto object-cover"
                   />
                 </div>
                 <div className="">
@@ -75,10 +81,12 @@ export default function ProcessSection() {
               </div>
               <div className="p-5 rounded-2lg bg-[#F2EFEA] flex flex-col gap-4">
                 <div className="relative overflow-hidden rounded-2lg">
-                  <img
+                  <Image
                     src="/assets/images/Travel-with-Purpose.png"
-                    alt=""
-                    className="size-full object-cover w-full"
+                    alt="Travel with Purpose"
+                    width={400}
+                    height={250}
+                    className="w-full h-auto object-cover"
                   />
                 </div>
                 <div className="">

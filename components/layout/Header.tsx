@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
@@ -36,9 +37,13 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const activeRouteIdx = navRoutes.findIndex((r) => r.path === pathname);
+    const activeRouteIdx = navRoutes.findIndex((r) => 
+      r.path === "/" ? pathname === "/" : pathname.startsWith(r.path)
+    );
     if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
       updateIndicator(linkRefs.current[activeRouteIdx]);
+    } else {
+      setIndicatorStyle({ width: 0, x: 0 });
     }
   }, [pathname]);
 
@@ -63,15 +68,22 @@ export default function Header() {
               href="/"
               className="table-cell align-middle"
             >
-              <img
+              <Image
                 src="/assets/images/Buy-My-Fare-Logo-L-1024x355.png"
                 alt="logo"
+                width={200}
+                height={69}
+                priority
                 className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden"
+                style={{ height: "auto" }}
               />
-              <img
+              <Image
                 src="/assets/images/Buy-My-Fare-Logo.png"
-                alt=""
+                alt="logo"
+                width={200}
+                height={69}
                 className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden"
+                style={{ height: "auto" }}
               />
             </Link>
           </div>
@@ -109,10 +121,13 @@ export default function Header() {
                 className="table-cell align-middle"
                 onClick={closeMenu}
               >
-                <img
+                <Image
                   src="/assets/images/Buy-My-Fare-Logo.png"
-                  alt=""
+                  alt="logo"
+                  width={135}
+                  height={61}
                   className="object-contain duration-500"
+                  style={{ height: "auto" }}
                 />
               </Link>
             </div>
@@ -122,8 +137,8 @@ export default function Header() {
               className="lg:flex flex-wrap navbar-nav nav-wrapper relative"
               onMouseLeave={() => {
                 setHoveredIdx(null);
-                const activeRouteIdx = navRoutes.findIndex(
-                  (r) => r.path === pathname,
+                const activeRouteIdx = navRoutes.findIndex((r) => 
+                  r.path === "/" ? pathname === "/" : pathname.startsWith(r.path)
                 );
                 if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
                   updateIndicator(linkRefs.current[activeRouteIdx]);
@@ -152,7 +167,9 @@ export default function Header() {
               />
 
               {navRoutes.map((route, idx) => {
-                const isActive = pathname === route.path;
+                const isActive = route.path === "/" 
+                  ? pathname === "/" 
+                  : pathname.startsWith(route.path);
                 const isHovered = hoveredIdx === idx;
 
                 // Desktop color logic:
@@ -178,7 +195,7 @@ export default function Header() {
                       ref={(el) => {
                         linkRefs.current[idx] = el;
                       }}
-                      className={`lg:py-2.5 py-2 xl:px-4 lg:px-2 relative z-1 lg:inline-block block xl:text-base text-2sm leading-none! font-medium rounded-8xl transition-all duration-300 nav-link
+                      className={`lg:py-2.5 py-2 xl:px-4 lg:px-2 relative z-1 lg:inline-block block xl:text-sm text-2sm leading-none! font-medium rounded-8xl transition-all duration-300 nav-link
                         ${desktopTextColor}
                         max-lg:text-secondary
                         ${isActive ? "active" : ""}

@@ -839,20 +839,6 @@ const plexify = function () {
       );
   };
 
-  const handleStarRating = () => {
-    try {
-      const starRatingElements = document.querySelectorAll(".star-rating-old");
-      if (!starRatingElements.length) return;
-
-      try {
-        new StarRating(".star-rating-old");
-      } catch (err) {
-        console.error("handleStarRating init error:", err);
-      }
-    } catch (err) {
-      console.error("handleStarRating error:", err);
-    }
-  };
 
   const handleStatusPost = () => {
     try {
@@ -891,20 +877,6 @@ const plexify = function () {
     el.classList.add(className);
   };
 
-  const handleFlatpickr = () => {
-    try {
-      const inputs = document.querySelectorAll(".flatpickr1");
-      if (!inputs.length) return;
-
-      try {
-        flatpickr(inputs);
-      } catch (err) {
-        console.error("handleFlatpickr init error:", err);
-      }
-    } catch (err) {
-      console.error("handleFlatpickr error:", err);
-    }
-  };
 
   return {
     init: function () {
@@ -925,9 +897,7 @@ const plexify = function () {
       handleScrollTop();
       handleMenuActiveAndIndicator();
       handleBtnHover();
-      handleStarRating();
       handleStatusPost();
-      handleFlatpickr();
     },
     resize: function () {},
   };

@@ -1,17 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function LetsConnect() {
   return (
     <section>
       <div className="container-full">
-        <div className="relative overflow-hidden">
-          <div className="absolute max-w-6xl top-1/2 -translate-y-1/2 text-center z-1 mx-auto w-full left-0 right-0">
+        <div className="relative overflow-hidden md:min-h-125 min-h-100 flex items-center justify-center">
+          <div className="container relative z-10 text-center mx-auto w-full px-4">
             <h1 className="2xxl:text-10xxl xl:text-10xl sm:text-8xl text-5xl mb-2.5 text-[#ffffff] font-bold headline">
               Your Journey Begins Here
             </h1>
-            <p className="text-white">
+            <p className="text-white max-w-4xl mx-auto text-lg/relaxed">
               Travel isn’t just about where you go; it’s about what you take
               back with you. At Buy My Fare, we’re here to help you start that
               journey—with a promise to make it extraordinary, responsible, and
@@ -20,26 +21,16 @@ export default function LetsConnect() {
             <Link
               href="/"
               className="btn btn-primary btn-hover light mt-5"
-              data-hover-init="true"
             >
               <span>Let's Connect</span>
-              <span
-                className="gsap-clone"
-                style={
-                  {
-                    "--clone-left": "35px",
-                    "--clone-top": "14px",
-                  } as React.CSSProperties
-                }
-              >
-                Plan Your Dream Trip
-              </span>
             </Link>
           </div>
-          <img
+          <Image
             src="/assets/images/about/large/img4.png"
-            alt=""
-            className="size-full min-h-75 object-cover"
+            alt="Your Journey Begins Here"
+            fill
+            sizes="100vw"
+            className="object-cover"
             data-speed="0.7"
           />
         </div>
@@ -50,20 +41,8 @@ export default function LetsConnect() {
           <Link
             href="/"
             className="btn btn-primary btn-hover light"
-            data-hover-init="true"
           >
             <span>Get Started Today!</span>
-            <span
-              className="gsap-clone"
-              style={
-                {
-                  "--clone-left": "35px",
-                  "--clone-top": "14px",
-                } as React.CSSProperties
-              }
-            >
-              Get Started Today!
-            </span>
           </Link>
         </div>
       </div>

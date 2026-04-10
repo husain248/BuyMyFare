@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
 import { homeTicketBookings } from "../../data/home-ticket-bookings";
@@ -14,14 +15,34 @@ declare global {
 export default function TicketBookings() {
   useEffect(() => {
     let msnry: any = null;
-    if (typeof window !== "undefined" && window.Masonry) {
-      const elem = document.getElementById("masonry");
-      if (elem) {
-        msnry = new window.Masonry(elem, { percentPosition: true });
+    let interval: NodeJS.Timeout;
+
+    const initMasonry = () => {
+      if (typeof window !== "undefined" && window.Masonry) {
+        const elem = document.getElementById("masonry");
+        if (elem) {
+          msnry = new window.Masonry(elem, {
+            percentPosition: true,
+            // Add a small delay for images to load if imagesLoaded is not used
+            transitionDuration: "0.2s",
+          });
+          return true;
+        }
       }
+      return false;
+    };
+
+    if (!initMasonry()) {
+      interval = setInterval(() => {
+        if (initMasonry()) {
+          clearInterval(interval);
+        }
+      }, 100);
     }
+
     return () => {
-      if (msnry && typeof msnry.destroy === 'function') {
+      if (interval) clearInterval(interval);
+      if (msnry && typeof msnry.destroy === "function") {
         msnry.destroy();
       }
     };
@@ -61,13 +82,17 @@ export default function TicketBookings() {
           {homeTicketBookings.map((ticket, idx) => (
             <div className="card-container xl:w-1/2 w-full mb-5" key={idx}>
               <div className="relative z-1 p-2.5 h-full duration-200 bg-white rounded-2xl md:flex group">
-                <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-full sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img
+                <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-auto sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-10 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
+                  <Image
                     src={`/assets/images/tour/style2/${ticket.img}`}
                     alt={ticket.title}
-                    className="size-full object-cover"
+                    width={400}
+                    height={300}
+                    className="size-full object-cover relative z-1 transition-transform duration-500 group-hover:scale-110"
+                    priority={idx < 2}
+                    style={{ width: "auto", height: "auto" }}
                   />
-                  <span className="absolute top-5 left-5 rounded-3xl text-xs font-medium px-2.5 py-1.5 bg-green text-secondary">
+                  <span className="absolute top-5 left-5 rounded-3xl text-xs font-medium px-2.5 py-1.5 bg-green text-secondary z-20">
                     Hot Deal
                   </span>
                 </div>

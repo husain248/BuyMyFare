@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutMission() {
   return (
@@ -10,10 +11,12 @@ export default function AboutMission() {
               <div className="xl:col-span-6 col-span-12">
                 <div className="relative z-1 h-full">
                   <div className="overflow-hidden h-auto">
-                    <img
+                    <Image
                       src="/assets/images/about/img4.png"
-                      alt="img"
-                      className="content__img size-full object-cover"
+                      alt="Our Mission"
+                      width={600}
+                      height={400}
+                      className="content__img w-full h-auto object-cover"
                     />
                   </div>
                 </div>
@@ -38,19 +41,25 @@ export default function AboutMission() {
                     </Link>
                     <div className="flex items-center gap-5.75 md:mt-0 mt-2.5">
                       <div>
-                        <img
+                        <Image
                           src="/assets/images/avatar/pic1.png"
-                          alt="img"
+                          alt="Client"
+                          width={60}
+                          height={60}
                           className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1"
                         />
-                        <img
+                        <Image
                           src="/assets/images/avatar/pic2.png"
-                          alt="img"
+                          alt="Client"
+                          width={60}
+                          height={60}
                           className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1"
                         />
-                        <img
+                        <Image
                           src="/assets/images/avatar/pic3.png"
-                          alt="img"
+                          alt="Client"
+                          width={60}
+                          height={60}
                           className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1"
                         />
                       </div>

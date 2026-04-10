@@ -1,4 +1,6 @@
 "use client";
+
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
@@ -21,18 +23,19 @@ export default function ExploreWorld() {
       {exploreWorldBgImages.map((img, idx) => (
         <div
           key={img}
-          className={`destination-bg bg-${idx + 1}${activeBg === idx ? " is-active" : ""}`}
-          style={{
-            backgroundImage: `url('${img}')`,
-            opacity: activeBg === idx ? 1 : 0,
-            transition: "opacity 0.8s cubic-bezier(.4,0,.2,1)",
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-          }}
-        />
+          className={`absolute inset-0 transition-opacity duration-1000 ${activeBg === idx ? "opacity-100" : "opacity-0"}`}
+        >
+          <Image
+            src={img}
+            alt="background"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority={idx === 0}
+          />
+        </div>
       ))}
-      <div className="container relative z-1">
+      <div className="container relative z-10">
         <div className="xl:mb-10 sm:mb-5 mb-2.5">
           <span className="font-main text-[24px] md:text-[32px] text-[#ffffff] capitalize">
             Start Your Adventure Today
@@ -67,14 +70,16 @@ export default function ExploreWorld() {
                         className="w-10 h-10 object-contain"
                       />
                     </div>
-                    <div className="relative overflow-hidden rounded-xxl before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60">
-                      <img
+                    <div className="relative overflow-hidden rounded-xxl before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60 aspect-video before:z-1">
+                      <Image
                         src={f.img}
                         alt={f.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="size-full object-cover"
                       />
                     </div>
-                    <div className="absolute left-0 bottom-0 sm:p-7.5 p-4.5 flex items-center justify-between w-full">
+                    <div className="absolute left-0 bottom-0 sm:p-7.5 p-4.5 flex items-center justify-between w-full z-10">
                       <div className="flex-1">
                         <h3 className="text-2xl font-medium text-white uppercase mb-2.5">
                           {f.title}
