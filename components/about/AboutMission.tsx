@@ -36,7 +36,7 @@ export default function AboutMission() {
                     </p>
                   </div>
                   <div className="md:flex items-center gap-5.75">
-                    <Link href="/" className="btn btn-primary btn-hover">
+                    <Link href="/contact" className="btn btn-primary btn-hover">
                       <span>Let's Connect</span>
                     </Link>
                     {/* <div className="flex items-center gap-5.75 md:mt-0 mt-2.5">

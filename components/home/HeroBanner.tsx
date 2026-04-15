@@ -59,7 +59,7 @@ export default function HeroBanner() {
                 </h1>
                 <p className="text-white">{slide.description}</p>
                 <Link
-                  href="/"
+                  href="/contact"
                   className="btn btn-primary btn-hover light mt-5"
                   data-hover-init="true"
                 >

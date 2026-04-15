@@ -24,7 +24,7 @@ export default function AboutWork() {
               leave a lasting, positive impact.”
             </p>
             <Link
-              href="/"
+              href="/contact"
               className="btn btn-primary btn-hover light mt-5"
             >
               <span>Let's Connect</span>

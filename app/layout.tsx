@@ -4,6 +4,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Script from "next/script";
 import ScriptInitializer from "../components/layout/ScriptInitializer";
+import WhatsAppFloat from "../components/common/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: "BuyMyFare | Flight Tickets, Tour Packages & Travel Deals",
@@ -78,6 +79,7 @@ export default function RootLayout({
               <Footer />
             </div>
           </div>
+          <WhatsAppFloat />
         </div>
 
         {/* Vendor scripts loaded after hydration to avoid DOM mismatches */}

@@ -32,7 +32,7 @@ export default function Destinations() {
           {homeDestinations.map((d) => (
             <Link
               key={d.title}
-              href="/"
+              href="/contact"
               className="group relative overflow-hidden rounded-xxl"
               aria-label={`View destination ${d.title}`}
             >

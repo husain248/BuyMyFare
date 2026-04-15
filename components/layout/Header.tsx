@@ -250,7 +250,7 @@ export default function Header() {
             <div className="flex items-center w-full">
               <ul className="lg:ml-5 sm:ml-3.75 flex items-center gap-5 w-full justify-between">
                 <li className="inline-block max-xl:hidden">
-                  <Link href="/" className="btn btn-primary btn-hover light">
+                  <Link href="/contact" className="btn btn-primary btn-hover light">
                     <span>Plan Your Dream Trip</span>
                   </Link>
                 </li>

@@ -51,7 +51,7 @@ export default function AboutExplore() {
                 </ul>
               </div>
               <div className="flex flex-wrap items-center gap-7.5">
-                <Link href="/book-now" className="btn btn-primary btn-hover">
+                <Link href="/contact" className="btn btn-primary btn-hover">
                   <span>Book Now</span>
                 </Link>
                 <div className="inline-flex items-center gap-3.75">

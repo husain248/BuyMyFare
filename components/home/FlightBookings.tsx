@@ -121,7 +121,7 @@ export default function FlightBookings() {
                       </del>
                     </h4>
                     <Link
-                      href="/"
+                      href="/contact"
                       aria-label="View trip Packages"
                       className="size-12.5 flex items-center justify-center rounded-full bg-primary"
                     >
@@ -156,7 +156,7 @@ export default function FlightBookings() {
 
           <div className="card-container xl:w-1/2 w-full mb-5">
             <Link
-              href="/"
+              href="/flight-booking"
               className="bg-white rounded-xxl flex items-center justify-center p-10 size-full sm:min-h-47.5 min-h-25"
             >
               <h4 className="sm:text-4xxl text-2xxl text-center">

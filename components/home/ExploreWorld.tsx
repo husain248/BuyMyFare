@@ -52,7 +52,10 @@ export default function ExploreWorld() {
                 destinations, and complete peace of mind. Your next adventure
                 begins here.
               </p>
-              <Link href="/" className="btn btn-primary btn-hover light">
+              <Link
+                href="/tour-packages"
+                className="btn btn-primary btn-hover light"
+              >
                 <span>Click Here</span>
               </Link>
             </div>

@@ -19,7 +19,7 @@ export default function Journey() {
               stress-free. So, pack your bags, and let the memories begin.”
             </p>
             <Link
-              href="/"
+              href="/contact"
               className="btn btn-primary btn-hover light mt-5"
             >
               <span>Let's Connect</span>

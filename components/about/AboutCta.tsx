@@ -7,7 +7,7 @@ export default function AboutCta() {
 				Your Gateway to Incredible Journeys
 			</h1>
 			<Link
-				href="/"
+				href="/contact"
 				className="btn btn-primary btn-hover light"
 			>
 				<span>Get Started Today!</span>

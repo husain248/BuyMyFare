@@ -140,7 +140,7 @@ export default function TourPackages() {
                 traveler. Whether it’s a relaxing escape or an action-packed
                 journey, we make it unforgettable.{" "}
               </p>
-              <Link href="/" className="btn btn-primary btn-hover">
+              <Link href="/tour-packages" className="btn btn-primary btn-hover">
                 <span>View All</span>
               </Link>
             </div>
@@ -177,7 +177,7 @@ export default function TourPackages() {
                           </span>
                         </div>
                       </div>
-                      <Link href="/" className="view-detail">
+                      <Link href="/contact" className="view-detail">
                         {" "}
                         View
                         <br />

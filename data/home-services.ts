@@ -14,7 +14,7 @@ export const homeServices: HomeService[] = [
     image: "/assets/images/tour-packages.png",
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "See All Packages",
-    link: "/",
+    link: "/contact",
   },
   {
     title: "FLIGHT BOOKING",
@@ -22,7 +22,7 @@ export const homeServices: HomeService[] = [
     image: "/assets/images/ticket-booking.png",
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "Book Now",
-    link: "/",
+    link: "/contact",
   },
   {
     title: "TRAVEL INSURANCE",
@@ -30,7 +30,7 @@ export const homeServices: HomeService[] = [
     image: "/assets/images/travel-insurence.png",
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",
     btnText: "Get Insurance",
-    link: "/",
+    link: "/contact",
   },
 ];
 
