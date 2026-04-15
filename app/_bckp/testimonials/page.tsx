@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { testimonials } from "../../data/testimonials";
+import { testimonials } from "../../../data/testimonials";
 
 export default function Testimonials() {
   return (

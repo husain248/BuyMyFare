@@ -361,6 +361,8 @@ const plexifyGsap = function () {
 
             const isSidebar = el.classList.contains("sidebar-sticky");
             const isTopZero = el.classList.contains("space-top-0");
+            const isFlightSticky = el.classList.contains("flight-sticky");
+            const hasDelayedOffset = isTopZero || isFlightSticky;
 
             spacer.style.setProperty(
               "--spacer-height",
@@ -369,26 +371,38 @@ const plexifyGsap = function () {
 
             el.style.setProperty(
               "--sticky-top",
-              isTopZero ? "0px" : `${offset}px`,
+              hasDelayedOffset ? "0px" : `${offset}px`,
             );
 
             parent.insertBefore(spacer, el);
             spacer.appendChild(el);
             el.classList.add("is-sticky");
 
+            const syncDelayedOffset = (pinSpacer, isActive) => {
+              if (!hasDelayedOffset || !pinSpacer) return;
+              pinSpacer.style.inset = `${isActive ? offset : 0}px 0px auto`;
+            };
+
             const trigger = ScrollTrigger.create({
               trigger: spacer,
-              start: "top top",
+              start: hasDelayedOffset ? `top top+=${offset}` : "top top",
               end: () => `+=${parent.offsetHeight - el.offsetHeight - offset}`,
               pin: el,
               pinType: "transform",
               pinSpacing: false,
               scroller: "#smooth-wrapper",
               anticipatePin: 1,
+              onToggle: (self) => syncDelayedOffset(self.pinSpacer, self.isActive),
+              onRefresh: (self) =>
+                syncDelayedOffset(
+                  self.pinSpacer,
+                  self.progress > 0 && self.progress < 1,
+                ),
             });
 
             requestAnimationFrame(() => {
               trigger.pinSpacer?.classList.add("gsap-pin-spacer-fix");
+              syncDelayedOffset(trigger.pinSpacer, false);
             });
 
             instances.push({ trigger, spacer, el });

@@ -196,4 +196,11 @@ export const ticketData: Ticket[] = [
     price: "$1698",
     image: "/assets/images/ticket-booking/vancouver-to-ahmedabad-round.png",
   },
+  {
+    id: 28,
+    type: "Round Trip",
+    destination: "Toronto to Mumbai",
+    price: "$1485",
+    image: "/assets/images/ticket-booking/calgary-to-mumbai-one.png",
+  },
 ];

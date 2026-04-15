@@ -17,7 +17,7 @@ export const homeServices: HomeService[] = [
     link: "/",
   },
   {
-    title: "TICKET BOOKING",
+    title: "FLIGHT BOOKING",
     tag: "Booking",
     image: "/assets/images/ticket-booking.png",
     desc: "Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape.",

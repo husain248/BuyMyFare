@@ -4,12 +4,12 @@ import ExploreWorld from "../components/home/ExploreWorld";
 import Destinations from "../components/home/Destinations";
 import OurServices from "../components/home/OurServices";
 import TourPackages from "../components/home/TourPackages";
-import TicketBookings from "../components/home/TicketBookings";
 // import EnjoyHoliday from "../components/home/EnjoyHoliday";
 import Feedback from "../components/home/Feedback";
 import Blog from "../components/home/Blog";
 import ContactSection from "../components/home/ContactSection";
 import GallerySection from "../components/home/GallerySection";
+import FlightBookings from "../components/home/FlightBookings";
 // import SubscribeBanner from "../components/home/SubscribeBanner";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
       <ExploreWorld />
       <OurServices />
       <TravelInsurance />
-      <TicketBookings />
+      <FlightBookings />
       <Destinations />
       <Blog />
       <Feedback />

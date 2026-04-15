@@ -1818,14 +1818,24 @@ button {
   color: #111;
 }
 
-.sidebar-sticky.sticky-top {
-  top: calc(var(--header-height, 80px) + 10px);
-  position: sticky;
-}
+@media (min-width: 992px) {
+  .sidebar-sticky.sticky-top {
+    top: calc(var(--header-height, 80px) + 10px);
+    position: sticky;
+  }
 
-.sidebar-sticky.sticky-default {
-  top: 60%;
-  position: absolute;
+  .sidebar-sticky.sticky-default {
+    top: 60%;
+    position: absolute;
+  }
+
+  .sidebar-sticky.space-top-0.sticky-default {
+    top: 0;
+  }
+
+  .flight-sticky.sticky-default {
+    top: 0;
+  }
 }
 
 .clipped {

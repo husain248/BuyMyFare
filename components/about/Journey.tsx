@@ -3,11 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function LetsConnect() {
+export default function Journey() {
   return (
-    <section>
-      <div className="container-full">
-        <div className="relative overflow-hidden md:min-h-125 min-h-100 flex items-center justify-center">
+    <section className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/40" style={{ backgroundImage: "url('/assets/images/about/large/img4.png')" }}>
+      <div className="container-full relative z-1">
+        <div className="relative overflow-hidden md:min-h-135 min-h-100 flex items-center justify-center py-[100px] sm:py-4">
           <div className="container relative z-10 text-center mx-auto w-full px-4">
             <h1 className="2xxl:text-10xxl xl:text-10xl sm:text-8xl text-5xl mb-2.5 text-[#ffffff] font-bold headline">
               Your Journey Begins Here
@@ -25,25 +25,14 @@ export default function LetsConnect() {
               <span>Let's Connect</span>
             </Link>
           </div>
-          <Image
+          {/* <Image
             src="/assets/images/about/large/img4.png"
             alt="Your Journey Begins Here"
             fill
             sizes="100vw"
             className="object-cover"
             data-speed="0.7"
-          />
-        </div>
-        <div className="flex justify-between items-center gap-5 flex-wrap bg-[#f2efe9] p-5 w-full">
-          <h1 className=" text-2xl font-main">
-            Your Gateway to Incredible Journeys
-          </h1>
-          <Link
-            href="/"
-            className="btn btn-primary btn-hover light"
-          >
-            <span>Get Started Today!</span>
-          </Link>
+          /> */}
         </div>
       </div>
     </section>

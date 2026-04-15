@@ -10,7 +10,7 @@ interface ContactFormProps {
 
 const ContactForm: React.FC<ContactFormProps> = ({
   inputBgColor = "bg-[#f2efea]",
-  layoutClasses = "grid-cols-1"
+  layoutClasses = "grid-cols-1",
 }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,7 +27,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const validate = () => {
     let isValid = true;
@@ -60,7 +62,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
     return isValid;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
@@ -74,6 +78,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
     if (!validate()) return;
 
     setIsSubmitting(true);
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
     // Simulate API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));

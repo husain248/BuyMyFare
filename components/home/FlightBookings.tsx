@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
-import { homeTicketBookings } from "../../data/home-ticket-bookings";
+import { homeFlightBookings } from "../../data/home-ticket-bookings";
 
 // Extend the Window interface to include Masonry
 declare global {
@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-export default function TicketBookings() {
+export default function FlightBookings() {
   useEffect(() => {
     let msnry: any = null;
     let interval: NodeJS.Timeout;
@@ -67,7 +67,7 @@ export default function TicketBookings() {
                 color: "#072032",
               }}
             >
-              Seamless Ticket Bookings
+              Seamless Flight Bookings
             </span>
             <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase lg:mb-7.5 headline">
               Your Journey Starts Here{" "}
@@ -79,13 +79,13 @@ export default function TicketBookings() {
             </p>
           </div>
 
-          {homeTicketBookings.map((ticket, idx) => (
+          {homeFlightBookings.map((flight, idx) => (
             <div className="card-container xl:w-1/2 w-full mb-5" key={idx}>
               <div className="relative z-1 p-2.5 h-full duration-200 bg-white rounded-2xl md:flex group">
                 <div className="rounded-xxl xl:w-73.75 md:w-62.5 w-full xl:min-w-73.75 md:min-w-62.5 min-w-full md:h-62.5 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-10 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
                   <Image
-                    src={`/assets/images/tour/style2/${ticket.img}`}
-                    alt={ticket.title}
+                    src={`/assets/images/tour/style2/${flight.img}`}
+                    alt={flight.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 25vw"
                     className="size-full object-cover relative z-1 transition-transform duration-500 group-hover:scale-110"
@@ -99,12 +99,12 @@ export default function TicketBookings() {
                   <div className="mb-2.5 flex-1">
                     <ul className="flex flex-wrap items-center gap-1.25 mb-1.5">
                       <li className="font-semibold text-xs uppercase">
-                        {ticket.tag}
+                        {flight.tag}
                       </li>
                     </ul>
                     <h3 className="xl:text-2xl text-xl uppercase mb-2.5">
                       <Link href="/tour-packages" className="link-hover">
-                        {ticket.title}
+                        {flight.title}
                       </Link>
                     </h3>
                     <p className="text-sm">

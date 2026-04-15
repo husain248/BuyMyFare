@@ -19,11 +19,11 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     image: "/assets/images/hero-banner/banner-2.png",
-    alt: "effortless ticket booking",
-    smallHeading: "effortless ticket booking",
+    alt: "effortless flight booking",
+    smallHeading: "effortless flight booking",
     mainHeading: "International Flights",
     description:
-      "Fly to your favorite destinations with our reliable international ticket booking service, offering competitive prices and flexible options..",
+      "Fly to your favorite destinations with our reliable international flight booking service, offering competitive prices and flexible options..",
     buttonLabel: "Book Your Flight Now ",
   },
   {

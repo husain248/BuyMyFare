@@ -1,10 +1,10 @@
-export type HomeTicketBooking = {
+export type HomeFlightBooking = {
   img: string;
   title: string;
   tag: string;
 };
 
-export const homeTicketBookings: HomeTicketBooking[] = [
+export const homeFlightBookings: HomeFlightBooking[] = [
   {
     img: "img1.png",
     title: "Vancouver to Mumbai",

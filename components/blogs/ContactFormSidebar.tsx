@@ -3,7 +3,7 @@ import ContactForm from "../common/ContactForm";
 
 const ContactFormSidebar: React.FC = () => {
   return (
-    <div className="p-5 bg-[#F4F4F4] rounded-xxl sticky top-24">
+    <div className="p-5 bg-[#F4F4F4] rounded-xxl">
       <div className="text-center flex flex-col gap-2.5 items-center justify-center mb-7.5">
         <span className="font-main capitalize text-[28px] text-[#222222]">
           Reach Us
@@ -18,4 +18,3 @@ const ContactFormSidebar: React.FC = () => {
 };
 
 export default ContactFormSidebar;
-

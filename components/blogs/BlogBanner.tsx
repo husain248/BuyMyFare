@@ -10,7 +10,7 @@ interface BlogBannerProps {
 const BlogBanner: React.FC<BlogBannerProps> = ({
   title,
   subtitle = "Latest News & Articles",
-  bgImage = "/assets/images/banner/bnr2.png",
+  bgImage = "/assets/images/banner/blog-banner.jpg",
 }) => {
   return (
     <div className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative overflow-hidden before:absolute before:inset-0 before:bg-black/40 before:z-1">

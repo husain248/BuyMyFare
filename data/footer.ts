@@ -2,8 +2,8 @@ export const footerLinks = {
   quickLinks: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about-us" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "Ticket Booking", href: "/ticket-booking" },
+    // { label: "Testimonials", href: "/testimonials" },
+    { label: "Flight Booking", href: "/flight-booking" },
     { label: "Tours Packages", href: "/tour-packages" },
     { label: "Travel Insurance", href: "/travel-insurance" },
   ],

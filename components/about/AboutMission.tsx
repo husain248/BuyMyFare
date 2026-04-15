@@ -39,7 +39,7 @@ export default function AboutMission() {
                     <Link href="/" className="btn btn-primary btn-hover">
                       <span>Let's Connect</span>
                     </Link>
-                    <div className="flex items-center gap-5.75 md:mt-0 mt-2.5">
+                    {/* <div className="flex items-center gap-5.75 md:mt-0 mt-2.5">
                       <div>
                         <Image
                           src="/assets/images/avatar/pic1.png"
@@ -71,7 +71,7 @@ export default function AboutMission() {
                           the world
                         </span>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
