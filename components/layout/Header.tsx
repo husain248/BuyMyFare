@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { navRoutes } from "../../data/navigation";
+import { useTripPlannerModal } from "../../context/TripPlannerModalContext";
 
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
@@ -13,6 +14,7 @@ export default function Header() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, x: 0 });
   const pathname = usePathname();
+  const { openModal } = useTripPlannerModal();
 
   const navRef = useRef<HTMLUListElement>(null);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -37,8 +39,8 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const activeRouteIdx = navRoutes.findIndex((r) => 
-      r.path === "/" ? pathname === "/" : pathname.startsWith(r.path)
+    const activeRouteIdx = navRoutes.findIndex((r) =>
+      r.path === "/" ? pathname === "/" : pathname.startsWith(r.path),
     );
     if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
       updateIndicator(linkRefs.current[activeRouteIdx]);
@@ -137,8 +139,10 @@ export default function Header() {
               className="lg:flex flex-wrap navbar-nav nav-wrapper relative"
               onMouseLeave={() => {
                 setHoveredIdx(null);
-                const activeRouteIdx = navRoutes.findIndex((r) => 
-                  r.path === "/" ? pathname === "/" : pathname.startsWith(r.path)
+                const activeRouteIdx = navRoutes.findIndex((r) =>
+                  r.path === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(r.path),
                 );
                 if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
                   updateIndicator(linkRefs.current[activeRouteIdx]);
@@ -167,9 +171,10 @@ export default function Header() {
               />
 
               {navRoutes.map((route, idx) => {
-                const isActive = route.path === "/" 
-                  ? pathname === "/" 
-                  : pathname.startsWith(route.path);
+                const isActive =
+                  route.path === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(route.path);
                 const isHovered = hoveredIdx === idx;
 
                 // Desktop color logic:
@@ -250,15 +255,20 @@ export default function Header() {
             <div className="flex items-center w-full">
               <ul className="lg:ml-5 sm:ml-3.75 flex items-center gap-5 w-full justify-between">
                 <li className="inline-block max-xl:hidden">
-                  <Link href="/contact" className="btn btn-primary btn-hover light">
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-hover light"
+                    onClick={openModal}
+                  >
                     <span>Plan Your Dream Trip</span>
-                  </Link>
+                  </button>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+
     </header>
   );
 }

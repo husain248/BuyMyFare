@@ -46,7 +46,10 @@ function Page() {
                     create unforgettable experiences tailored just for you!
                   </p>
                 </div>
-                <ContactForm inputBgColor="bg-[#f2efea]" />
+                <ContactForm
+                  inputBgColor="bg-[#f2efea]"
+                  layoutClasses="gap-5"
+                />
               </div>
             </div>
           </div>

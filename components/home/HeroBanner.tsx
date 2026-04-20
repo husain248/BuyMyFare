@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { heroSlides } from "../../data/home-hero-slides";
+import { useTripPlannerModal } from "../../context/TripPlannerModalContext";
 
 export default function HeroBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = heroSlides.length;
+  const { openModal } = useTripPlannerModal();
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -58,10 +59,11 @@ export default function HeroBanner() {
                   {slide.mainHeading}
                 </h1>
                 <p className="text-white">{slide.description}</p>
-                <Link
-                  href="/contact"
+                <button
+                  type="button"
                   className="btn btn-primary btn-hover light mt-5"
                   data-hover-init="true"
+                  onClick={openModal}
                 >
                   <span>{slide.buttonLabel}</span>
                   <span
@@ -72,7 +74,7 @@ export default function HeroBanner() {
                   >
                     {slide.buttonLabel}
                   </span>
-                </Link>
+                </button>
               </div>
               <div className="clipped"></div>
               <svg width="0" height="0" aria-hidden="true" focusable="false">

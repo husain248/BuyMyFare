@@ -13,6 +13,8 @@ interface InputFieldProps {
   inputClassName?: string;
   isTextArea?: boolean;
   rows?: number;
+  labelClassName?: string;
+  errorClassName?: string;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -28,6 +30,8 @@ const InputField: React.FC<InputFieldProps> = ({
   inputClassName = "",
   isTextArea = false,
   rows = 4,
+  labelClassName = "",
+  errorClassName = "",
 }) => {
   const baseInputClasses = `w-full border-none rounded-xl px-4 py-3 text-secondary placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all ${
     error ? "ring-2 ring-red-500" : ""
@@ -35,7 +39,9 @@ const InputField: React.FC<InputFieldProps> = ({
 
   return (
     <div className={className}>
-      <label className="block text-sm font-semibold text-secondary/50 mb-2">
+      <label
+        className={`mb-2 block text-sm font-semibold text-secondary/50 ${labelClassName}`}
+      >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       {isTextArea ? (
@@ -59,7 +65,13 @@ const InputField: React.FC<InputFieldProps> = ({
           className={baseInputClasses}
         />
       )}
-      {error && <p className="mt-1.5 text-xs text-red-500 font-medium animate-in fade-in slide-in-from-top-1">{error}</p>}
+      {error && (
+        <p
+          className={`mt-1.5 text-xs font-medium text-red-500 animate-in fade-in slide-in-from-top-1 ${errorClassName}`}
+        >
+          {error}
+        </p>
+      )}
     </div>
   );
 };

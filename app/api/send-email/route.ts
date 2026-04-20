@@ -7,6 +7,13 @@ export async function POST(req: Request) {
   try {
     const { name, email, phone, message } = await req.json();
 
+    if (!name || !email || !phone || !message) {
+      return NextResponse.json(
+        { success: false, error: "Missing required fields." },
+        { status: 400 },
+      );
+    }
+
     const data = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: ["husainyuvasoft248@gmail.com"],
@@ -20,8 +27,10 @@ export async function POST(req: Request) {
       `,
     });
 
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ success: false, error });
+    const message =
+      error instanceof Error ? error.message : "Unable to send email.";
+    return NextResponse.json({ success: false, error: message }, { status: 500 });
   }
 }

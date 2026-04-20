@@ -1,5 +1,6 @@
 "use client";
 
+import { X } from "lucide-react";
 import { useState } from "react";
 
 const WHATSAPP_NUMBER = "17806001550";
@@ -30,7 +31,7 @@ export default function WhatsAppFloat() {
               onClick={() => setIsOpen(false)}
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-lg transition hover:bg-white/25"
             >
-              x
+              <X />
             </button>
           </div>
 

@@ -6,12 +6,26 @@ import InputField from "../ui/InputField";
 interface ContactFormProps {
   inputBgColor?: string;
   layoutClasses?: string;
+  size?: "default" | "compact";
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({
   inputBgColor = "bg-[#f2efea]",
   layoutClasses = "grid-cols-1",
+  size = "default",
 }) => {
+  const isCompact = size === "compact";
+  const fieldInputClass = isCompact
+    ? `${inputBgColor} rounded-lg px-3 py-2.5 text-xs placeholder:text-xs`
+    : inputBgColor;
+  const fieldLabelClass = isCompact ? "mb-1 text-xs font-medium" : "";
+  const fieldErrorClass = isCompact ? "text-[11px]" : "";
+  const formSpacingClass = isCompact ? "space-y-3" : "space-y-5";
+  const submitButtonClass = isCompact
+    ? "w-full justify-center !rounded-lg !px-4 !py-2.5 text-xs"
+    : "w-full justify-center";
+  const statusMessageClass = isCompact ? "p-3 text-xs" : "p-4";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -77,14 +91,21 @@ const ContactForm: React.FC<ContactFormProps> = ({
     e.preventDefault();
     if (!validate()) return;
 
-    setIsSubmitting(true);
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setIsSubmitting(true);
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data?.success) {
+        throw new Error("Failed to submit form.");
+      }
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch {
@@ -96,8 +117,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
   };
 
   return (
-    <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-      <div className={`grid gap-5 ${layoutClasses}`}>
+    <form className={formSpacingClass} onSubmit={handleSubmit} noValidate>
+      <div className={`grid ${layoutClasses}`}>
         <InputField
           label="Name"
           name="name"
@@ -105,7 +126,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
           value={formData.name}
           onChange={handleChange}
           error={errors.name}
-          inputClassName={inputBgColor}
+          inputClassName={fieldInputClass}
+          labelClassName={fieldLabelClass}
+          errorClassName={fieldErrorClass}
           required
         />
         <InputField
@@ -116,7 +139,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
-          inputClassName={inputBgColor}
+          inputClassName={fieldInputClass}
+          labelClassName={fieldLabelClass}
+          errorClassName={fieldErrorClass}
           required
         />
         <InputField
@@ -127,7 +152,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
           value={formData.phone}
           onChange={handleChange}
           error={errors.phone}
-          inputClassName={inputBgColor}
+          inputClassName={fieldInputClass}
+          labelClassName={fieldLabelClass}
+          errorClassName={fieldErrorClass}
           required
         />
       </div>
@@ -139,26 +166,33 @@ const ContactForm: React.FC<ContactFormProps> = ({
         value={formData.message}
         onChange={handleChange}
         error={errors.message}
-        inputClassName={inputBgColor}
+        inputClassName={fieldInputClass}
+        labelClassName={fieldLabelClass}
+        errorClassName={fieldErrorClass}
         isTextArea
+        rows={isCompact ? 3 : 4}
         required
       />
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`btn btn-primary btn-hover w-full justify-center ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
+        className={`btn btn-primary btn-hover ${submitButtonClass} ${isSubmitting ? "cursor-not-allowed opacity-70" : ""}`}
       >
         <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
       </button>
 
       {submitStatus === "success" && (
-        <div className="p-4 bg-green-100 text-green-700 rounded-xl text-center animate-in fade-in zoom-in duration-300">
+        <div
+          className={`${statusMessageClass} rounded-xl bg-green-100 text-center text-green-700 animate-in fade-in zoom-in duration-300`}
+        >
           Message sent successfully! We'll get back to you soon.
         </div>
       )}
       {submitStatus === "error" && (
-        <div className="p-4 bg-red-100 text-red-700 rounded-xl text-center animate-in fade-in zoom-in duration-300">
+        <div
+          className={`${statusMessageClass} rounded-xl bg-red-100 text-center text-red-700 animate-in fade-in zoom-in duration-300`}
+        >
           Something went wrong. Please try again.
         </div>
       )}

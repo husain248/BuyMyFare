@@ -43,7 +43,10 @@ function Page() {
                       Get in Touch
                     </h2>
                   </div>
-                  <ContactForm inputBgColor="bg-[#ffffff]" />
+                  <ContactForm
+                    inputBgColor="bg-[#ffffff]"
+                    layoutClasses="gap-5"
+                  />
                 </div>
               </aside>
             </div>

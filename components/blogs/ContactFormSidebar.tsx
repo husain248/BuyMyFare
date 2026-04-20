@@ -12,7 +12,10 @@ const ContactFormSidebar: React.FC = () => {
           Get in Touch
         </h2>
       </div>
-      <ContactForm inputBgColor="bg-[#ffffff]" layoutClasses="grid-cols-1" />
+      <ContactForm
+        inputBgColor="bg-[#ffffff]"
+        layoutClasses="grid-cols-1 gap-5"
+      />
     </div>
   );
 };

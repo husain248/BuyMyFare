@@ -5,6 +5,7 @@ import Footer from "../components/layout/Footer";
 import Script from "next/script";
 import ScriptInitializer from "../components/layout/ScriptInitializer";
 import WhatsAppFloat from "../components/common/WhatsAppFloat";
+import { TripPlannerModalProvider } from "../context/TripPlannerModalContext";
 
 export const metadata: Metadata = {
   title: "BuyMyFare | Flight Tickets, Tour Packages & Travel Deals",
@@ -70,17 +71,19 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <ScriptInitializer />
-        <div className="page-wraper">
-          <Header />
-          <div id="smooth-wrapper">
-            <div id="smooth-content">
-              <main className="page-content">{children}</main>
-              <Footer />
+        <TripPlannerModalProvider>
+          <ScriptInitializer />
+          <div className="page-wraper">
+            <Header />
+            <div id="smooth-wrapper">
+              <div id="smooth-content">
+                <main className="page-content">{children}</main>
+                <Footer />
+              </div>
             </div>
+            <WhatsAppFloat />
           </div>
-          <WhatsAppFloat />
-        </div>
+        </TripPlannerModalProvider>
 
         {/* Vendor scripts loaded after hydration to avoid DOM mismatches */}
         <Script
