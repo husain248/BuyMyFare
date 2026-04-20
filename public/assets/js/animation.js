@@ -417,7 +417,10 @@ const plexifyGsap = function () {
               const parent = spacer.parentElement;
               if (parent) {
                 parent.insertBefore(el, spacer);
-                parent.removeChild(spacer);
+                // App-router navigations can detach nodes before this cleanup runs.
+                if (spacer.parentNode === parent) {
+                  parent.removeChild(spacer);
+                }
               }
             });
           };

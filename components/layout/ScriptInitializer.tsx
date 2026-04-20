@@ -40,8 +40,18 @@ export default function ScriptInitializer() {
     if (typeof window !== "undefined") {
       const w = window as any;
       if (w.ScrollTrigger) {
-        w.ScrollTrigger.getAll().forEach((t: any) => t.revert());
-        w.ScrollTrigger.refresh();
+        w.ScrollTrigger.getAll().forEach((t: any) => {
+          try {
+            t.kill(true);
+          } catch {
+            try {
+              t.kill();
+            } catch {}
+          }
+        });
+        try {
+          w.ScrollTrigger.refresh();
+        } catch {}
       }
     }
     
