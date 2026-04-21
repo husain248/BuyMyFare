@@ -20,6 +20,7 @@ export default function TourPackages() {
         !swiperInstance
       ) {
         swiperInstance = new (window as any).Swiper(swiperRef.current, {
+          modules: [(window as any).SwiperModules?.Autoplay].filter(Boolean),
           speed: 1500,
           parallax: true,
           slidesPerView: 1,

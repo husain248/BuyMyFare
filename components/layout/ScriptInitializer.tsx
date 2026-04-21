@@ -6,6 +6,7 @@ import Script from "next/script";
 
 function runInit() {
   const w = window as any;
+  if (!w.__vendorLibsReady) return;
   try {
     if (typeof w.plexify === "function") w.plexify().init();
   } catch {}
@@ -56,8 +57,11 @@ export default function ScriptInitializer() {
     }
     
     const timer = setTimeout(runInit, 500);
+    const onVendorReady = () => runInit();
+    window.addEventListener("vendor-libs-ready", onVendorReady, { once: true });
     return () => {
       clearTimeout(timer);
+      window.removeEventListener("vendor-libs-ready", onVendorReady);
     };
   }, [pathname]);
 
@@ -67,9 +71,19 @@ export default function ScriptInitializer() {
       src="/assets/js/custom.js"
       strategy="afterInteractive"
       onReady={() => {
-        runInit();
-        // Run again after images settle
-        setTimeout(runInit, 800);
+        if ((window as any).__vendorLibsReady) {
+          runInit();
+          // Run again after images settle
+          setTimeout(runInit, 800);
+        } else {
+          const onVendorReady = () => {
+            runInit();
+            setTimeout(runInit, 800);
+          };
+          window.addEventListener("vendor-libs-ready", onVendorReady, {
+            once: true,
+          });
+        }
       }}
     />
   );

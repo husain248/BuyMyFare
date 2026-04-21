@@ -4,6 +4,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Script from "next/script";
 import ScriptInitializer from "../components/layout/ScriptInitializer";
+import VendorLibraryLoader from "../components/layout/VendorLibraryLoader";
 import WhatsAppFloat from "../components/common/WhatsAppFloat";
 import { TripPlannerModalProvider } from "../context/TripPlannerModalContext";
 
@@ -72,6 +73,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <TripPlannerModalProvider>
+          <VendorLibraryLoader />
           <ScriptInitializer />
           <div className="page-wraper">
             <Header />
@@ -86,10 +88,6 @@ export default function RootLayout({
         </TripPlannerModalProvider>
 
         {/* Vendor scripts loaded after hydration to avoid DOM mismatches */}
-        <Script
-          src="/assets/vendor/three/three.js"
-          strategy="afterInteractive"
-        />
         <Script
           src="/assets/vendor/gsap/gsap.min.js"
           strategy="afterInteractive"
@@ -115,27 +113,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script
-          src="/assets/vendor/swiper/swiper-bundle.min.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="/assets/vendor/masonry/masonry-4.2.2.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="/assets/vendor/masonry/isotope.pkgd.min.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="/assets/vendor/imagesloaded/imagesloaded.js"
-          strategy="afterInteractive"
-        />
-        <Script
           src="/assets/vendor/xmenu/xmenu.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="/assets/vendor/hovereffect/hover-effect.js"
           strategy="afterInteractive"
         />
         <Script src="/assets/js/animation.js" strategy="afterInteractive" />
