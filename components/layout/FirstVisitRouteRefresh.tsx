@@ -25,7 +25,7 @@ export default function FirstVisitRouteRefresh() {
 
   return (
     <div
-      id="loading-area"
+      id="route-loading-area"
       className="pxl-loader style-3"
       aria-live="polite"
       aria-label="Loading page"

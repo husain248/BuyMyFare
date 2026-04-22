@@ -550,7 +550,7 @@ window.addEventListener("load", function () {
 
   setTimeout(function () {
     try {
-      const loadingArea = document.getElementById("loading-area");
+      const loadingArea = document.querySelector("#loading-area.hidden");
       if (loadingArea?.parentNode) {
         loadingArea.parentNode.removeChild(loadingArea);
       }

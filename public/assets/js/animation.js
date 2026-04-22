@@ -1,4 +1,13 @@
 const plexifyGsap = function () {
+  if (
+    typeof window.gsap === "undefined" ||
+    typeof window.ScrollTrigger === "undefined" ||
+    typeof window.ScrollSmoother === "undefined" ||
+    typeof window.SplitText === "undefined"
+  ) {
+    return null;
+  }
+
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
   let smoother;
 
@@ -645,18 +654,44 @@ const plexifyGsap = function () {
   };
 };
 
-// Keep a single instance so we don't recreate ScrollSmoother on route changes.
-window.__plexifyGsapInstance = window.__plexifyGsapInstance || plexifyGsap();
+const getPlexifyInstance = () => {
+  if (window.__plexifyGsapInstance) return window.__plexifyGsapInstance;
+  const instance = plexifyGsap();
+  if (!instance) return null;
+  // Keep a single instance so we don't recreate ScrollSmoother on route changes.
+  window.__plexifyGsapInstance = instance;
+  return instance;
+};
+
+const initPlexifyWhenReady = () => {
+  const instance = getPlexifyInstance();
+  if (!instance) return false;
+  instance.init();
+  return true;
+};
 
 window.addEventListener("load", () => {
-  window.__plexifyGsapInstance.init();
+  if (initPlexifyWhenReady()) return;
+
+  // Production CDNs may load vendor files in a different order on first hit.
+  // Retry briefly so page init does not fail if gsap dependencies are late.
+  let attempts = 0;
+  const maxAttempts = 40;
+  const pollId = setInterval(() => {
+    attempts += 1;
+    if (initPlexifyWhenReady() || attempts >= maxAttempts) {
+      clearInterval(pollId);
+    }
+  }, 100);
 });
 
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
-    window.__plexifyGsapInstance.resize();
-    ScrollTrigger.refresh();
+    window.__plexifyGsapInstance?.resize?.();
+    if (typeof window.ScrollTrigger !== "undefined") {
+      window.ScrollTrigger.refresh();
+    }
   }, 250);
 });
