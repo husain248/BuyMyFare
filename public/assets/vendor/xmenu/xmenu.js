@@ -538,23 +538,43 @@ const xMenu = function () {
 
 window.addEventListener("load", function () {
   setTimeout(function () {
-    const preloader = document.getElementById("xMenuPreloader");
-    if (preloader) {
-      preloader.remove();
+    try {
+      const preloader = document.getElementById("xMenuPreloader");
+      if (preloader?.parentNode) {
+        preloader.parentNode.removeChild(preloader);
+      }
+    } catch (err) {
+      console.error("xMenu preloader remove error:", err);
     }
   }, 50);
 
   setTimeout(function () {
-    const loadingArea = document.getElementById("loading-area");
-    if (loadingArea) {
-      loadingArea.remove();
+    try {
+      const loadingArea = document.getElementById("loading-area");
+      if (loadingArea?.parentNode) {
+        loadingArea.parentNode.removeChild(loadingArea);
+      }
+    } catch (err) {
+      console.error("xMenu loading-area remove error:", err);
     }
   }, 100);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  xMenu().init();
+  try {
+    if (typeof xMenu === "function") {
+      xMenu().init();
+    }
+  } catch (err) {
+    console.error("xMenu init handler error:", err);
+  }
 });
 window.addEventListener("resize", () => {
-  xMenu().resize();
+  try {
+    if (typeof xMenu === "function") {
+      xMenu().resize();
+    }
+  } catch (err) {
+    console.error("xMenu resize handler error:", err);
+  }
 });

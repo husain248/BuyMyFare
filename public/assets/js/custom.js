@@ -903,28 +903,52 @@ const plexify = function () {
   };
 };
 window.addEventListener("load", function () {
-  if (typeof plexify !== "undefined" && typeof plexify.load === "function") {
-    plexify.load();
+  try {
+    if (typeof plexify !== "undefined" && typeof plexify.load === "function") {
+      plexify.load();
+    }
+  } catch (err) {
+    console.error("plexify load handler error:", err);
   }
 
   setTimeout(function () {
-    const loadingArea = document.getElementById("loading-area");
-    if (loadingArea) {
-      loadingArea.remove();
+    try {
+      const loadingArea = document.getElementById("loading-area");
+      if (loadingArea?.parentNode) {
+        loadingArea.parentNode.removeChild(loadingArea);
+      }
+    } catch (err) {
+      console.error("loading-area remove error:", err);
     }
   }, 100);
 });
 
 window.addEventListener("scroll", function () {
-  if (typeof plexify !== "undefined" && typeof plexify.scroll === "function") {
-    plexify.scroll();
+  try {
+    if (typeof plexify !== "undefined" && typeof plexify.scroll === "function") {
+      plexify.scroll();
+    }
+  } catch (err) {
+    console.error("plexify scroll handler error:", err);
   }
 });
 
 window.addEventListener("resize", function () {
-  plexify().resize();
+  try {
+    if (typeof plexify === "function") {
+      plexify().resize();
+    }
+  } catch (err) {
+    console.error("plexify resize handler error:", err);
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  plexify().init();
+  try {
+    if (typeof plexify === "function") {
+      plexify().init();
+    }
+  } catch (err) {
+    console.error("plexify init handler error:", err);
+  }
 });
