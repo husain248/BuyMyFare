@@ -206,7 +206,13 @@ export default function Header() {
                         ${isActive ? "active" : ""}
                       `}
                       href={route.path}
-                      onClick={closeMenu}
+                      onClick={(e) => {
+                        // Use hard navigation for primary menu links to avoid
+                        // intermittent App Router client-load failures on deploy.
+                        e.preventDefault();
+                        closeMenu();
+                        window.location.assign(route.path);
+                      }}
                       onMouseEnter={(e) => {
                         setHoveredIdx(idx);
                         updateIndicator(e.currentTarget);
