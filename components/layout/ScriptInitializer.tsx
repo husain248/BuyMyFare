@@ -51,25 +51,6 @@ export default function ScriptInitializer() {
       } catch {}
     }
 
-    // Immediate cleanup before new page settles
-    if (typeof window !== "undefined") {
-      const w = window as any;
-      if (w.ScrollTrigger) {
-        w.ScrollTrigger.getAll().forEach((t: any) => {
-          try {
-            t.kill(true);
-          } catch {
-            try {
-              t.kill();
-            } catch {}
-          }
-        });
-        try {
-          w.ScrollTrigger.refresh();
-        } catch {}
-      }
-    }
-    
     const timer = setTimeout(runInit, 500);
     const topResetTimer = setTimeout(() => {
       const w = window as any;

@@ -1,6 +1,7 @@
 "use client";
 
 import ContactForm from "../common/ContactForm";
+import { getOptimizedBackgroundImage } from "../../lib/optimizedBackgroundImage";
 
 export default function ContactSection() {
   return (
@@ -30,7 +31,9 @@ export default function ContactSection() {
           <div
             className="absolute inset-0 bg-no-repeat bg-bottom-right pointer-events-none z-0"
             style={{
-              backgroundImage: "url(/assets/images/background/bg4.png)",
+              backgroundImage: getOptimizedBackgroundImage(
+                "/assets/images/background/bg4.png"
+              ),
               backgroundSize: "cover",
             }}
           ></div>

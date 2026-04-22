@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const STORAGE_PREFIX = "first-visit-refresh:";
 
 export default function FirstVisitRouteRefresh() {
   const pathname = usePathname();
+  const router = useRouter();
   const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
@@ -18,15 +19,22 @@ export default function FirstVisitRouteRefresh() {
     if (!hasRefreshed) {
       setShowLoader(true);
       sessionStorage.setItem(key, "1");
-      const reloadTimer = window.setTimeout(() => {
-        window.location.reload();
+      const refreshTimer = window.setTimeout(() => {
+        // Soft refresh avoids "page could not load" flashes from hard reload.
+        router.refresh();
       }, 220);
+      const hideLoaderTimer = window.setTimeout(() => {
+        setShowLoader(false);
+      }, 1200);
 
-      return () => window.clearTimeout(reloadTimer);
+      return () => {
+        window.clearTimeout(refreshTimer);
+        window.clearTimeout(hideLoaderTimer);
+      };
     }
 
     setShowLoader(false);
-  }, [pathname]);
+  }, [pathname, router]);
 
   if (!showLoader) {
     return null;

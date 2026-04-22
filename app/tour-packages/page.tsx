@@ -2,13 +2,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { tourPackages } from "../../data/tour-packages";
+import { getOptimizedBackgroundImage } from "../../lib/optimizedBackgroundImage";
 
 function page() {
   return (
     <>
       <div
         className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/20"
-        style={{ backgroundImage: "url('/assets/images/banner/bnr2.png')" }}
+        style={{
+          backgroundImage: getOptimizedBackgroundImage("/assets/images/banner/bnr2.png"),
+        }}
       >
         <div className="container relative z-1 table h-full">
           <div className="text-center py-15 table-cell align-middle 2xxl:h-125 lg:h-125 sm:h-100 h-75">

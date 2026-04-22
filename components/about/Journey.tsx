@@ -2,10 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { getOptimizedBackgroundImage } from "../../lib/optimizedBackgroundImage";
 
 export default function Journey() {
   return (
-    <section className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/40" style={{ backgroundImage: "url('/assets/images/about/large/img4.png')" }}>
+    <section
+      className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/40"
+      style={{
+        backgroundImage: getOptimizedBackgroundImage(
+          "/assets/images/about/large/img4.png"
+        ),
+      }}
+    >
       <div className="container-full relative z-1">
         <div className="relative overflow-hidden md:min-h-135 min-h-100 flex items-center justify-center py-[100px] sm:py-4">
           <div className="container relative z-10 text-center mx-auto w-full px-4">

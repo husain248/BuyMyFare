@@ -33,7 +33,7 @@ function Page() {
               <ContactInfo />
             </div>
 
-            <div className="lg:col-span-6 col-span-12">
+            <div className="lg:col-span-6 col-span-12 pb-10 sm:pb-2">
               <div className="xl:pt-12.5 2xl:ps-5">
                 <div className="xl:mb-12.5 mb-5">
                   <h2 className="2xl:text-7xl xl:text-6xl md:text-5xl sm:text-4xl text-3xl font-medium lg:mb-7.5 mb-4 headline">
