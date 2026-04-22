@@ -7,6 +7,7 @@ import ScriptInitializer from "../components/layout/ScriptInitializer";
 import VendorLibraryLoader from "../components/layout/VendorLibraryLoader";
 import WhatsAppFloat from "../components/common/WhatsAppFloat";
 import { TripPlannerModalProvider } from "../context/TripPlannerModalContext";
+import FirstVisitRouteRefresh from "../components/layout/FirstVisitRouteRefresh";
 
 export const metadata: Metadata = {
   title: "BuyMyFare | Flight Tickets, Tour Packages & Travel Deals",
@@ -73,6 +74,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <TripPlannerModalProvider>
+          <FirstVisitRouteRefresh />
           <VendorLibraryLoader />
           <ScriptInitializer />
           <div className="page-wraper">

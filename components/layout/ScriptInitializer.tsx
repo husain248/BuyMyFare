@@ -37,6 +37,20 @@ export default function ScriptInitializer() {
 
   // Re-run init on every client-side route change
   useEffect(() => {
+    // Force each new route to start from the top.
+    if (typeof window !== "undefined") {
+      try {
+        window.history.scrollRestoration = "manual";
+      } catch {}
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      const w = window as any;
+      try {
+        if (w.ScrollSmoother?.get()) {
+          w.ScrollSmoother.get().scrollTo(0, false);
+        }
+      } catch {}
+    }
+
     // Immediate cleanup before new page settles
     if (typeof window !== "undefined") {
       const w = window as any;
@@ -57,10 +71,20 @@ export default function ScriptInitializer() {
     }
     
     const timer = setTimeout(runInit, 500);
+    const topResetTimer = setTimeout(() => {
+      const w = window as any;
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      try {
+        if (w.ScrollSmoother?.get()) {
+          w.ScrollSmoother.get().scrollTo(0, false);
+        }
+      } catch {}
+    }, 50);
     const onVendorReady = () => runInit();
     window.addEventListener("vendor-libs-ready", onVendorReady, { once: true });
     return () => {
       clearTimeout(timer);
+      clearTimeout(topResetTimer);
       window.removeEventListener("vendor-libs-ready", onVendorReady);
     };
   }, [pathname]);
