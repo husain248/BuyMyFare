@@ -410,18 +410,29 @@ const plexifyGsap = function () {
 
           return () => {
             instances.forEach(({ trigger, spacer, el }) => {
-              trigger.kill();
-              el.classList.remove("is-sticky");
-              el.style.removeProperty("--sticky-top");
+              try {
+                trigger?.kill?.();
+              } catch (e) {}
 
-              const parent = spacer.parentElement;
-              if (parent) {
-                parent.insertBefore(el, spacer);
+              try {
+                el?.classList?.remove?.("is-sticky");
+                el?.style?.removeProperty?.("--sticky-top");
+              } catch (e) {}
+
+              try {
+                const parent = spacer?.parentElement;
                 // App-router navigations can detach nodes before this cleanup runs.
-                if (spacer.parentNode === parent) {
-                  parent.removeChild(spacer);
+                if (parent && spacer && el) {
+                  if (parent.contains(spacer)) {
+                    try {
+                      parent.insertBefore(el, spacer);
+                    } catch (e) {}
+                    if (spacer.parentNode === parent) {
+                      parent.removeChild(spacer);
+                    }
+                  }
                 }
-              }
+              } catch (e) {}
             });
           };
         } catch (err) {

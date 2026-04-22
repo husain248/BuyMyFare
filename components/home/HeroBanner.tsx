@@ -24,7 +24,7 @@ export default function HeroBanner() {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
 
   return (
-    <div className="group relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-140 after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
+    <div className="group relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-140 after:absolute after:inset-0 md:after:bg-linear-to-b after:bg-linear-to-t after:from-black/70 after:to-transparent">
       <div className="absolute inset-0">
         {heroSlides.map((item, index) => (
           <Image
