@@ -11309,4 +11309,16 @@ button {
   max-height: 95vh !important;
 }
 
+.before-bg1::before {
+  background-image: url("/assets/images/background/bg1.png");
+}
+
+.after-bg1::after {
+  background-image: url("/assets/images/background/bg1.png");
+}
+
+.after-bg2::after {
+  background-image: url("/assets/images/background/bg2.png");
+}
+
 }

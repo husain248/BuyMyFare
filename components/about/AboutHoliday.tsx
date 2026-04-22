@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutHoliday() {
   return (
-    <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 relative z-1 after:absolute after:bottom-0 lg:after:-left-55 after:left-0 after:size-full after:bg-no-repeat after:bg-bottom-left after:bg-[url('/assets/images/background/bg2.png')] after:-z-1 max-xl:after:bg-contain before:absolute before:top-0 before:right-0 before:size-full before:bg-no-repeat before:bg-top-right before:bg-[url('/assets/images/background/bg1.png')] before:-z-1">
+    <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 relative z-1 after:absolute after:bottom-0 lg:after:-left-55 after:left-0 after:size-full after:bg-no-repeat after:bg-bottom-left after-bg2 after:-z-1 max-xl:after:bg-contain before:absolute before:top-0 before:right-0 before:size-full before:bg-no-repeat before:bg-top-right before-bg1 before:-z-1">
       <div className="container">
         <div className="xl:mb-10 sm:mb-5 mb-2.5">
           <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase headline">

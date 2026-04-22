@@ -49,7 +49,7 @@ export default function FlightBookings() {
   }, []);
 
   return (
-    <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 bg-light relative z-1 after:absolute after:bottom-0 lg:after:-right-55 after:right-0 after:size-full after:bg-no-repeat after:bg-bottom-right after:bg-[url(/assets/images/background/bg2.png)] after:-z-1 max-xl:after:bg-contain overflow-hidden">
+    <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 bg-light relative z-1 after:absolute after:bottom-0 lg:after:-right-55 after:right-0 after:size-full after:bg-no-repeat after:bg-bottom-right after-bg2 after:-z-1 max-xl:after:bg-contain overflow-hidden">
       <div className="container max-w-[1330px] relative z-1">
         <div
           className="row"
