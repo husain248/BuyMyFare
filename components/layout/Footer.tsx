@@ -24,8 +24,7 @@ export default function Footer() {
                     alt="BuyMyFare"
                     width={200}
                     height={69}
-                    className="h-20 w-auto object-contain"
-                    style={{ width: "auto" }}
+                    className="h-auto w-[200px] object-contain md:w-[220px]"
                   />
                 </Link>
                 <p className="text-white/80 text-base leading-relaxed mb-7 max-w-lg">
@@ -98,8 +97,7 @@ export default function Footer() {
                     alt="TIDS IATA"
                     width={150}
                     height={100}
-                    className="h-25 w-auto"
-                    style={{ width: "auto" }}
+                    className="h-auto w-[150px] object-contain"
                   />
                 </div>
               </div>

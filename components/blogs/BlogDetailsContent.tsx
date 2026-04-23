@@ -54,7 +54,7 @@ const BlogDetailsContent: React.FC<BlogDetailsContentProps> = ({ blog }) => {
   };
 
   return (
-    <div className="xl:pt-20 sm:pt-15 pt-10">
+    <div className="sm:pt-12 pt-10">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="row">
           <div className="w-full">

@@ -1,9 +1,18 @@
-"use client";
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import PageBanner from "../../components/layout/PageBanner";
 import ContactInfo from "../../components/contact/ContactInfo";
 import ContactForm from "../../components/common/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Contact BuyMyFare for flight bookings, tour packages, and custom travel planning support from our travel specialists.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 function Page() {
   return (

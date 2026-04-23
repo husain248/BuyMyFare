@@ -19,17 +19,17 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   return (
     <div className="group blog-card mb-5">
       <div className="sm:mb-7.5 mb-5 overflow-hidden rounded-2xl">
-        <div className="group dz-hover-item relative overflow-hidden">
+        <div className="group dz-hover-item relative h-[240px] overflow-hidden sm:h-[280px]">
           <Link
             href={`/blogs/${blog.slug}`}
-            className="dz-hover-img relative block"
+            className="dz-hover-img relative block h-full w-full"
           >
             <Image
               src={blog.image}
               alt={blog.title}
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover duration-500 group-hover:scale-[1.03]"
+              fill
+              sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+              className="object-cover duration-500 group-hover:scale-[1.03]"
             />
           </Link>
         </div>

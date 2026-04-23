@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import React, { use } from "react";
+import type { Metadata } from "next";
 import blogsData from "../../../data/blogs.json";
 import { notFound } from "next/navigation";
 import BlogDetailsContent from "../../../components/blogs/BlogDetailsContent";
@@ -22,8 +20,59 @@ interface Blog {
   tags: string[];
 }
 
-function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = (blogsData as Blog[]).find((item) => item.slug === slug);
+
+  if (!blog) {
+    return {
+      title: "Blog Not Found",
+      description: "This blog article could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  return {
+    title: blog.title,
+    description: blog.content,
+    keywords: blog.tags,
+    alternates: {
+      canonical: `/blogs/${blog.slug}`,
+    },
+    openGraph: {
+      title: blog.title,
+      description: blog.content,
+      type: "article",
+      url: `/blogs/${blog.slug}`,
+      images: [
+        {
+          url: blog.image,
+          alt: blog.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.content,
+      images: [blog.image],
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return (blogsData as Blog[]).map((blog) => ({ slug: blog.slug }));
+}
+
+async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const blog = (blogsData as Blog[]).find((b) => b.slug === slug);
 
   if (!blog) {
@@ -44,7 +93,7 @@ function Page({ params }: { params: Promise<{ slug: string }> }) {
             <div className="flex flex-wrap -mx-4">
               {/* Main Content Area */}
               <div className="xl:w-3/4 w-full px-4 mb-10 xl:mb-0">
-                <div className="container mx-auto px-4 pb-20">
+                <div className="container mx-auto px-4">
                   <div className="relative w-full h-100 overflow-hidden rounded-2xl">
                     <Image
                       src={blog.image}

@@ -124,21 +124,75 @@
 //   );
 // }
 
-"use client";
-
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { tourPackages } from "../../../data/tour-packages";
 
 const packages = tourPackages;
 
-export default function TourDetails() {
-  const params = useParams();
-  const slug = params.slug;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const tour = packages.find((pkg) => pkg.slug === slug);
+
+  if (!tour) {
+    return {
+      title: "Tour Package Not Found",
+      description: "The requested tour package could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  return {
+    title: `${tour.title} Tour Package`,
+    description: tour.description,
+    alternates: {
+      canonical: `/tour-packages/${tour.slug}`,
+    },
+    openGraph: {
+      title: `${tour.title} Tour Package`,
+      description: tour.description,
+      type: "website",
+      url: `/tour-packages/${tour.slug}`,
+      images: [
+        {
+          url: tour.images[0] || "/assets/images/banner/bnr2.png",
+          alt: tour.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${tour.title} Tour Package`,
+      description: tour.description,
+      images: [tour.images[0] || "/assets/images/banner/bnr2.png"],
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return packages.map((pkg) => ({ slug: pkg.slug }));
+}
+
+export default async function TourDetails({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
   const tour = packages.find((p) => p.slug === slug);
 
-  if (!tour) return <div>Tour not found</div>;
+  if (!tour) {
+    notFound();
+  }
 
   return (
     <>

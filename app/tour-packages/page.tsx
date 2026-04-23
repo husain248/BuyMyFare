@@ -1,8 +1,17 @@
-"use client";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { tourPackages } from "../../data/tour-packages";
 import { getOptimizedBackgroundImage } from "../../lib/optimizedBackgroundImage";
+
+export const metadata: Metadata = {
+  title: "Tour Packages",
+  description:
+    "Browse affordable tour packages with BuyMyFare, including beach escapes, city breaks, and custom vacation deals.",
+  alternates: {
+    canonical: "/tour-packages",
+  },
+};
 
 function page() {
   return (

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const AboutWorkSidebar: React.FC = () => {
   return (
-    <div className="sm:mb-11.25 mb-5 bg-[#FAFAFA] p-8 rounded-2xl relative overflow-hidden group">
+    <div className="sm:mb-11.25 my-5 bg-[#FAFAFA] p-8 rounded-2xl relative overflow-hidden group">
       <div className="relative z-1">
         <h4 className="text-xl uppercase mb-4 font-semibold text-secondary">
           Why We Do What We Do

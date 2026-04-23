@@ -127,14 +127,14 @@ export default function Header() {
                 width={200}
                 height={69}
                 priority
-                className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden w-auto h-auto"
+                className="block h-auto w-[200px] object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:hidden"
               />
               <Image
                 src="/assets/images/Buy-My-Fare-Logo.png"
                 alt="logo"
                 width={200}
                 height={69}
-                className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden w-auto h-auto"
+                className="hidden h-auto w-[200px] object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block"
               />
             </Link>
           </div>
@@ -177,8 +177,7 @@ export default function Header() {
                   alt="logo"
                   width={135}
                   height={61}
-                  className="object-contain duration-500"
-                  style={{ height: "auto" }}
+                  className="h-auto w-[135px] object-contain duration-500"
                 />
               </Link>
             </div>
