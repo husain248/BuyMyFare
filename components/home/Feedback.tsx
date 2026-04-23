@@ -77,7 +77,7 @@ export default function Feedback() {
 
   return (
     <section className="2xl:py-40 2xl:pb-10 lg:py-30 sm:py-25 py-18 bg-white relative max-sm:px-4">
-      <div className="container relative z-1 max-w-[1330px]">
+      <div className="container relative z-1 max-w-332.5">
         <div className="mb-10 max-lg:text-center">
           <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase headline">
             Client Feedback

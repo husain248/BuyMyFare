@@ -7,7 +7,7 @@ import { homeServices } from "../../data/home-services";
 export default function OurServices() {
   return (
     <section className="py-20 bg-[#F5F2EB]">
-      <div className="container px-4 mx-auto relative z-1 max-w-[1330px]">
+      <div className="container px-4 mx-auto relative z-1 max-w-332.5">
         <div className="text-center mb-12">
           <span className="font-main text-[24px] md:text-[32px] capitalize text-[#072032]">
             Service We Offer Is Specifically Designed To Meet Your Needs.

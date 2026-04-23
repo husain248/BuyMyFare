@@ -71,7 +71,7 @@ export default function ProcessSection() {
                 </div>
                 <div className="">
                   <h3 className="text-2xl font-medium mb-2.5  font-main">
-                    Hassle-Free Services
+                    Trouble-Free Solution
                   </h3>
                   <p className="text-base">
                     Leave the logistics to us—flights, hotels, visas, and

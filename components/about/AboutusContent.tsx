@@ -14,7 +14,7 @@ export default function AboutusContent() {
           className="object-contain object-bottom-left"
         />
       </div>
-      <div className="container max-w-[1330px] relative z-1">
+      <div className="container max-w-332.5 relative z-1">
         <div className="row">
           <div className="lg:w-1/2 w-full">
             <div className="lg:pt-20 relative mb-10">

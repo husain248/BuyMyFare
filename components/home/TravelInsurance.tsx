@@ -9,7 +9,7 @@ export default function TravelInsurance() {
       id="nextSection"
       className="relative md:py-20 py-15 before:absolute before:top-0 before:right-[21%] before:bg-[#f5f2eb] before:w-[22.35%] before:h-full before:-z-1 max-lg:before:hidden after:absolute after:-bottom-47.5 lg:after:-left-72.5 after:left-0 after:size-full after:bg-no-repeat after:bg-bottom-left after-bg1 after:-z-1"
     >
-      <div className="container max-w-[1330px] relative z-1">
+      <div className="container max-w-332.5 relative z-1">
         <div className="row">
           <div className="lg:w-1/2 w-full">
             <div className="lg:pt-20 relative mb-10">

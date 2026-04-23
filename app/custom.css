@@ -1819,22 +1819,29 @@ button {
 }
 
 @media (min-width: 992px) {
+  .sidebar-sticky,
+  .flight-booking-sticky {
+    position: sticky;
+    top: calc(var(--header-height, 80px) + 10px);
+    align-self: flex-start;
+  }
+
   .sidebar-sticky.sticky-top {
     top: calc(var(--header-height, 80px) + 10px);
     position: sticky;
   }
 
   .sidebar-sticky.sticky-default {
-    top: 60%;
-    position: absolute;
+    top: calc(var(--header-height, 80px) + 10px);
+    position: sticky;
   }
 
   .sidebar-sticky.space-top-0.sticky-default {
-    top: 0;
+    top: calc(var(--header-height, 80px) + 10px);
   }
 
   .flight-sticky.sticky-default {
-    top: 0;
+    top: calc(var(--header-height, 80px) + 10px);
   }
 }
 

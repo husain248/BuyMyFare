@@ -19,7 +19,7 @@ export default function AboutHoliday() {
           </div>
         </div>
       </div>
-      <div className="container max-w-[1330px]">
+      <div className="container max-w-332.5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
           <div className="p-5 rounded-2lg bg-[#F2EFEA]">
             <div className="relative overflow-hidden rounded-2lg aspect-square">
@@ -36,8 +36,8 @@ export default function AboutHoliday() {
                 Tailored Itineraries
               </h3>
               <p className="text-base">
-                We design journeys that reflect your interests,
-                preferences, and pace.
+                We design journeys that reflect your interests, preferences, and
+                pace.
               </p>
             </div>
           </div>
@@ -56,9 +56,8 @@ export default function AboutHoliday() {
                 Exclusive Deals
               </h3>
               <p className="text-base">
-                Our partnerships with top airlines, hotels, and tour
-                operators mean you get the best value without compromising
-                quality.
+                Our partnerships with top airlines, hotels, and tour operators
+                mean you get the best value without compromising quality.
               </p>
             </div>
           </div>
@@ -77,15 +76,15 @@ export default function AboutHoliday() {
                 Round-the-Clock Support
               </h3>
               <p className="text-base">
-                Your peace of mind is our priority—before, during, and
-                after your trip.
+                Your peace of mind is our priority—before, during, and after
+                your trip.
               </p>
             </div>
           </div>
           <div className="p-5 rounded-2lg bg-[#F2EFEA]">
             <div className="relative overflow-hidden rounded-2lg aspect-square">
               <Image
-                src="/assets/images/tour/style3/img4.png"
+                src="/assets/images/tour/style3/hassle-free-service.jpg"
                 alt="Hassle-Free Service"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -97,14 +96,13 @@ export default function AboutHoliday() {
                 Hassle-Free Service
               </h3>
               <p className="text-base">
-                From planning your itinerary to ensuring a smooth journey,
-                we handle the details so you can focus on enjoying your
-                trip.
+                From planning your itinerary to ensuring a smooth journey, we
+                handle the details so you can focus on enjoying your trip.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 }

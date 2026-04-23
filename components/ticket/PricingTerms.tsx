@@ -8,11 +8,13 @@ const PricingTerms = () => {
         Air Ticket Pricing and Availability{" "}
       </h2>
       <p className="text-white/90 mt-3 relative z-1 max-w-2xl mx-auto">
-        Please be advised that the prices shown on our website are
-        indicative and subject to change based on availability and
-        market conditions. Final pricing will be confirmed at the time
-        of booking. For the most accurate and up-to-date information,
-        we encourage you to contact our team directly.
+        Please be advised that the prices shown on our website are indicative
+        and subject to change based on availability and market conditions.
+        <span className="block mt-6 bg-white p-3 rounded-lg text-base text-black/80 font-semibold">
+          Final pricing will be confirmed at the time of booking. For the most
+          accurate and up-to-date information, we encourage you to contact our
+          team directly.{" "}
+        </span>
       </p>
     </div>
   );

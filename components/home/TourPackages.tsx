@@ -124,7 +124,7 @@ export default function TourPackages() {
 
   return (
     <section className="lg:pt-25 lg:pb-45 sm:py-25 py-18 overflow-hidden">
-      <div className="container-left relative z-1 max-w-[1330px]">
+      <div className="container-left relative z-1 max-w-332.5">
         <div className="lg:mb-10 sm:mb-5 mb-2.5">
           <span className="font-main text-[24px] md:text-[32px] text-[#072032] capitalize">
             Discover Your Next Adventure

@@ -10,7 +10,9 @@ function page() {
       <div
         className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/20"
         style={{
-          backgroundImage: getOptimizedBackgroundImage("/assets/images/banner/bnr2.png"),
+          backgroundImage: getOptimizedBackgroundImage(
+            "/assets/images/banner/bnr2.png",
+          ),
         }}
       >
         <div className="container relative z-1 table h-full">
@@ -32,7 +34,7 @@ function page() {
         </div>
       </div>
       <section className="lg:pt-25 lg:pb-45 sm:py-25 py-18 overflow-hidden">
-        <div className="container-left max-w-[1330px] mx-auto">
+        <div className="container-left max-w-332.5 mx-auto">
           <div className="text-center mb-12">
             <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase lg:mb-4 headline">
               Popular Packages

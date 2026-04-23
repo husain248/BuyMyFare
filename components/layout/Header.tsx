@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useLayoutEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { navRoutes } from "../../data/navigation";
 import { useTripPlannerModal } from "../../context/TripPlannerModalContext";
@@ -22,6 +22,11 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
+  const getActiveRouteIdx = () =>
+    navRoutes.findIndex((route) =>
+      route.path === "/" ? pathname === "/" : pathname.startsWith(route.path),
+    );
+
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => setIsFixed(window.scrollY > 100);
@@ -38,16 +43,62 @@ export default function Header() {
     }
   };
 
-  useEffect(() => {
-    const activeRouteIdx = navRoutes.findIndex((r) =>
-      r.path === "/" ? pathname === "/" : pathname.startsWith(r.path),
-    );
+  const syncIndicatorToActiveRoute = () => {
+    const activeRouteIdx = getActiveRouteIdx();
     if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
       updateIndicator(linkRefs.current[activeRouteIdx]);
     } else {
       setIndicatorStyle({ width: 0, x: 0 });
     }
-  }, [pathname]);
+  };
+
+  useLayoutEffect(() => {
+    syncIndicatorToActiveRoute();
+
+    let secondFrame: number | null = null;
+    const firstFrame = window.requestAnimationFrame(() => {
+      syncIndicatorToActiveRoute();
+
+      secondFrame = window.requestAnimationFrame(() => {
+        syncIndicatorToActiveRoute();
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      if (secondFrame !== null) {
+        window.cancelAnimationFrame(secondFrame);
+      }
+    };
+  }, [pathname, isFixed]);
+
+  useEffect(() => {
+    if (!navRef.current) return;
+
+    const syncLater = () => {
+      window.requestAnimationFrame(() => {
+        syncIndicatorToActiveRoute();
+      });
+    };
+
+    const resizeObserver = new ResizeObserver(() => {
+      syncLater();
+    });
+
+    resizeObserver.observe(navRef.current);
+    window.addEventListener("resize", syncLater);
+    window.addEventListener("load", syncLater);
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(syncLater);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", syncLater);
+      window.removeEventListener("load", syncLater);
+    };
+  }, [pathname, isFixed]);
 
   useEffect(() => {
     closeMenu();
@@ -76,16 +127,14 @@ export default function Header() {
                 width={200}
                 height={69}
                 priority
-                className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden"
-                style={{ height: "auto" }}
+                className="object-contain duration-500 block [.sticky-header-wrapper.is-fixed_&]:hidden w-auto h-auto"
               />
               <Image
                 src="/assets/images/Buy-My-Fare-Logo.png"
                 alt="logo"
                 width={200}
                 height={69}
-                className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden"
-                style={{ height: "auto" }}
+                className="object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block hidden w-auto h-auto"
               />
             </Link>
           </div>
@@ -139,16 +188,7 @@ export default function Header() {
               className="lg:flex flex-wrap navbar-nav nav-wrapper relative"
               onMouseLeave={() => {
                 setHoveredIdx(null);
-                const activeRouteIdx = navRoutes.findIndex((r) =>
-                  r.path === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(r.path),
-                );
-                if (activeRouteIdx !== -1 && linkRefs.current[activeRouteIdx]) {
-                  updateIndicator(linkRefs.current[activeRouteIdx]);
-                } else {
-                  setIndicatorStyle({ width: 0, x: 0 });
-                }
+                syncIndicatorToActiveRoute();
               }}
             >
               {/* Sliding indicator pill */}
@@ -274,7 +314,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
     </header>
   );
 }

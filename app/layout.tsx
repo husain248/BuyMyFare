@@ -121,7 +121,11 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script src="/assets/js/animation.js" strategy="afterInteractive" />
-
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="K2/H3F9UoHH8ojZlUpYkNQ"
+          async
+        />
 
         {/* custom.js loaded via ScriptInitializer (client component) so onLoad can be used */}
       </body>

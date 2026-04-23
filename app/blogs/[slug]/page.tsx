@@ -9,6 +9,7 @@ import BlogBanner from "../../../components/blogs/BlogBanner";
 import AboutWorkSidebar from "../../../components/blogs/AboutWorkSidebar";
 import ContactFormSidebar from "../../../components/blogs/ContactFormSidebar";
 import RecentBlogsSlider from "../../../components/blogs/RecentBlogsSlider";
+import StickySidebar from "../../../components/common/StickySidebar";
 
 interface Blog {
   id: number;
@@ -58,10 +59,12 @@ function Page({ params }: { params: Promise<{ slug: string }> }) {
 
               {/* Sidebar */}
               <div className="xl:w-1/4 w-full px-4">
-                <aside className="my-sticky sidebar-sticky space-top-0">
-                  <AboutWorkSidebar />
-                  <ContactFormSidebar />
-                </aside>
+                <StickySidebar>
+                  <aside>
+                    <ContactFormSidebar />
+                    <AboutWorkSidebar />
+                  </aside>
+                </StickySidebar>
               </div>
             </div>
           </div>

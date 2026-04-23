@@ -22,7 +22,6 @@ const plexifyGsap = function () {
 
   const initHeaderSticky = () => {
     const header = document.querySelector(".site-header");
-    const sidebarStickyWrap = document.querySelector(".sidebar-sticky");
     if (!header) return;
 
     let rafId = null;
@@ -40,11 +39,6 @@ const plexifyGsap = function () {
       const shouldFix = scrollY > SCROLL_OFFSET;
 
       header.classList.toggle("is-fixed", shouldFix);
-
-      if (sidebarStickyWrap) {
-        sidebarStickyWrap.classList.toggle("sticky-top", shouldFix);
-        sidebarStickyWrap.classList.toggle("sticky-default", !shouldFix);
-      }
 
       rafId = requestAnimationFrame(loop);
     };
@@ -353,107 +347,64 @@ const plexifyGsap = function () {
   let cleanupSticky = null;
 
   const initStickyPosition = (selector = ".my-sticky", offset = 100) => {
-    ScrollTrigger.matchMedia({
-      "(min-width: 992px)": () => {
+    const media = gsap.matchMedia();
+
+    media.add("(min-width: 992px)", () => {
         try {
-          const elements = document.querySelectorAll(selector);
+          const elements = gsap.utils.toArray(selector);
           if (!elements.length) return;
 
-          const instances = [];
+          const triggers = [];
 
           elements.forEach((el) => {
             const parent = el.parentElement;
-            if (!parent) return;
-
-            const spacer = document.createElement("div");
-            spacer.className = "sticky-spacer";
-
-            const isSidebar = el.classList.contains("sidebar-sticky");
-            const isTopZero = el.classList.contains("space-top-0");
-            const isFlightSticky = el.classList.contains("flight-sticky");
-            const hasDelayedOffset = isTopZero || isFlightSticky;
-
-            spacer.style.setProperty(
-              "--spacer-height",
-              isSidebar ? "0px" : `${el.offsetHeight + offset}px`,
-            );
-
-            el.style.setProperty(
-              "--sticky-top",
-              hasDelayedOffset ? "0px" : `${offset}px`,
-            );
-
-            parent.insertBefore(spacer, el);
-            spacer.appendChild(el);
-            el.classList.add("is-sticky");
-
-            const syncDelayedOffset = (pinSpacer, isActive) => {
-              if (!hasDelayedOffset || !pinSpacer) return;
-              pinSpacer.style.inset = `${isActive ? offset : 0}px 0px auto`;
-            };
+            const boundary = parent?.parentElement;
+            if (!parent || !boundary) return;
 
             const trigger = ScrollTrigger.create({
-              trigger: spacer,
-              start: hasDelayedOffset ? `top top+=${offset}` : "top top",
-              end: () => `+=${parent.offsetHeight - el.offsetHeight - offset}`,
-              pin: el,
-              pinType: "transform",
+              trigger: el,
+              start: () => `top top+=${offset}`,
+              endTrigger: boundary,
+              end: () => `bottom top+=${offset + el.offsetHeight}`,
+              pin: true,
               pinSpacing: false,
-              scroller: "#smooth-wrapper",
               anticipatePin: 1,
-              onToggle: (self) => syncDelayedOffset(self.pinSpacer, self.isActive),
-              onRefresh: (self) =>
-                syncDelayedOffset(
-                  self.pinSpacer,
-                  self.progress > 0 && self.progress < 1,
-                ),
+              invalidateOnRefresh: true,
+              onRefresh: (self) => {
+                self.pinSpacer?.classList.add("gsap-pin-spacer-fix");
+              },
             });
 
             requestAnimationFrame(() => {
               trigger.pinSpacer?.classList.add("gsap-pin-spacer-fix");
-              syncDelayedOffset(trigger.pinSpacer, false);
             });
 
-            instances.push({ trigger, spacer, el });
+            triggers.push(trigger);
           });
 
           return () => {
-            instances.forEach(({ trigger, spacer, el }) => {
+            triggers.forEach((trigger) => {
               try {
                 trigger?.kill?.();
-              } catch (e) {}
-
-              try {
-                el?.classList?.remove?.("is-sticky");
-                el?.style?.removeProperty?.("--sticky-top");
-              } catch (e) {}
-
-              try {
-                const parent = spacer?.parentElement;
-                // App-router navigations can detach nodes before this cleanup runs.
-                if (parent && spacer && el) {
-                  if (parent.contains(spacer)) {
-                    try {
-                      parent.insertBefore(el, spacer);
-                    } catch (e) {}
-                    if (spacer.parentNode === parent) {
-                      parent.removeChild(spacer);
-                    }
-                  }
-                }
               } catch (e) {}
             });
           };
         } catch (err) {
           console.error("initStickyPosition error:", err);
         }
-      },
     });
+
+    return () => {
+      media.revert();
+    };
   };
 
   const initApplySticky = () => {
     cleanupSticky?.();
     cleanupSticky = initStickyPosition();
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
   };
 
   const initStickyCard = () => {
