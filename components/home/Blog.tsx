@@ -70,13 +70,12 @@ export default function Blog() {
                   </div>
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center gap-2.5">
-
                       <ul className="flex flex-wrap items-center gap-x-2.5">
                         <li className="text-sm md:text-base text-black/40 flex items-center gap-1">
                           <MessageCircle size={20} />
                           {blog.comments}
                         </li>
-                        <li className="text-sm md:text-base text-black/40 hidden sm:flex items-center gap-1">
+                        <li className="text-sm md:text-base text-black/40 flex items-center gap-1">
                           |
                           <Calendar size={20} />
                           {blog.date}
@@ -122,4 +121,3 @@ export default function Blog() {
     </section>
   );
 }
-

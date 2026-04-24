@@ -9,17 +9,10 @@ export default function Destinations() {
     <section className="bg-[#ffffff] py-20 overflow-hidden">
       <div className="container relative z-1 max-w-7xl">
         <div className="text-center mb-12">
-          <span
-            className="text-white font-main"
-            style={{
-              textTransform: "capitalize",
-              fontSize: "32px",
-              color: "#072032",
-            }}
-          >
+          <span className="text-[#072032] font-main text-[24px] md:text-[32px] capitalize">
             The Unforgettable
           </span>
-          <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase lg:mb-4 headline">
+          <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase mb-4 headline">
             DESTINATION
           </h2>
           <p>

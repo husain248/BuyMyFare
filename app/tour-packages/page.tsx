@@ -26,14 +26,7 @@ function page() {
       >
         <div className="container relative z-1 table h-full">
           <div className="text-center py-15 table-cell align-middle 2xxl:h-125 lg:h-125 sm:h-100 h-75">
-            <span
-              className="text-white font-main"
-              style={{
-                textTransform: "capitalize",
-                fontSize: "32px",
-                color: "#ffffff",
-              }}
-            >
+            <span className="text-white font-main text-[24px] md:text-[32px] capitalize">
               Customized Vacation Deals
             </span>
             <h1 className="2xxl:text-11xxl xl:text-10xl sm:text-8xl text-5xl mb-2.5 text-white">

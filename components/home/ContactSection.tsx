@@ -9,10 +9,7 @@ export default function ContactSection() {
       <div className="container relative z-1">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12">
-            <span
-              className="block font-main text-primary mb-4"
-              style={{ fontSize: "28px", textTransform: "none" }}
-            >
+            <span className="block font-main text-primary mb-4 text-[24px] md:text-[32px]">
               Discover Your Next Adventure
             </span>
             <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xl uppercase mb-5">
@@ -32,7 +29,7 @@ export default function ContactSection() {
             className="absolute inset-0 bg-no-repeat bg-bottom-right pointer-events-none z-0"
             style={{
               backgroundImage: getOptimizedBackgroundImage(
-                "/assets/images/background/bg4.png"
+                "/assets/images/background/bg4.png",
               ),
               backgroundSize: "cover",
             }}
@@ -53,4 +50,3 @@ export default function ContactSection() {
     </section>
   );
 }
-

@@ -16,10 +16,7 @@ export default function GallerySection() {
     <section className="relative z-1 bg-[#F2EFEA] overflow-hidden 2xl:py-40 2xl:pb-10 lg:py-30 sm:py-25 py-18">
       {/* Section heading */}
       <div className="container mb-10 md:mb-14 text-center">
-        <span
-          className="block font-main text-primary mb-3"
-          style={{ fontSize: "28px", textTransform: "none" }}
-        >
+        <span className="block font-main text-primary mb-3 text-[24px] md:text-[32px]">
           The Gallery Hub
         </span>
         <h2 className="2xxl:text-8xl lg:text-6xl md:text-5xxl sm:text-4xl text-3xxl uppercase headline">

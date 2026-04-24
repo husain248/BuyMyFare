@@ -5,7 +5,9 @@ export default function AboutBanner() {
     <div
       className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-black/20"
       style={{
-        backgroundImage: getOptimizedBackgroundImage("/assets/images/banner/bnr1.png"),
+        backgroundImage: getOptimizedBackgroundImage(
+          "/assets/images/banner/bnr1.png",
+        ),
       }}
     >
       <div className="container relative z-1 table h-full">

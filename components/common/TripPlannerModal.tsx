@@ -53,7 +53,7 @@ export default function TripPlannerModal({
       />
 
       <div className="relative z-10 flex max-h-[calc(100dvh-2rem)] w-full max-w-4xl flex-col overflow-y-auto rounded-[26px] bg-white shadow-[0_30px_80px_rgba(0,0,0,0.28)] md:flex-row">
-        <div className="relative min-h-47.5 w-full md:min-h-115 md:w-[46%]">
+        <div className="relative min-h-40 w-full md:min-h-115 md:w-[46%] hidden sm:block">
           <Image
             src="/assets/images/banner/contact-bg-2.jpg"
             alt="Travel inspiration"
@@ -66,7 +66,7 @@ export default function TripPlannerModal({
             <p className="text-xs uppercase tracking-[0.2em] text-white/90">
               Let&apos;s Plan Together
             </p>
-            <h3 className="mt-2 text-2xl leading-tight font-semibold text-white">
+            <h3 className="mt-2 text-lg sm:text-2xl leading-tight font-semibold text-white">
               Tell us your dream destination and we&apos;ll design it
               beautifully.
             </h3>

@@ -5,12 +5,14 @@ interface BlogBannerProps {
   title: string;
   subtitle?: string;
   bgImage?: string;
+  compactTitle?: boolean;
 }
 
 const BlogBanner: React.FC<BlogBannerProps> = ({
   title,
   subtitle = "Latest News & Articles",
   bgImage = "/assets/images/banner/blog-banner.jpg",
+  compactTitle = false,
 }) => {
   return (
     <div className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative overflow-hidden before:absolute before:inset-0 before:bg-black/40 before:z-1">
@@ -23,17 +25,16 @@ const BlogBanner: React.FC<BlogBannerProps> = ({
       />
       <div className="container relative z-10 table h-full mx-auto">
         <div className="text-center py-15 table-cell align-middle 2xxl:h-125 lg:h-125 sm:h-100 h-75">
-          <span
-            className="text-white font-main"
-            style={{
-              textTransform: "capitalize",
-              fontSize: "32px",
-              color: "#ffffff",
-            }}
-          >
+          <span className="text-white font-main capitalize text-[24px] md:text-[32px]">
             {subtitle}
           </span>
-          <h1 className="xl:text-7xl sm:text-5xl text-2xl mb-2.5 text-white">
+          <h1
+            className={
+              compactTitle
+                ? "xl:text-7xl sm:text-5xl text-2xl mb-2.5 text-white"
+                : "2xxl:text-11xxl xl:text-10xl sm:text-8xl text-5xl mb-2.5 text-white"
+            }
+          >
             {title}
           </h1>
         </div>

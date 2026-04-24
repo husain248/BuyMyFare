@@ -59,14 +59,7 @@ export default function FlightBookings() {
         >
           <div className="grid-sizer w-1/12"></div>
           <div className="card-container xl:w-1/2 w-full mb-5">
-            <span
-              className="text-white font-main"
-              style={{
-                textTransform: "capitalize",
-                fontSize: "32px",
-                color: "#072032",
-              }}
-            >
+            <span className="text-[#072032] font-main text-[24px] md:text-[32px] capitalize">
               Seamless Flight Bookings
             </span>
             <h2 className="2xxl:text-10xl lg:text-8xl md:text-5xxl sm:text-4xl text-3xxl uppercase lg:mb-7.5 headline">

@@ -19,7 +19,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   return (
     <div className="group blog-card mb-5">
       <div className="sm:mb-7.5 mb-5 overflow-hidden rounded-2xl">
-        <div className="group dz-hover-item relative h-[240px] overflow-hidden sm:h-[280px]">
+        <div className="group dz-hover-item relative h-60 overflow-hidden sm:h-70">
           <Link
             href={`/blogs/${blog.slug}`}
             className="dz-hover-img relative block h-full w-full"

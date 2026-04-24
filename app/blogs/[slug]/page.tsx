@@ -86,6 +86,7 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
           title={blog.title}
           subtitle={`${blog.date} / By ${blog.author}`}
           bgImage={blog.image}
+          compactTitle
         />
 
         <section className="xl:py-25 py-15 bg-white">

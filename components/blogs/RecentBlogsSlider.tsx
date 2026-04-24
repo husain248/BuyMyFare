@@ -11,7 +11,9 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({
   const swiperRef = useRef<HTMLDivElement>(null);
 
   // Filter out the current blog and take the latest ones
-  const recentBlogs = blogsData.filter((b) => b.slug !== currentSlug).slice(0, 6);
+  const recentBlogs = blogsData
+    .filter((b) => b.slug !== currentSlug)
+    .slice(0, 6);
 
   useEffect(() => {
     let swiperInstance: any = null;
@@ -95,16 +97,16 @@ const RecentBlogsSlider: React.FC<{ currentSlug: string }> = ({
                   </div>
                   <div className="p-6">
                     <h4 className="text-xl font-semibold mb-3 line-clamp-2 hover:text-primary transition-colors">
-                      <Link href={`/blogs/${blog.slug}`}>
-                        {blog.title}
-                      </Link>
+                      <Link href={`/blogs/${blog.slug}`}>{blog.title}</Link>
                     </h4>
                     <Link
                       href={`/blogs/${blog.slug}`}
                       className="text-primary font-medium text-sm flex items-center group/link"
                     >
                       Read More
-                      <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
+                      <span className="ml-2 group-hover/link:translate-x-1 transition-transform">
+                        →
+                      </span>
                     </Link>
                   </div>
                 </div>

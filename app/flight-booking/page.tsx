@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import FlightBookingPageClient from "./page-client";
+import FlightBookingNewPageClient from "./page-client";
 
 export const metadata: Metadata = {
   title: "Flight Booking",
   description:
-    "Book domestic and international flights with BuyMyFare and get support for better routes, fares, and travel planning.",
+    "Find current flight offers and book smarter with BuyMyFare. Compare routes and plan your trip with expert support.",
   alternates: {
-    canonical: "/flight-booking",
+    canonical: "/flight-booking-new",
   },
 };
 
-export default function FlightBookingBackupPage() {
-  return <FlightBookingPageClient />;
+export default function Page() {
+  return <FlightBookingNewPageClient />;
 }
