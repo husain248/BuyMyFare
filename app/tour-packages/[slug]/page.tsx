@@ -128,6 +128,11 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { tourPackages } from "../../../data/tour-packages";
+import {
+  absoluteUrl,
+  buildPageMetadata,
+  truncateDescription,
+} from "../../../lib/seo";
 
 const packages = tourPackages;
 
@@ -151,14 +156,15 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${tour.title} Tour Package`,
-    description: tour.description,
-    alternates: {
-      canonical: `/tour-packages/${tour.slug}`,
-    },
-    openGraph: {
+    ...buildPageMetadata({
       title: `${tour.title} Tour Package`,
       description: tour.description,
+      path: `/tour-packages/${tour.slug}`,
+      image: tour.images[0] || "/assets/images/banner/bnr2.png",
+    }),
+    openGraph: {
+      title: `${tour.title} Tour Package`,
+      description: truncateDescription(tour.description),
       type: "website",
       url: `/tour-packages/${tour.slug}`,
       images: [
@@ -171,7 +177,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${tour.title} Tour Package`,
-      description: tour.description,
+      description: truncateDescription(tour.description),
       images: [tour.images[0] || "/assets/images/banner/bnr2.png"],
     },
   };
@@ -196,6 +202,29 @@ export default async function TourDetails({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: `${tour.title} Tour Package`,
+            description: truncateDescription(tour.description),
+            image: tour.images.map((image) => absoluteUrl(image)),
+            brand: {
+              "@type": "Brand",
+              name: "BuyMyFare",
+            },
+            offers: {
+              "@type": "Offer",
+              price: tour.price.replace(/[^0-9.]/g, ""),
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+              url: absoluteUrl(`/tour-packages/${tour.slug}`),
+            },
+          }),
+        }}
+      />
       <div className="2xxl:min-h-100 lg:min-h-100 sm:min-h-100 min-h-75 text-center relative overflow-hidden before:absolute before:inset-0 before:bg-black/20 before:z-1">
         <Image
           src="/assets/images/banner/bnr2.png"

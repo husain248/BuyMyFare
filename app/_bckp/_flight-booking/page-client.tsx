@@ -1,10 +1,10 @@
 "use client";
 
-import PageBanner from "../../components/layout/PageBanner";
-import TicketCard from "../../components/ticket/TicketCard";
-import PricingTerms from "../../components/ticket/PricingTerms";
-import { ticketData } from "../../data/ticket-booking";
-import { useTripPlannerModal } from "../../context/TripPlannerModalContext";
+import PageBanner from "../../../components/layout/PageBanner";
+import TicketCard from "../../../components/ticket/TicketCard";
+import PricingTerms from "../../../components/ticket/PricingTerms";
+import { ticketData } from "../../../data/ticket-booking";
+import { useTripPlannerModal } from "../../../context/TripPlannerModalContext";
 
 export default function FlightBookingPageClient() {
   const { openModal } = useTripPlannerModal();

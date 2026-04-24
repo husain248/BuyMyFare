@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import blogsData from "../data/blogs.json";
 import { tourPackages } from "../data/tour-packages";
-
-const siteUrl = "https://buy-my-fare.vercel.app";
+import { siteUrl } from "../lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -12,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blogs",
     "/tour-packages",
     "/flight-booking",
-    "/flight-booking-new",
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({

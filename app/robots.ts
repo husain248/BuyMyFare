@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://buy-my-fare.vercel.app";
+import { siteUrl } from "../lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {

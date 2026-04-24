@@ -3,15 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { tourPackages } from "../../data/tour-packages";
 import { getOptimizedBackgroundImage } from "../../lib/optimizedBackgroundImage";
+import { buildPageMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Tour Packages",
   description:
     "Browse affordable tour packages with BuyMyFare, including beach escapes, city breaks, and custom vacation deals.",
-  alternates: {
-    canonical: "/tour-packages",
-  },
-};
+  path: "/tour-packages",
+  image: "/assets/images/banner/bnr2.png",
+});
 
 function page() {
   return (

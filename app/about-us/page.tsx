@@ -7,15 +7,14 @@ import AboutusContent from "../../components/about/AboutusContent";
 import WhatweOffer from "../../components/about/WhatweOffer";
 import Journey from "../../components/about/Journey";
 import AboutCta from "../../components/about/AboutCta";
+import { buildPageMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "About Us",
   description:
     "Learn about BuyMyFare, our travel experts, and how we help travelers book flights and tour packages with confidence.",
-  alternates: {
-    canonical: "/about-us",
-  },
-};
+  path: "/about-us",
+});
 
 export default function AboutUsPage() {
   return (

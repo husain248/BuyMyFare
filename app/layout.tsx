@@ -9,12 +9,19 @@ import WhatsAppFloat from "../components/common/WhatsAppFloat";
 import { TripPlannerModalProvider } from "../context/TripPlannerModalContext";
 import FirstVisitRouteRefresh from "../components/layout/FirstVisitRouteRefresh";
 import RouteLoadRecovery from "../components/layout/RouteLoadRecovery";
+import {
+  defaultOgImage,
+  organizationJsonLd,
+  siteName,
+  siteUrl,
+} from "../lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://buy-my-fare.vercel.app"),
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
   title: {
     default: "BuyMyFare | Flight Tickets, Tour Packages & Travel Deals",
-    template: "%s | BuyMyFare",
+    template: `%s | ${siteName}`,
   },
   description:
     "BuyMyFare offers affordable flight tickets, customizable tour packages, and travel deals. Plan your next adventure with great prices and easy booking.",
@@ -33,13 +40,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    siteName: "BuyMyFare",
+    siteName,
     title: "BuyMyFare | Flight Tickets, Tour Packages & Travel Deals",
     description:
       "BuyMyFare offers affordable flight tickets, customizable tour packages, and travel deals. Plan your next adventure with great prices and easy booking.",
     images: [
       {
-        url: "/assets/images/banner/bnr1.png",
+        url: defaultOgImage,
         width: 1200,
         height: 630,
         alt: "BuyMyFare travel deals and packages",
@@ -51,7 +58,7 @@ export const metadata: Metadata = {
     title: "BuyMyFare | Flight Tickets, Tour Packages & Travel Deals",
     description:
       "BuyMyFare offers affordable flight tickets, customizable tour packages, and travel deals.",
-    images: ["/assets/images/banner/bnr1.png"],
+    images: [defaultOgImage],
   },
   robots: {
     index: true,
@@ -64,6 +71,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  category: "travel",
 };
 
 export default function RootLayout({
@@ -75,6 +83,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="shortcut icon" href="/assets/images/favicon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         <link
           rel="preload"
           href="/assets/icons/font-awesome/css/all.min.css"

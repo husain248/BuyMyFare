@@ -8,6 +8,11 @@ import AboutWorkSidebar from "../../../components/blogs/AboutWorkSidebar";
 import ContactFormSidebar from "../../../components/blogs/ContactFormSidebar";
 import RecentBlogsSlider from "../../../components/blogs/RecentBlogsSlider";
 import StickySidebar from "../../../components/common/StickySidebar";
+import {
+  absoluteUrl,
+  buildPageMetadata,
+  truncateDescription,
+} from "../../../lib/seo";
 
 interface Blog {
   id: number;
@@ -40,15 +45,18 @@ export async function generateMetadata({
   }
 
   return {
-    title: blog.title,
-    description: blog.content,
-    keywords: blog.tags,
-    alternates: {
-      canonical: `/blogs/${blog.slug}`,
-    },
-    openGraph: {
+    ...buildPageMetadata({
       title: blog.title,
       description: blog.content,
+      path: `/blogs/${blog.slug}`,
+      image: blog.image,
+      keywords: blog.tags,
+      type: "article",
+    }),
+    openGraph: {
+      siteName: "BuyMyFare",
+      title: blog.title,
+      description: truncateDescription(blog.content),
       type: "article",
       url: `/blogs/${blog.slug}`,
       images: [
@@ -61,7 +69,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: blog.title,
-      description: blog.content,
+      description: truncateDescription(blog.content),
       images: [blog.image],
     },
   };
@@ -81,6 +89,32 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: blog.title,
+            description: truncateDescription(blog.content),
+            image: [absoluteUrl(blog.image)],
+            author: {
+              "@type": "Person",
+              name: blog.author,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "BuyMyFare",
+              logo: {
+                "@type": "ImageObject",
+                url: absoluteUrl("/assets/images/Buy-My-Fare-Logo-L-1024x355.png"),
+              },
+            },
+            mainEntityOfPage: absoluteUrl(`/blogs/${blog.slug}`),
+            datePublished: blog.date,
+          }),
+        }}
+      />
       <div className="page-content">
         <BlogBanner
           title={blog.title}

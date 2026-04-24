@@ -11,16 +11,15 @@ import ContactSection from "../components/home/ContactSection";
 import GallerySection from "../components/home/GallerySection";
 import FlightBookings from "../components/home/FlightBookings";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "../lib/seo";
 // import SubscribeBanner from "../components/home/SubscribeBanner";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Home",
   description:
     "Explore affordable flights, curated tour packages, and travel offers with BuyMyFare. Start planning your next trip today.",
-  alternates: {
-    canonical: "/",
-  },
-};
+  path: "/",
+});
 
 export default function Home() {
   return (

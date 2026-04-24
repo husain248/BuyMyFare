@@ -15,7 +15,7 @@ export default function WhatsAppFloat() {
   )}`;
 
   return (
-    <div className="fixed right-5 bottom-5 z-[1000] flex flex-col items-end gap-3">
+    <div className="fixed right-5 bottom-5 z-1000 flex flex-col items-end gap-3">
       {isOpen && (
         <div className="w-[min(320px,calc(100vw-2.5rem))] overflow-hidden rounded-2xl border border-[#d7efe0] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
           <div className="flex items-center justify-between bg-[#25D366] px-4 py-3 text-white">
@@ -36,7 +36,7 @@ export default function WhatsAppFloat() {
           </div>
 
           <div className="bg-[#efeae2] px-4 py-4">
-            <div className="max-w-[240px] rounded-2xl rounded-tl-sm bg-white px-4 py-3 text-sm text-secondary shadow-sm">
+            <div className="max-w-60 rounded-2xl rounded-tl-sm bg-white px-4 py-3 text-sm text-secondary shadow-sm">
               Hi there! Need help with flights, holidays, or travel insurance?
             </div>
           </div>

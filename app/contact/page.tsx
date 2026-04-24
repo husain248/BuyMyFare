@@ -4,15 +4,14 @@ import Image from "next/image";
 import PageBanner from "../../components/layout/PageBanner";
 import ContactInfo from "../../components/contact/ContactInfo";
 import ContactForm from "../../components/common/ContactForm";
+import { buildPageMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact Us",
   description:
     "Contact BuyMyFare for flight bookings, tour packages, and custom travel planning support from our travel specialists.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+  path: "/contact",
+});
 
 function Page() {
   return (
@@ -32,11 +31,11 @@ function Page() {
                 data-wow-delay="1s"
               >
                 <Image
-                  src="/assets/images/contact-person.jpg"
+                  src="/assets/images/contact-person-new.jpeg"
                   alt="Contact Us"
                   width={800}
                   height={600}
-                  className="w-full h-auto"
+                  className="w-full h-auto max-h-112.5 object-cover "
                 />
               </div>
               <ContactInfo />
