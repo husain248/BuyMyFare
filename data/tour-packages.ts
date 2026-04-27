@@ -199,7 +199,7 @@ export const tourPackages: TourPackage[] = [
     description3:
       "If you prefer a more laid-back experience, you can unwind on the pristine beaches that stretch along both coasts. Bask in the sun on the soft sands of Tamarindo, take a snorkeling trip in the crystal-clear waters of Conchal Beach, or enjoy the unique pink sands of Flamingo Beach. Costa Rica is the perfect mix of relaxation and adventure!",
     price: "$1345",
-    images: ["/assets/images/costa-rica-trip.png"],
+    images: ["/assets/images/Costa-Rica-trip.png"],
     inclusions: [
       {
         icon: "/assets/images/inclusions/flight-icon.svg",
