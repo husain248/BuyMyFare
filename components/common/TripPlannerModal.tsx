@@ -39,11 +39,10 @@ export default function TripPlannerModal({
 
   return (
     <div
-      className={`fixed inset-0 z-10000 flex items-center justify-center p-4 transition-all duration-300 ${
-        isOpen
-          ? "pointer-events-auto opacity-100"
-          : "pointer-events-none opacity-0"
-      }`}
+      className={`fixed inset-0 z-10000 flex items-center justify-center p-4 transition-all duration-300 ${isOpen
+        ? "pointer-events-auto opacity-100"
+        : "pointer-events-none opacity-0"
+        }`}
     >
       <button
         type="button"
@@ -55,7 +54,7 @@ export default function TripPlannerModal({
       <div className="relative z-10 flex max-h-[calc(100dvh-2rem)] w-full max-w-4xl flex-col overflow-y-auto rounded-[26px] bg-white shadow-[0_30px_80px_rgba(0,0,0,0.28)] md:flex-row">
         <div className="relative min-h-40 w-full md:min-h-115 md:w-[46%] hidden sm:block">
           <Image
-            src="/assets/images/banner/contact-bg-2.jpg"
+            src="/assets/images/contact-person-new.jpeg"
             alt="Travel inspiration"
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
