@@ -33,7 +33,7 @@ export async function POST(req: Request) {
 
     const data = await resend.emails.send({
       from: "BuyMyFare <onboarding@resend.dev>",
-      to: ["husainyuvasoft248@gmail.com"],
+      to: ["travel@buymyfare.ca"],
       subject: `New Trip Enquiry from ${safeName}`,
       html: `
 <!DOCTYPE html>
@@ -198,7 +198,7 @@ export async function POST(req: Request) {
                     <p style="margin:0;font-size:12px;color:#94a3b8;">We're available 24/7 for you</p>
                   </td>
                   <td style="padding:22px 24px;vertical-align:middle;text-align:right;white-space:nowrap;">
-                    <a href="mailto:husainyuvasoft248@gmail.com" style="display:inline-block;background:#06a8f9;color:#ffffff;font-size:13px;font-weight:700;padding:12px 22px;border-radius:50px;text-decoration:none;">
+                    <a href="mailto:travel@buymyfare.ca" style="display:inline-block;background:#06a8f9;color:#ffffff;font-size:13px;font-weight:700;padding:12px 22px;border-radius:50px;text-decoration:none;">
                       Contact Us
                     </a>
                   </td>

@@ -45,11 +45,11 @@ export default function HeroBanner() {
             <div className="w-full">
               <div className="relative z-1 xl:p-20 lg:p-15 md:py-12.5 py-6 md:px-5 px-5 sm:pe-20 bottom-[50px] md:bottom-[250px]">
                 <div className="mb-5">
-                  <h1 className="flex items-center gap-3.5 cursor-pointer relative z-1">
+                  <h5 className="flex items-center gap-3.5 cursor-pointer relative z-1">
                     <span className="text-white font-main capitalize text-[24px] md:text-[32px]">
                       {slide.smallHeading}
                     </span>
-                  </h1>
+                  </h5>
                 </div>
                 <h1
                   className="3xl:text-15xl 2xxl:text-10xl xl:text-10xl md:text-8xl sm:text-6xl text-4xxl font-bold mb-2.5 text-white leading-none! uppercase wow fadeInUp"
