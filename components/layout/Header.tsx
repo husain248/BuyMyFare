@@ -10,6 +10,7 @@ import { useTripPlannerModal } from "../../context/TripPlannerModalContext";
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, x: 0 });
@@ -29,10 +30,16 @@ export default function Header() {
 
   useEffect(() => {
     setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 992);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
     const handleScroll = () => setIsFixed(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const updateIndicator = (el: HTMLElement | null) => {
@@ -107,7 +114,8 @@ export default function Header() {
   return (
     <header
       suppressHydrationWarning
-      className={`site-header sticky-header-wrapper absolute top-0 left-0 w-full z-999 lg:pt-7.5 [.sticky-header-wrapper.is-fixed]:fixed [.sticky-header-wrapper.is-fixed]:bg-white lg:[.sticky-header-wrapper.is-fixed]:pb-4 lg:[.sticky-header-wrapper.is-fixed]:pt-4 [.sticky-header-wrapper.is-fixed]:animate-headerSlideDown ${mounted && isFixed ? "is-fixed" : ""}`}
+      className={`site-header sticky-header-wrapper absolute top-0 left-0 w-full z-999 py-2.5 sm:py-0 lg:pt-7.5 [.sticky-header-wrapper.is-fixed]:fixed [.sticky-header-wrapper.is-fixed]:bg-white lg:[.sticky-header-wrapper.is-fixed]:pb-4 lg:[.sticky-header-wrapper.is-fixed]:pt-4 [.sticky-header-wrapper.is-fixed]:animate-headerSlideDown ${mounted && isFixed ? "is-fixed" : ""}`}
+      style={mounted && isMobile && !isFixed ? { backgroundColor: "rgba(0,0,0,0.6)" } : undefined}
     >
       <div className="main-bar relative lg:text-white text-secondary w-full">
         <div className="container max-w-8xl flex items-center">
@@ -127,14 +135,14 @@ export default function Header() {
                 width={200}
                 height={69}
                 priority
-                className="block h-auto w-[200px] object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:hidden"
+                className="block h-auto w-[180px] sm:w-[200px] object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:hidden"
               />
               <Image
                 src="/assets/images/Buy-My-Fare-Logo.png"
                 alt="logo"
                 width={200}
                 height={69}
-                className="hidden h-auto w-[200px] object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block"
+                className="hidden h-auto w-[180px] sm:w-[200px] object-contain duration-500 [.sticky-header-wrapper.is-fixed_&]:block"
               />
             </Link>
           </div>

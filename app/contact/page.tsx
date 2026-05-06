@@ -19,7 +19,7 @@ function Page() {
       <PageBanner
         title="Contact Us"
         subtitle="Reach Out to Us"
-        bgImage="/assets/images/banner/contact-bg.png"
+        bgImage="/assets/images/banner/contact-bg-2.png"
       />
 
       <section className="main-banner overflow-hidden lg:pt-36.25 pt-27.25 lg:pb-23.75 sm:pb-12.5 z-0 before:content-[''] before:absolute before:top-0 before:left-0 before:bg-light before:h-full before:w-[44%] before:-z-1 lg:before:block before:hidden">
